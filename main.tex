@@ -8,6 +8,26 @@
 
 \usepackage{multirow}     % for multi-row table
 \usepackage{booktabs}     % table style used in books
+\usepackage{enumerate}
+
+% agda and math replacement
+\usepackage{agda}
+\usepackage{newunicodechar}
+\newunicodechar{ℕ}{$\mathbb{N}$}
+\newunicodechar{≡}{$\equiv$}
+\newunicodechar{∀}{$\forall$}
+\newunicodechar{∄}{$\nexists$}
+\newunicodechar{∃}{$\exists$}
+\newunicodechar{⊥}{$\bot$}
+\newunicodechar{↦}{$\mapsto$}
+\newunicodechar{∷}{$\Colon$}
+\newunicodechar{◾}{$\oiint$}
+\newunicodechar{⤖}{$\bij$}
+
+% \usepackage{fontspec,unicode-math}
+% \setmainfont{XITS}
+% \setmathfont{XITS Math}
+
 
 %-------------------------------------------------------------------------------
 % Configuration
@@ -22,7 +42,7 @@
 \begin{document}
 
 % Show repeated author names in bibliography when using IEEEtran.bst
-% Comment out this line if you don't set IEEEtran in \bibliographystyle{}
+% Comment out this li ne if you don't set IEEEtran in \bibliographystyle{}
 \bstctlcite{IEEEexample:BSTcontrol}
 
 % Generate cover, title, authorization, approval and copyright pages
@@ -59,10 +79,10 @@
 
 % 內文, 請依照章節順序擺放
 \input{chapters/1-intro}
-\input{chapters/2-doccls}
-\input{chapters/3-secorder}
-\input{chapters/4-ref}
-\input{chapters/5-figure}
+\input{chapters/2-background-knowledge}
+\input{chapters/3-narrow-rev-termination}
+\input{chapters/4-broad-rev-termination}
+\input{chapters/5-conclusion}
 
 %-------------------------------------------------------------------------------
 % 參考文獻

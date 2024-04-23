@@ -1,0 +1,55 @@
+\begin{code}%
+\>[2]\AgdaKeyword{data} %
+\AgdaOperator{\AgdaDatatype{\underline{\hspace{0.5em}}↦[\underline{\hspace{0.5em}}]\underline{\hspace{0.5em}}}} %
+\AgdaSymbol{:} %
+\AgdaField{State} %
+\AgdaSymbol{→} %
+\AgdaDatatype{ℕ} %
+\AgdaSymbol{→} %
+\AgdaField{State} %
+\AgdaSymbol{→} %
+\AgdaPrimitive{Set} %
+\AgdaSymbol{(}\AgdaPrimitive{L.suc} %
+\AgdaBound{ℓ}\AgdaSymbol{)} %
+\AgdaKeyword{where}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaInductiveConstructor{◾} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{st}\AgdaSymbol{\}} %
+\AgdaSymbol{→} %
+\AgdaBound{st} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaNumber{0} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{st}\<%
+\\
+%
+\>[4]\AgdaOperator{\AgdaInductiveConstructor{\underline{\hspace{0.5em}}∷\underline{\hspace{0.5em}}}} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{st₁} %
+\AgdaBound{st₂} %
+\AgdaBound{st₃} %
+\AgdaBound{n}\AgdaSymbol{\}} %
+\AgdaSymbol{→} %
+\AgdaBound{st₁} %
+\AgdaOperator{\AgdaField{↦}} %
+\AgdaBound{st₂} %
+\AgdaSymbol{→} %
+\AgdaBound{st₂} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{n} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{st₃} %
+\AgdaSymbol{→} %
+\AgdaBound{st₁} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaInductiveConstructor{suc} %
+\AgdaBound{n} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{st₃}\<%
+\\
+\>[0]\<%
+\end{code}

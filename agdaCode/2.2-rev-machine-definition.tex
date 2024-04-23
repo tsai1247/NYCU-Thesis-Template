@@ -1,0 +1,59 @@
+\begin{code}%
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaKeyword{field}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaField{State} %
+\AgdaSymbol{:} %
+\AgdaPrimitive{Set} %
+\AgdaBound{ℓ}\<%
+\\
+%
+\>[4]\AgdaOperator{\underline{\hspace{0.5em}}\AgdaField{↦}\underline{\hspace{0.5em}}} %
+\AgdaSymbol{:} %
+\AgdaFunction{Rel} %
+\AgdaField{State} %
+\AgdaBound{ℓ}\<%
+\\
+%
+\>[4]\AgdaField{deterministic} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{st} %
+\AgdaBound{st₁} %
+\AgdaBound{st₂}\AgdaSymbol{\}} %
+\AgdaSymbol{→} %
+\AgdaBound{st} %
+\AgdaOperator{\AgdaField{↦}} %
+\AgdaBound{st₁} %
+\AgdaSymbol{→} %
+\AgdaBound{st} %
+\AgdaOperator{\AgdaField{↦}} %
+\AgdaBound{st₂} %
+\AgdaSymbol{→} %
+\AgdaBound{st₁} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{st₂}\<%
+\\
+%
+\>[4]\AgdaField{deterministicᵣₑᵥ} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{st} %
+\AgdaBound{st₁} %
+\AgdaBound{st₂}\AgdaSymbol{\}} %
+\AgdaSymbol{→} %
+\AgdaBound{st₁} %
+\AgdaOperator{\AgdaField{↦}} %
+\AgdaBound{st} %
+\AgdaSymbol{→} %
+\AgdaBound{st₂} %
+\AgdaOperator{\AgdaField{↦}} %
+\AgdaBound{st} %
+\AgdaSymbol{→} %
+\AgdaBound{st₁} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{st₂}\<%
+\\
+\>[0]\<%
+\end{code}

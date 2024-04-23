@@ -1,0 +1,41 @@
+\section{Agda}
+
+Agda is a dependently typed functional programming language.
+Writing in the Agda language is akin to organizing a mathematical proof. It begins with self-evident datatypes, proposes assumptions to be proven, and provides detailed evidence for their validity thereafter.
+The following is an example of a datatype concerning natural numbers.
+
+\input{agdaCode/2.1-natrual-number-definition}
+
+This definition captures the first two axioms corresponding to Peano's axioms, and the other axioms within Peano's axioms can also be easily proven. 
+The function suc can be considered as a mapping operation. 
+We can describe this operation in natural language as follows: 
+"Given a natural number n, suc(n) is also a natural number." 
+Such a function from $\mathbb{N}$ to $\mathbb{N}$ will be utilized in Chapter {TODO}, where it will constitute a critical part of the proof process.
+
+And the following demonstrates two examples of the proof process:
+
+\input{agdaCode/2.1-peano-axioms-3}
+
+Here, we take the third Peano axiom as an example, which is to prove that there does not exist a natural number such that suc(n) is zero. 
+In Agda, a proof of non-existence typically begins by assuming the existence of such an entity, and then deriving a contradiction (denoted as $\bot$). 
+In this case, the proof process is merely an empty parenthesis.
+When Agda attempts to find n among the two possible kinds of natural numbers (zero and suc(n)), it immediately encounters an obvious contradiction. 
+Therefore, it concludes that no further cases need to be proven.
+
+\input{agdaCode/2.1-peano-axioms-5-1}
+This statement corresponds to the fifth Peano axiom. 
+Agda uses the right arrow to sequentially assign the necessary conditions, with the conclusion appearing to the right of the last right arrow. 
+The fifth Peano axiom describes that for any function f, if:
+\begin{enumerate}[1.]
+\item f(0) holds true,
+\item f(n) being true implies that f(suc(n)) is also true
+\end{enumerate}
+then for all natural numbers n, f(n) holds true.
+
+\input{agdaCode/2.1-peano-axioms-5-2}
+This illustrates the proof of the fifth Peano axiom. This straightforward proof highlights a few commonly used proof techniques in Agda:
+\begin{enumerate}[1.]
+\item Pattern Matching on Variables: The example splits the natural number n into two cases: zero and suc n, for separate discussion. This technique allows for detailed examination of different scenarios directly related to the structure of natural numbers.
+\item Mathematical Induction on Natural Numbers: Theorems involving natural numbers often leverage induction. In Agda, we typically prove a case for n to infer the case for suc n. Agda ensures that there is a corresponding proof for the base case (usually zero), which acts as the termination condition for a comprehensive proof.
+\item Simplifying Variables Using 'with': In the example, the proof for f(n) is obtained using axiom-5, and it is named fn. This approach helps to avoid verbose variable expressions, streamlining the proof.
+\end{enumerate}

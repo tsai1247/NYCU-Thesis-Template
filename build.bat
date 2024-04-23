@@ -1,9 +1,10 @@
+del *.log
+ 
 xelatex -synctex=1 -shell-escape -interaction=nonstopmode main.tex
 bibtex main.aux
-xelatex -synctex=1 -shell-escape -interaction=nonstopmode main.tex
-xelatex -synctex=1 -shell-escape -interaction=nonstopmode main.tex
+@REM xelatex -synctex=1 -shell-escape -interaction=nonstopmode main.tex
+@REM xelatex -synctex=1 -shell-escape -interaction=nonstopmode main.tex
 del *.aux 
-del *.log 
 del *.gz 
 del *.bbl 
 del *.blg 

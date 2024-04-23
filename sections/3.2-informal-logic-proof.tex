@@ -1,0 +1,11 @@
+\section{Informal Logic Proof}
+
+The proof of Narrow RevTermination using informal logic is straightforward and will serve as our guide for the formal proof:
+\begin{enumerate}[1.]
+\item Start from the initial state $st_{0}$ we know $st_{0}$ is reachable with 0 steps.
+\item If $st_{0}$ cannot transition to another state, then $st_{0}$ is the target stuck state.
+\item If $st_{0}$ can transition to $st_{1}$ we construct a trace from $st_{0}$ to $st_{1}$ denoted as $st_{0}$ ↦* $st_{1}$ with length of 1.
+\item Continue checking whether $st_{1}$ has a subsequent state to transition to until we find a stuck state or construct a trace $st_{0}$ ↦* $st_{n}$ with length of n.
+\item Upon reaching $st_{n}$ it is confirmed that all states have been traversed.  With no-repeating principle, we know it is impossible for $st_{n}$ having next state.
+\end{enumerate}.  
+// TODO: 還可以簡化

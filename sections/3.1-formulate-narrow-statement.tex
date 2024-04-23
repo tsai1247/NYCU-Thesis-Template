@@ -1,0 +1,39 @@
+\section{Formulate Statement}
+
+Before we can construct the Termination Statement, it is necessary to define certain relationships between states.
+
+\input{agdaCode/3.1-narrow-revTermination-preparation-isInitial}
+The is-initial code segment provides a proof that a given state has no preceding states.
+
+\input{agdaCode/3.1-narrow-revTermination-preparation-isStuck}
+The is-stuck code segment offers a proof that a given state has no succeeding states.
+
+\input{agdaCode/3.1-narrow-revTermination-preparation-trace}
+The ↦* symbol code segment establishes a trace between two specified states, demonstrating that one state can be reached from the other through a finite number of transitions.
+
+\input{agdaCode/3.1-narrow-revTermination-preparation-trace-n}
+Similar to the ↦* code, the ↦[n] segment specifies a definite trace length n, establishing a fixed number of transitions from one state to another.
+
+First of all, we describe in natural language the proof content expected for narrow reversible termination:
+In a reversible machine m, if the number of states in the state set is finite, then each initial state should reach a stuck state after a finite number of transitions and terminate.
+
+Here is the formal definition of a narrow reversible termination statement:
+
+\input{agdaCode/3.1-narrow-revTermination-definition}
+
+In the first two statements, we describe the necessary conditions for the termination of a reversible machine in narrow cases:
+
+\begin{enumerate}[1.]
+\item "For every state, the existence of a subsequent state is decidable." Imagine if the machine cannot determine whether a state can continue to progress; in such cases, the state would not be able to advance.
+\item There is a bijection between the set of States and Fin N. This statement restricts the total number of states by establishing a correspondence with Fin N.
+\end{enumerate}
+
+And in the former 2 statement, we 描述了Termination這件事本身：
+
+Given an initial state, we can determine a reachable stuck state, ensuring that the machine will eventually terminate.
+
+
+
+
+
+

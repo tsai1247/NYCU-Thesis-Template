@@ -1,0 +1,16 @@
+\section{Reversible Abstract Machine}
+
+The Reversible Abstract Machine, abbreviated as RevMachine, is defined as follows.
+
+\input{agdaCode/2.2-rev-machine-definition}
+
+"State" is the set of all states.
+
+"$\mapsto$" is used to record state transitions, for example, $st_{0}$ $\mapsto$ $st_{1}$ indicates that $st_{0}$ transitions to $st_{1}$.
+
+"Deterministic" refers to forward determinism, meaning that identical states will transition to the same next state.
+
+"deterministicᵣₑᵥ", on the other hand, is the opposite of "deterministic", indicating that for each state, all possible transitions to it are the same.
+
+Based on the definitions above, given a RevMachine and one of its states, we can determine an invariant trace composed of states.
+
