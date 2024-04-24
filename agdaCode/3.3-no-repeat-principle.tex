@@ -1,0 +1,47 @@
+\begin{code}%
+    \\
+    %
+    \>[4]\AgdaPostulate{NoRepeat} %
+    \AgdaSymbol{:} %
+    \AgdaSymbol{∀} %
+    \AgdaSymbol{\{}\AgdaBound{st₀} %
+    \AgdaBound{stₙ} %
+    \AgdaBound{stₘ} %
+    \AgdaBound{n} %
+    \AgdaBound{m}\AgdaSymbol{\}}\<%
+    \\
+    \>[4][@{}l@{\AgdaIndent{0}}]%
+    \>[10]\AgdaSymbol{→} %
+    \AgdaFunction{is-initial} %
+    \AgdaBound{st₀}\<%
+    \\
+    %
+    \>[10]\AgdaSymbol{→} %
+    \AgdaBound{n} %
+    \AgdaOperator{\AgdaFunction{<}} %
+    \AgdaBound{m}\<%
+    \\
+    %
+    \>[10]\AgdaSymbol{→} %
+    \AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦[}} %
+    \AgdaBound{n} %
+    \AgdaOperator{\AgdaDatatype{]}} %
+    \AgdaBound{stₙ}\<%
+    \\
+    %
+    \>[10]\AgdaSymbol{→} %
+    \AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦[}} %
+    \AgdaBound{m} %
+    \AgdaOperator{\AgdaDatatype{]}} %
+    \AgdaBound{stₘ}\<%
+    \\
+    %
+    \>[10]\AgdaSymbol{→} %
+    \AgdaBound{stₙ} %
+    \AgdaOperator{\AgdaFunction{≢}}%
+    \>[19]\AgdaBound{stₘ}\<%
+    \\
+    \>[0]\<%
+\end{code}

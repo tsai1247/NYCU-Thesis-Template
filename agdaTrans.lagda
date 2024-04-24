@@ -1,5 +1,5 @@
 \begin{code}
-open import Relation.Binary.PropositionalEquality using ( _≡_ ; refl ; trans ; sym ; cong )
+open import Relation.Binary.PropositionalEquality
 open import Data.Product
 open import Data.Empty
 open import Data.Nat
@@ -31,7 +31,6 @@ module RevNoRepeat {ℓ} (M : RevMachine {ℓ}) where
     ◾ : {st : State} → st ↦* st
     _∷_ : {st₁ st₂ st₃ : State} → st₁ ↦ st₂ → st₂ ↦* st₃ → st₁ ↦* st₃
 
-  -- target
   data _↦[_]_ : State → ℕ → State → Set (L.suc ℓ) where
     ◾ : ∀ {st} → st ↦[ 0 ] st
     _∷_ : ∀ {st₁ st₂ st₃ n} → st₁ ↦ st₂ → st₂ ↦[ n ] st₃ → st₁ ↦[ suc n ] st₃
@@ -42,4 +41,40 @@ module RevNoRepeat {ℓ} (M : RevMachine {ℓ}) where
       → State ⤖ Fin N
       → is-initial st₀
       → ∃[ stₙ ] (st₀ ↦* stₙ × is-stuck stₙ)
+
+      
+    Finite-State-Termination-With-Countdown : ∀ {N st₀}
+      → State ⤖ Fin N
+      → is-initial st₀
+      → ∀ cd m stₘ → cd + m ≡ N → st₀ ↦[ m ] stₘ
+      → ∃[ stₙ ] (st₀ ↦* stₙ × is-stuck stₙ)
+
+    NoRepeat : ∀ {st₀ stₙ stₘ n m}
+          → is-initial st₀
+          → n < m
+          → st₀ ↦[ n ] stₙ
+          → st₀ ↦[ m ] stₘ
+          → stₙ ≢  stₘ
+
+    Finite-State-Termination-At-N : ∀ {N st₀}
+        → State ⤖ Fin N
+        → is-initial st₀
+        → ∃[ stₙ ] (st₀ ↦[ N ] stₙ) → ⊥
+
+    -- target
+    pigeonhole : ∀ N → (f : ℕ → ℕ)
+           → (∀ n → n ≤ N → f n < N)
+           → ∃[ m ] ∃[ n ] (m < n × n ≤ N × f m ≡ f n)
+
+    Finite-Reachable-State-Termination : ∀ {N st₀}
+      → (St-Fin : ∃[ m ] ∃[ stₘ ] (st₀ ↦[ m ] stₘ) ⤖ Fin N)
+      → is-initial st₀
+      → ∃[ stₙ ] (st₀ ↦* stₙ × is-stuck stₙ)
+
+
+    cd-1 : ∀ {cd} {m} {N}
+      → suc (cd + m) ≡ N
+      → cd + (m + 1) ≡ N
+
+
 \end{code}

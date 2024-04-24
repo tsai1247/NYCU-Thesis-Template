@@ -1,0 +1,52 @@
+\begin{code}%
+    \>[4]\AgdaPostulate{Finite-State-Termination-With-Countdown} %
+    \AgdaSymbol{:} %
+    \AgdaSymbol{∀} %
+    \AgdaSymbol{\{}\AgdaBound{N} %
+    \AgdaBound{st₀}\AgdaSymbol{\}}\<%
+    \\
+    \>[4][@{}l@{\AgdaIndent{0}}]%
+    \>[6]\AgdaSymbol{→} %
+    \AgdaField{State} %
+    \AgdaOperator{\AgdaFunction{⤖}} %
+    \AgdaDatatype{Fin} %
+    \AgdaBound{N}\<%
+    \\
+    %
+    \>[6]\AgdaSymbol{→} %
+    \AgdaFunction{is-initial} %
+    \AgdaBound{st₀}\<%
+    \\
+    %
+    \>[6]\AgdaSymbol{→} %
+    \AgdaSymbol{∀} %
+    \AgdaBound{cd} %
+    \AgdaBound{m} %
+    \AgdaBound{stₘ} %
+    \AgdaSymbol{→} %
+    \AgdaBound{cd} %
+    \AgdaOperator{\AgdaPrimitive{+}} %
+    \AgdaBound{m} %
+    \AgdaOperator{\AgdaDatatype{≡}} %
+    \AgdaBound{N} %
+    \AgdaSymbol{→} %
+    \AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦[}} %
+    \AgdaBound{m} %
+    \AgdaOperator{\AgdaDatatype{]}} %
+    \AgdaBound{stₘ}\<%
+    \\
+    %
+    \>[6]\AgdaSymbol{→} %
+    \AgdaFunction{∃[} %
+    \AgdaBound{stₙ} %
+    \AgdaFunction{]} %
+    \AgdaSymbol{(}\AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦*}} %
+    \AgdaBound{stₙ} %
+    \AgdaOperator{\AgdaFunction{×}} %
+    \AgdaFunction{is-stuck} %
+    \AgdaBound{stₙ}\AgdaSymbol{)}\<%
+    \\
+    \>[0]\<%
+\end{code}

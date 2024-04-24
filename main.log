@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3) (preloaded format=xelatex 2024.4.1)  23 APR 2024 10:32
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3) (preloaded format=xelatex 2024.4.1)  24 APR 2024 13:38
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1888,54 +1888,807 @@ and I'll forget about whatever was undefined.
 )) (sections/3.2-informal-logic-proof.tex
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
- [7]))
-(chapters/4-broad-rev-termination.tex
+ [7])
+(sections/3.3-formal-logic-proof.tex
+(agdaCode/3.3-narrow-revTermination-with-countdown.tex
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
  [8]
-Chapter 4.
-
-LaTeX Warning: Reference `sec:citation' on page 9 undefined on input line 4.
+\openout4 = `main.ptb'.
 
 
-LaTeX Warning: Reference `sec:quote' on page 9 undefined on input line 5.
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.52 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.52 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.52 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+) (agdaCode/3.3-cd-1-system.tex
+\openout4 = `main.ptb'.
 
 
-LaTeX Warning: Citation `Yang_2016' on page 9 undefined on input line 15.
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...ce {}\AgdaSymbol {:}\AgdaSpace 
+                                                  {}\AgdaSymbol {∀}\AgdaSpac...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...ce {}\AgdaSymbol {∀}\AgdaSpace 
+                                                  {}\AgdaSymbol {\{}\AgdaBou...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{cd}\AgdaSymbol {\}}\AgdaSpace 
+                                                  {}\AgdaSymbol {\{}\AgdaBou...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ... {m}\AgdaSymbol {\}}\AgdaSpace 
+                                                  {}\AgdaSymbol {\{}\AgdaBou...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...\>[6]\AgdaSymbol {→}\AgdaSpace 
+                                                  {}\AgdaInductiveConstructo...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{\AgdaPrimitive {+}}\AgdaSpace 
+                                                  {}\AgdaBound {m}\AgdaSymbo...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...d {m}\AgdaSymbol {)}\AgdaSpace 
+                                                  {}\AgdaOperator {\AgdaData...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ... {\AgdaDatatype {≡}}\AgdaSpace 
+                                                  {}\AgdaBound {N}\<\\ \>[6]...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...\>[6]\AgdaSymbol {→}\AgdaSpace 
+                                                  {}\AgdaBound {cd}\AgdaSpac...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{\AgdaPrimitive {+}}\AgdaSpace 
+                                                  {}\AgdaSymbol {(}\AgdaBoun...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{\AgdaPrimitive {+}}\AgdaSpace 
+                                                  {}\AgdaNumber {1}\AgdaSymb...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...r {1}\AgdaSymbol {)}\AgdaSpace 
+                                                  {}\AgdaOperator {\AgdaData...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ... {\AgdaDatatype {≡}}\AgdaSpace 
+                                                  {}\AgdaBound {N}\<\\ \>[0]\<
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...ce {}\AgdaSymbol {:}\AgdaSpace 
+                                                  {}\AgdaSymbol {∀}\AgdaSpac...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...ce {}\AgdaSymbol {∀}\AgdaSpace 
+                                                  {}\AgdaSymbol {\{}\AgdaBou...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{cd}\AgdaSymbol {\}}\AgdaSpace 
+                                                  {}\AgdaSymbol {\{}\AgdaBou...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ... {m}\AgdaSymbol {\}}\AgdaSpace 
+                                                  {}\AgdaSymbol {\{}\AgdaBou...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...\>[6]\AgdaSymbol {→}\AgdaSpace 
+                                                  {}\AgdaInductiveConstructo...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{\AgdaPrimitive {+}}\AgdaSpace 
+                                                  {}\AgdaBound {m}\AgdaSymbo...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...d {m}\AgdaSymbol {)}\AgdaSpace 
+                                                  {}\AgdaOperator {\AgdaData...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ... {\AgdaDatatype {≡}}\AgdaSpace 
+                                                  {}\AgdaBound {N}\<\\ \>[6]...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...\>[6]\AgdaSymbol {→}\AgdaSpace 
+                                                  {}\AgdaBound {cd}\AgdaSpac...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{\AgdaPrimitive {+}}\AgdaSpace 
+                                                  {}\AgdaSymbol {(}\AgdaBoun...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{\AgdaPrimitive {+}}\AgdaSpace 
+                                                  {}\AgdaNumber {1}\AgdaSymb...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...r {1}\AgdaSymbol {)}\AgdaSpace 
+                                                  {}\AgdaOperator {\AgdaData...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ... {\AgdaDatatype {≡}}\AgdaSpace 
+                                                  {}\AgdaBound {N}\<\\ \>[0]\<
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...ce {}\AgdaSymbol {:}\AgdaSpace 
+                                                  {}\AgdaSymbol {∀}\AgdaSpac...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...ce {}\AgdaSymbol {∀}\AgdaSpace 
+                                                  {}\AgdaSymbol {\{}\AgdaBou...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{cd}\AgdaSymbol {\}}\AgdaSpace 
+                                                  {}\AgdaSymbol {\{}\AgdaBou...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ... {m}\AgdaSymbol {\}}\AgdaSpace 
+                                                  {}\AgdaSymbol {\{}\AgdaBou...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...\>[6]\AgdaSymbol {→}\AgdaSpace 
+                                                  {}\AgdaInductiveConstructo...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{\AgdaPrimitive {+}}\AgdaSpace 
+                                                  {}\AgdaBound {m}\AgdaSymbo...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...d {m}\AgdaSymbol {)}\AgdaSpace 
+                                                  {}\AgdaOperator {\AgdaData...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ... {\AgdaDatatype {≡}}\AgdaSpace 
+                                                  {}\AgdaBound {N}\<\\ \>[6]...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Yang_2017' on page 9 undefined on input line 16.
+Overfull \hbox (9.78152pt too wide) detected at line 30
+  |  
+ []
 
-) (chapters/5-conclusion.tex
+! Undefined control sequence.
+<inserted text> ...\>[6]\AgdaSymbol {→}\AgdaSpace 
+                                                  {}\AgdaBound {cd}\AgdaSpac...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{\AgdaPrimitive {+}}\AgdaSpace 
+                                                  {}\AgdaSymbol {(}\AgdaBoun...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \AgdaSpace 
+                           
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...{\AgdaPrimitive {+}}\AgdaSpace 
+                                                  {}\AgdaNumber {1}\AgdaSymb...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ...r {1}\AgdaSymbol {)}\AgdaSpace 
+                                                  {}\AgdaOperator {\AgdaData...
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> ... {\AgdaDatatype {≡}}\AgdaSpace 
+                                                  {}\AgdaBound {N}\<\\ \>[0]\<
+l.30 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (9.78152pt too wide) detected at line 30
+  |  
+ []
+
+) (agdaImages/3.3-halfway-hault-image.tex
+\openout4 = `main.ptb'.
+
+)
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
- [9
+ [9]
+(agdaCode/3.3-nth-state-termination-statement.tex
+\openout4 = `main.ptb'.
+
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.35 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.35 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.35 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+File: figures/nycu_logo.jpg Graphic file (type bmp)
+<figures/nycu_logo.jpg>
+ [10] (agdaImages/3.3-mapping-relation.tex
+\openout4 = `main.ptb'.
+
+)
+(agdaCode/3.3-piegonhole-principle.tex
+\openout4 = `main.ptb'.
+
+)
+File: figures/nycu_logo.jpg Graphic file (type bmp)
+<figures/nycu_logo.jpg>
+ [11]
+(agdaCode/3.3-no-repeat-principle.tex
+\openout4 = `main.ptb'.
+
+
+Missing character: There is no ≢ in font Arial/OT:script=latn;language=dflt;map
+ping=tex-text;!
+Missing character: There is no ≢ in font Arial/OT:script=latn;language=dflt;map
+ping=tex-text;!
+Missing character: There is no ≢ in font Arial/OT:script=latn;language=dflt;map
+ping=tex-text;!
+))) (chapters/4-broad-rev-termination.tex
+File: figures/nycu_logo.jpg Graphic file (type bmp)
+<figures/nycu_logo.jpg>
+ [12]
+Chapter 4.
+(sections/4.1-formulate-broad-statement.tex
+(agdaCode/4.1-broad-revTermination-definition.tex
+\openout4 = `main.ptb'.
+
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (9.19745pt too wide) detected at line 47
+  |  
+ []
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+) (agdaImages/4.1-finite-reachable-state-example-images.tex
+\openout4 = `main.ptb'.
+
+))
+(sections/4.2-informal-logic-proof.tex) (sections/4.3-formal-logic-proof.tex))
+(chapters/5-conclusion.tex
+File: figures/nycu_logo.jpg Graphic file (type bmp)
+<figures/nycu_logo.jpg>
+ [13
 
 ]
 Chapter 5.
 File: figures/nctu_logo.pdf Graphic file (type pdf)
 <use figures/nctu_logo.pdf>
 
-LaTeX Warning: Reference `fig:nctu_logo' on page 10 undefined on input line 25.
+LaTeX Warning: Reference `fig:nctu_logo' on page 14 undefined on input line 25.
 
 
 
-LaTeX Warning: Reference `table:clsoptions' on page 10 undefined on input line 
+LaTeX Warning: Reference `table:clsoptions' on page 14 undefined on input line 
 30.
 
 )
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
- [10
+ [14
 
-] [11]
+] [15]
 No file main.bbl.
 (appx/1-appendix.tex
 Appendix A.
 ) (author/cv.tex) (author/publications.tex)
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
- [12
+ [16
 
 
 ] (main.aux)
@@ -1957,7 +2710,7 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  00A0F8664611F639CEACB1D3E05F6E26;2885.
+(rerunfilecheck)             After:  76B28FB45474765DD11C0905E6A4A2D8;4764.
  )
 (\end occurred when \iffalse on line 1 was incomplete)
 (\end occurred when \iffalse on line 1 was incomplete)
@@ -1966,12 +2719,12 @@ Package rerunfilecheck Info: Checksums for `main.out':
 (\end occurred when \iffalse on line 1 was incomplete)
 (\end occurred when \iftrue on line 1 was incomplete) 
 Here is how much of TeX's memory you used:
- 33595 strings out of 409554
- 680126 string characters out of 5772180
- 1933148 words of memory out of 5000000
- 55140 multiletter control sequences out of 15000+600000
- 562896 words of font info for 116 fonts, out of 8000000 for 9000
+ 33705 strings out of 409554
+ 683712 string characters out of 5772180
+ 1934148 words of memory out of 5000000
+ 55210 multiletter control sequences out of 15000+600000
+ 562904 words of font info for 117 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 117i,13n,121p,448b,777s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,13n,121p,448b,779s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (22 pages).
+Output written on main.pdf (26 pages).

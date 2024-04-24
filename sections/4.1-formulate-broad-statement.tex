@@ -1,0 +1,11 @@
+\section{ Formulate Statement }
+The definition of broad reversible machine shows below:
+
+\input{agdaCode/4.1-broad-revTermination-definition}
+
+It is similar to the narrow one, except for the Bijection.
+In the Statement of narrow reversible machine termination, we consider the number of all states is finite.
+On the contrary, the Statement of broad reversible machine termination firstly given an $st_{0}$, and 限定了 the number of "reachable states from $st_{0}$" is finite.
+In this restriction, the number of states could be infinite.  Some initial states in machine may also not be terminated unless we know the initial state can just reach finite states.
+
+\input{agdaImages/4.1-finite-reachable-state-example-images}
