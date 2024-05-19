@@ -661,7 +661,7 @@
   % English name
     \begin{tabular}{ll}%
       \large{Student:}&{\large{\@author}}\vspace{0.5em}\\%
-      \large{Advisor:}&{Dr. \large{\@advisor}}\\%
+      \large{Advisor:}&{\large{Dr. \@advisor}}\\%
       \ifx \@coadvisorA \@empty \else
         &{\large{\@coadvisorA}}\\%
       \fi

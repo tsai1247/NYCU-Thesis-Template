@@ -1,14 +1,12 @@
 \begin{abstract}%
+    In Chao-Hong Chen's paper, ``A Computational Interpretation of Compact Closed Categories: Reversible Programming with Negative and Fractional Types,'' he explores an interpretation of compact closed categories through ``reversing time and space,'' formalizing its application in the development of a reversible SAT solver. 
+    The termination proof of a reversible abstract machine, an essential component of the paper, involved the formalization of two crucial theorems.
+    Although these proofs are clearly correct, only partial formal proofs are provided in the paper.
 
-    In the research conducted by CHAO-HONG CHEN, the interpretation of compact closed categories in terms of "reversing time" and "reversing space" was formalized and applied to the implementation of reversible SAT solvers.
-    Among these, the technique for proving termination of reversible abstract machines stands out as particularly important. 
-    In this study, two theorems are mentioned regarding termination proofs, but only partial formalization of concepts was utilized.
-
-    Our research delved into this issue specifically. 
-    We proposed a hypothesis: for reversible abstract machines, if the reachable states from a given initial state are finite, then the initial state will terminate within a finite number of steps through transitions of the reversible abstract machine. 
-    We first presented a narrow proof based on this hypothesis, with the restriction that "the total number of states of the reversible abstract machine is finite." 
-    Subsequently, we removed this restriction and completed a more generalized proof.
-
+    Our research delves deeply into this statement from Chen's work. Initially, we rearticulate the specifics of the statement: for a reversible abstract machine, given an initial state with a known finite number of reachable states, this initial state will terminate within a finite number of transitions through the reversible abstract machine. 
+    Subsequently, we added a condition and completed a formal proof under the assumption that all states are finite.
+    Finally, we removed the assumption of finite states and employed similar methods to complete a formal proof under infinite states, thus complementing and enhancing the proofs in the original paper.
+    
 \vspace{17cm}
 
 Keyword: Abstract Machines, Termination Proofs, Agda

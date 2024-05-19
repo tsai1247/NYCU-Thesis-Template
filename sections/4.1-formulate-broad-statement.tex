@@ -9,3 +9,8 @@ On the contrary, the Statement of broad reversible machine termination firstly g
 In this restriction, the number of states could be infinite.  Some initial states in machine may also not be terminated unless we know the initial state can just reach finite states.
 
 \input{agdaImages/4.1-finite-reachable-state-example-images}
+
+In the example above, we know the initial state 0 has only 2 reachable states (state 1 and state 2), therefore, it will terminate after limited steps.
+類似的情況， state 3 can also terminate by 3 steps.
+與 narrow reversible termination statement 不同的是，或許State的總數是無限的。而事實上，the third trace shows 未知數量的states. 
+不過即使State的總數可能無限，we still can 把握前兩個trace can terminate.

@@ -1,1 +1,31 @@
 \section{ Formal Logic Proof }
+
+Base on the informal logic proof, we continue 討論 the descriptions of the formal one.
+Same as the narrow reversible termination proof, we have the following steps:
+\begin{enumerate}[1.]
+    \item Starting from initial state, try looking for its next state. 
+    \item If the next state exists, keep looking for 再下一個 state
+    \item Upon reaching the n-th state, proof that it's impossible for the existence of next states with no-repeat principle.
+\end{enumerate}.
+
+
+\subsection{ Countdown rules }
+We 引入 countdown rule to make agda terminate.
+
+\input{agdaCode/4.3-broad-revTermination-with-countdown}
+Our target Principle can be regarded as the special case when Countdown is N, 也就是剛開始的時候。
+With countdown rule, we could check if each state we through has next state.  Once it doesn't have next state, it will terminate immediately.  Otherwise, we will get N-th state.
+
+\subsection{ At n-th state }
+The proof of 「當抵達 n-th state 會終止」 can be simply分為 the two steps below：
+\begin{enumerate}[1.]
+    \item 假定n+1-th state存在， with Piegonhole principle ，可以在 n 個 state 映射到 n + 1 個state，而找到重複經過的兩個相同state
+    \item No-repeat 告訴我們找到的兩個state不該是相同的，因為他們的step不同，得到矛盾。
+\end{enumerate}
+
+Here is the mapping graph to explain the steps:
+\input{ agdaImages/4.3-mapping }
+
+The number of reachable state is only n.  That is, the Step n should be mapping to 重複的 index.  And we'll 藉由 the bijection to find out state n is also 重複 with one of previous states.
+It's a contradiction with No-repeat principle.
+

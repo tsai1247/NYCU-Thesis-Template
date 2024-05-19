@@ -1,11 +1,42 @@
 \section{Informal Logic Proof}
 
-The proof of Narrow RevTermination using informal logic is straightforward and will serve as our guide for the formal proof:
-\begin{enumerate}[1.]
-\item Start from the initial state $st_{0}$ we know $st_{0}$ is reachable with 0 steps.
-\item If $st_{0}$ cannot transition to another state, then $st_{0}$ is the target stuck state.
-\item If $st_{0}$ can transition to $st_{1}$ we construct a trace from $st_{0}$ to $st_{1}$ denoted as $st_{0}$ ↦* $st_{1}$ with length of 1.
-\item Continue checking whether $st_{1}$ has a subsequent state to transition to until we find a stuck state or construct a trace $st_{0}$ ↦* $st_{n}$ with length of n.
-\item Upon reaching $st_{n}$ it is confirmed that all states have been traversed.  With no-repeating principle, we know it is impossible for $st_{n}$ having next state.
-\end{enumerate}.  
-// TODO: 還可以簡化
+\subsection{ No Repeat }
+
+\subsection{ 狹義的 statement }
+重述一次 the statement we have to proof:
+``Given a reversible abstract machine, it will inevitably terminate from any initial state with a finite number of total states.''
+
+Here is the graph of the machine we expected.  It seems monotonous.  The initial state will 不重複地 經過 all the other states and then terminate.
+
+\input{agdaImages/3.2-narrow-case-machine}
+
+This is the other case for the machine with finite states.  In the graph, the initial state also walk through finite state and terminate.  However, not all the states are traversed.
+
+\input{agdaImages/3.2-narrow-case-machine-early-stop}
+
+
+Assume number of all states is N.  That is, we have $st_{0}$, $st_{1}$, ..., and $st_{N-1}$.
+Assume $st_{0}$ is the initial state, we can check whether $st_{0}$ has next state.
+Once current state doesn't have next state, the machine will terminate.  
+Therefore, we just have to consider the states starting from $st_{0}$ always have its next state.
+
+當 trace 推移了 N 次, it should be like the graph below:
+
+\input{agdaImages/3.2-n-step-from-st0}
+
+這裡，我們不特別提及已遍歷的前n個state應完全不重複，即使顯而易見地他們重複時會引發矛盾。
+我們將重點關注於 the whole trace with lenth of N+1.
+The reversible machine have only N states, but there are N+1 state we have traversed.
+According to piegonhole principle, we can find two same states in the trace.
+
+\input{agdaImages/3.2-n-step-with-2-same}
+
+With No-Repeat principle, we know it's impossible for an initial state, walk through two different steps but reach same state.
+到這邊，我們成功找出矛盾。 The contradiction shows the length of trace is always less or equal than N, and then terminate.
+
+\subsection{ 廣義的 statement }
+Similar to Narrow RevTerminate Principle, we assume $st_{0}$ is the $$initial state, and 關注於 there are always states after each state we walk through.
+The Broad RevTerminate Principle says there is only N states $st_{0}$ can reach.  我們與先前一樣走N步以讓the length of trace be N+1.
+
+\input{agdaImages/3.2-n-step-from-st0}
+

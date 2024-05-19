@@ -61,7 +61,7 @@ module RevNoRepeat {ℓ} (M : RevMachine {ℓ}) where
         → is-initial st₀
         → ∃[ stₙ ] (st₀ ↦[ N ] stₙ) → ⊥
 
-    -- target
+
     pigeonhole : ∀ N → (f : ℕ → ℕ)
            → (∀ n → n ≤ N → f n < N)
            → ∃[ m ] ∃[ n ] (m < n × n ≤ N × f m ≡ f n)
@@ -75,6 +75,14 @@ module RevNoRepeat {ℓ} (M : RevMachine {ℓ}) where
     cd-1 : ∀ {cd} {m} {N}
       → suc (cd + m) ≡ N
       → cd + (m + 1) ≡ N
+      
+    -- target
+    Finite-Reachable-State-Termination-CountDown : ∀ {N st₀}
+      → (St-Fin : ∃[ m ] ∃[ stₘ ] (st₀ ↦[ m ] stₘ) ⤖ Fin N)
+      → (has-next : ∀ (st : State) → Dec (∃[ st' ] (st ↦ st')))
+      → is-initial st₀
+      → ∀ cd m  stₘ → cd + m ≡ N → st₀ ↦[ m ] stₘ
+      → ∃[ stₙ ] (st₀ ↦* stₙ × is-stuck stₙ)
 
 
 \end{code}

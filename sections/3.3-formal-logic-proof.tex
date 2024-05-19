@@ -24,13 +24,15 @@ To maintain the Countdown, there are cd and m variable.  cd and m is 相對的, 
 \subsection{ Termination rules }
 The 中途停止的規則：
 We have N different states in a RevMachine, but 並不保證given $st_{0}$ can reach any states in RevMachine.  Here is an instance: 
+
 \input{agdaImages/3.3-halfway-hault-image}
 
+In this example, we have 7 steps in total.  Given a initial state State 0, it will just go 2 steps and reach a stuck state rather than the all 6 steps however.
 
 Therefore, the principle 的證明有兩個終止規則：
 \begin{enumerate}[1.]
     \item trying to 推進 next step.  However, there is no next step.  In this case we directly got stuck-state. 
-    \item trying to 推進 next step until reaching n-th step, we use no-repeat to 間接地 proof the n-th step should be stuck.
+    \item trying to 推進 next step until reaching n-th step, and we use no-repeat to 間接地 proof the n-th step should be stuck.
 \end{enumerate}.
 The former case is much simplier because it 完全地 find what we need. 
 And the latter case, we have to keep discussing in the 之後的 sections.
@@ -53,16 +55,18 @@ The proof of 「當抵達 n-th state 會終止」 can be simply分為 the two st
 Before introducing Piegonhole principle and No-Repeat Principle, we will discussing mapping rules.
 
 \subsection{ mapping rules }
+// TODO: Fin 相關的說明應該都改為 Index
 In our proof of n-th Termination case, a critical part is the mapping rules.
 We have,
 \begin{enumerate}[1.]
     \item an injection from Step to State.  Note that the 定義域 of step is from 0 to N(included both sides)
-    \item bijection between State and Fin N.  The Fin N can be 理解成 the index of each state.
+    \item bijection between State and Index. because of the limitation of States, we should have n indexes in total.
     \item we can also construct an injection from Step to Index easily.  Just Through the two injection and bijection above.
 \end{enumerate}.
 Here is an 示意圖 for the relations
 \input{agdaImages/3.3-mapping-relation}
 
+Note again that there are only n indexes in the relations.
 With the relation, we can 更清楚地描述 the Termination proof at n-th state:
 \begin{enumerate}[1.]
     \item first of all, we have n+1 states (from $st_{0}$ to $st_{n}$)

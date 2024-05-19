@@ -1,1 +1,15 @@
-\section{ Informal Logic Proof }
+\section{ informal Logic Proof }
+
+We also use Mathematical Induction to proof the statement.  Here is the 流程
+
+\begin{enumerate}[1.]
+    \item given an initial state $st_{0}$
+    \item if there is no step from $st_{0}$, then it terminate; otherwise, we reach $st_{1}$
+    \item keep 推進 the trace, until reach $st_{n}$.
+    \item When we reach $st_{n}$, we have traversed all n reachable states.
+    \item if $st_{n}$ not terminate, consider the next state of $st_{n}$, the piegonhole principle says that there are two states will be same, but there are in different steps from $st_{0}$ obviously.
+    \item The statement will occurs a contradiction with No-repeat principle.
+\end{enumerate}.
+
+Similar to the narrow reversible termination, however, the bijection 從 ``State to index'' 變成了 ``State to reachable state index''.
+In fact, in informal logic proof, 除了 the bijection 被替換了, all processes are the same.
