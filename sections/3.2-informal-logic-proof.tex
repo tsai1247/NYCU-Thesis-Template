@@ -1,10 +1,14 @@
 \section{Informal Logic Proof}
 
 \subsection{ No Repeat }
+``No Repeat Principle'' is formally proved in the paper ``A Computational Interpretation of Compact Closed Categories: Reversible Programming with Negative and Fractional Types.''
+Here is the definition of the principle:
+Given a reversible abstract machine and an initial state, given two different natural numbers m and n, and the initial state reach $st_{m}$ and $st_{n}$ by walk through m and n steps.
+Then $st_{m}$ should not equal to $st_{n}$.
 
 \subsection{ 狹義的 statement }
 重述一次 the statement we have to proof:
-``Given a reversible abstract machine, it will inevitably terminate from any initial state with a finite number of total states.''
+``Given a reversible abstract machine with a finite number of total states, it will inevitably terminate from any initial state.''
 
 Here is the graph of the machine we expected.  It seems monotonous.  The initial state will 不重複地 經過 all the other states and then terminate.
 
@@ -35,8 +39,21 @@ With No-Repeat principle, we know it's impossible for an initial state, walk thr
 到這邊，我們成功找出矛盾。 The contradiction shows the length of trace is always less or equal than N, and then terminate.
 
 \subsection{ 廣義的 statement }
+重述一次 the statement we have to proof:
+``Given a reversible abstract machine, it will inevitably terminate from any initial state with a finite number of reachable states.''
+
 Similar to Narrow RevTerminate Principle, we assume $st_{0}$ is the $$initial state, and 關注於 there are always states after each state we walk through.
-The Broad RevTerminate Principle says there is only N states $st_{0}$ can reach.  我們與先前一樣走N步以讓the length of trace be N+1.
+The Broad RevTerminate Principle says there are finite states $st_{0}$ be able to reach. 
+Assume the number of finite states $st_{0}$ be able to reach is N.
+我們與先前一樣走N步以讓the length of trace be N+1.
 
 \input{agdaImages/3.2-n-step-from-st0}
+
+There are N+1 state we have traversed.  And now, there are only N states $st_{0}$ be able to reachable.
+According to piegonhole principle, we can find two same states in the trace.
+
+\input{agdaImages/3.2-n-step-with-2-same}
+
+With No-Repeat principle, we know it's impossible for an initial state, walk through two different steps but reach same state.
+到這邊，我們成功找出矛盾。 The contradiction shows the length of trace is always less or equal than N, and then terminate.
 

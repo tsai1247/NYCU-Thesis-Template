@@ -1,6 +1,35 @@
-\section{Informal Logic Proof}
+\section{Formal Logic Proof}
 
-\subsection{ Overall narrow proof }
+\subsection{ Redefinition Of Narrow RevTerminate Principle}
+相較於 informal logic proof, we need 更嚴格的定義 for our formal logic proof.
+Here is the Narrow RevTerminate Principle:
+``Given a reversible abstract machine with a finite number of total states, it will inevitably terminate from any initial state.''
+
+First of all, we define the initial state.  Given a state, if 他不是任何state的next state，we call the state is initial.
+\input{ agdaCode/3.3-is-initial }
+
+Secondly, we define the terminate of a reversible machine.
+Starting from the initial state $st_{0}$, we use $st_{0}$ $\mapsto$* $st_{n}$ presents $st_{0}$ can reach $st_{n}$ by walk through finite steps.
+\input{ agdaCode/3.3-mapsto-star }
+
+And if a state $st_{0}$ have no next state, we call the state is stuck.
+\input{ agdaCode/3.3-is-stuck }
+
+The terminate of a reversible machine means ``given an initial state, it will reach a stuck state.''
+\input{ agdaCode/3.3-terminate }
+
+At last, we define ``a reversible abstract machine with finite number of total states.''
+Here is the definition of Fin in agda.  a Fin N set have exactly N elements.
+\input{ agdaCode/3.3-Fin }
+
+We construct a bijection relation between state and Fin N.
+It seems like all states are indexed by one of element in Fin N set.
+\input{ agdaCode/3.3-finite-total-states }
+
+And Here is the exact definition of Narrow RevTerminate Principle:
+\input{ agdaCode/3.3-Narrow-RevTerminate-Principle }
+
+
 
 With the steps in informal logic proof, we can construct a Similar proof for the formal one.  However, there are 許多細節需要更詳細的定義.
 The 大致上的 steps are shown below:

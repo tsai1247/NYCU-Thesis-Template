@@ -1,0 +1,1 @@
+agda --latex .\agdaTrans.lagda
