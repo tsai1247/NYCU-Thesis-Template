@@ -50,114 +50,13 @@ For all the m and 對應的 $st_{m}$ 滿足 $st_{0}$ $\mapsto$[m] $st_{m}$, it's
 \input{ agdaCode/4.1-set-of-reachable-states}
 
 In agda, each elements of reachable states set seems like a tuple. 
-\input{ agdaImage/4.1-set-of-reachable-states}
+\input{ agdaImages/4.1-set-of-reachable-states}
 
 Then, we construct a bijection relation between reachable state set and Fin N.
 \input{ agdaCode/4.1-finite-reachable-states }
 
 It seems like all reachable states are indexed by one of element in Fin N set.
-\input{ agdaImage/4.1-finite-reachable-states}
+\input{ agdaImages/4.1-finite-reachable-states}
 
-Combine the definition above, and we have the exact definition of Narrow RevTerminate Principle:
+Combine the definition above, and we have the exact definition of Broad RevTerminate Principle:
 \input{ agdaCode/4.1-Broad-RevTerminate-Principle }
-
-
-
-
-
-
-
-With the steps in informal logic proof, we can construct a Similar proof for the formal one.  However, there are 許多細節需要更詳細的定義.
-The 大致上的 steps are shown below:
-\begin{enumerate}[1.]
-\item Starting from initial state, try looking for its next state. 
-\item If the next state exists, keep looking for 再下一個 state
-\item Upon reaching the n-th state, proof that it's impossible for the existence of next states with no-repeat principle.
-\end{enumerate}.
-
-\subsection{ Countdown rules }
-The principle called Finite-State-Termination-Principle, {TODO: 連結到上面3.1的定義}, agda 無法認知 a proof with "proved n case, and any case should be 推導到 the n-th case", but 這樣的證明方式其實是數學歸納法的一個變體，我們引入countdown variable來轉換成normal 數學歸納法:
-
-\input{agdaCode/4.1-narrow-revTermination-with-countdown}
-And our target Principle can be regarded as the special case when Countdown is N, 也就是剛開始的時候。
-
-The Countdown 的運作規則 is as below:
-\input{agdaCode/4.1-cd-1-system}
-
-To maintain the Countdown, there are cd and m variable.  cd and m is 相對的, and their sum is always be N.  Starting when m is zero and Countdown is N, after a steps, m 將會 increasing and countdown is decreasing.  We use cd-1 principle to ensure the 不變 of the sum.
-
-\subsection{ Termination rules }
-The 中途停止的規則：
-We have N different states in a RevMachine, but 並不保證given $st_{0}$ can reach any states in RevMachine.  Here is an instance: 
-
-\input{agdaImages/4.1-halfway-hault-image}
-
-In this example, we have 7 steps in total.  Given a initial state State 0, it will just go 2 steps and reach a stuck state rather than the all 6 steps however.
-
-Therefore, the principle 的證明有兩個終止規則：
-\begin{enumerate}[1.]
-    \item trying to 推進 next step.  However, there is no next step.  In this case we directly got stuck-state. 
-    \item trying to 推進 next step until reaching n-th step, and we use no-repeat to 間接地 proof the n-th step should be stuck.
-\end{enumerate}.
-The former case is much simplier because it 完全地 find what we need. 
-And the latter case, we have to keep discussing in the 之後的 sections.
-
-\subsection{ When we are at n-th state }
-
-With the countdown system and 中途停止的規則， we can 專注於處理以下 principle:
-When an initial state 經過 n step and reach n-th state, then the n-th state should be stuck.
-The formal principle is shown below:
-
-\input{agdaCode/4.1-nth-state-termination-statement}
-
-
-The proof of 「當抵達 n-th state 會終止」 can be simply分為 the two steps below：
-\begin{enumerate}[1.]
-    \item 假定n+1-th state存在， with Piegonhole principle ，可以在 n 個 state 映射到 n + 1 個state，而找到重複經過的兩個相同state
-    \item No-repeat 告訴我們找到的兩個state不該是相同的，因為他們的step不同，得到矛盾。
-\end{enumerate}.
-
-Before introducing Piegonhole principle and No-Repeat Principle, we will discussing mapping rules.
-
-\subsection{ mapping rules }
-// TODO: Fin 相關的說明應該都改為 Index
-In our proof of n-th Termination case, a critical part is the mapping rules.
-We have,
-\begin{enumerate}[1.]
-    \item an injection from Step to State.  Note that the 定義域 of step is from 0 to N(included both sides)
-    \item bijection between State and Index. because of the limitation of States, we should have n indexes in total.
-    \item we can also construct an injection from Step to Index easily.  Just Through the two injection and bijection above.
-\end{enumerate}.
-Here is an 示意圖 for the relations
-\input{agdaImages/4.1-mapping-relation}
-
-Note again that there are only n indexes in the relations.
-With the relation, we can 更清楚地描述 the Termination proof at n-th state:
-\begin{enumerate}[1.]
-    \item first of all, we have n+1 states (from $st_{0}$ to $st_{n}$)
-    \item with injection from Step to index, we get two different steps mapping to same index using Piegonhole Principle
-    \item with bijection from index back to State, the same indexes should be mapped to same states.
-    \item No-repeat principle told us that the two different steps should be mapped to different states, and the contradiction occurs.
-\end{enumerate}.
-
-\subsection{ Piegonhole principle }
-The definition of Piegonhole principle in agda is shown below:
-
-\input{agdaCode/4.1-piegonhole-principle}
-
-The two necessary inputs are 
-\begin{enumerate}[1.]
-    \item N to N function. In this case, it is the injection from Step to Index. 
-    \item all mapped N should be less than N.  The proof is 隱含在 Fin的定義裡面.  That is, a natrual number value of Fin N is always less than N.
-\end{enumerate}.
-
-And we could get two different steps which will injection to the same index.
-
-\subsection{ No Repeat }
-The definition of No-Repeat-Principle in agda is shown below:
-
-No-Repeat-Principle is proved by {TODO: 學長論文}.  In the principle, we know that the two states with different steps from initial state, they should be different states.
-\input{agdaCode/4.1-no-repeat-principle}
-
-// TODO: 可能需要小結論
-

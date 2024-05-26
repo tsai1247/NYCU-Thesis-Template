@@ -1,0 +1,82 @@
+\begin{code}
+    %\\
+    %
+    \>[4]\AgdaPostulate{Finite-Reachable-State-Termination-CountDown} %
+    \AgdaSymbol{:} %
+    \AgdaSymbol{∀} %
+    \AgdaSymbol{\{}\AgdaBound{N} %
+    \AgdaBound{st₀}\AgdaSymbol{\}}\<%
+    \\
+    \>[4][@{}l@{\AgdaIndent{0}}]%
+    \>[6]\AgdaSymbol{→} %
+    \AgdaSymbol{(}\AgdaBound{St-Fin} %
+    \AgdaSymbol{:} %
+    \AgdaFunction{∃[} %
+    \AgdaBound{m} %
+    \AgdaFunction{]} %
+    \AgdaFunction{∃[} %
+    \AgdaBound{stₘ} %
+    \AgdaFunction{]} %
+    \AgdaSymbol{(}\AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦[}} %
+    \AgdaBound{m} %
+    \AgdaOperator{\AgdaDatatype{]}} %
+    \AgdaBound{stₘ}\AgdaSymbol{)} %
+    \AgdaOperator{\AgdaFunction{⤖}} %
+    \AgdaDatatype{Fin} %
+    \AgdaBound{N}\AgdaSymbol{)}\<%
+    \\
+    %
+    \>[6]\AgdaSymbol{→} %
+    \AgdaSymbol{(}\AgdaBound{has-next} %
+    \AgdaSymbol{:} %
+    \AgdaSymbol{∀} %
+    \AgdaSymbol{(}\AgdaBound{st} %
+    \AgdaSymbol{:} %
+    \AgdaField{State}\AgdaSymbol{)} %
+    \AgdaSymbol{→} %
+    \AgdaRecord{Dec} %
+    \AgdaSymbol{(}\AgdaFunction{∃[} %
+    \AgdaBound{st'} %
+    \AgdaFunction{]} %
+    \AgdaSymbol{(}\AgdaBound{st} %
+    \AgdaOperator{\AgdaField{↦}} %
+    \AgdaBound{st'}\AgdaSymbol{)))}\<%
+    \\
+    %
+    \>[6]\AgdaSymbol{→} %
+    \AgdaFunction{is-initial} %
+    \AgdaBound{st₀}\<%
+    \\
+    %
+    \>[6]\AgdaSymbol{→} %
+    \AgdaSymbol{∀} %
+    \AgdaBound{cd} %
+    \AgdaBound{m}%
+    \>[16]\AgdaBound{stₘ} %
+    \AgdaSymbol{→} %
+    \AgdaBound{cd} %
+    \AgdaOperator{\AgdaPrimitive{+}} %
+    \AgdaBound{m} %
+    \AgdaOperator{\AgdaDatatype{≡}} %
+    \AgdaBound{N} %
+    \AgdaSymbol{→} %
+    \AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦[}} %
+    \AgdaBound{m} %
+    \AgdaOperator{\AgdaDatatype{]}} %
+    \AgdaBound{stₘ}\<%
+    \\
+    %
+    \>[6]\AgdaSymbol{→} %
+    \AgdaFunction{∃[} %
+    \AgdaBound{stₙ} %
+    \AgdaFunction{]} %
+    \AgdaSymbol{(}\AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦*}} %
+    \AgdaBound{stₙ} %
+    \AgdaOperator{\AgdaFunction{×}} %
+    \AgdaFunction{is-stuck} %
+    \AgdaBound{stₙ}\AgdaSymbol{)}\<%
+    \>[0]\<%
+\end{code}

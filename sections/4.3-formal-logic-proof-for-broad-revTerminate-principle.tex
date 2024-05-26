@@ -1,0 +1,70 @@
+\section{Formal Logic Proof for Broad RevTerminate Principle}
+
+\subsection{ Step }
+\input{ agdaCode/4.3-Broad-RevTerminate-Principle }
+
+Similar to informal logic proof, we proof the principle in such steps below:
+\begin{enumerate}[1.]
+    \item Starting from initial state, keep steping into the next state.
+    \item If the next state doesn't exist, then it terminate.
+    \item Upon walked N steps, show contradiction by Piegonhole Principle and Mapping Rules.
+    \item 至此，we have proved the case in N steps and it's impossible for the case over N steps.
+\end{enumerate}
+
+\subsection{ Countdown Rule }
+Here is the Countdown Rule for Broad RevTerminate Principle.
+Same as the narrow one, we add the variable ``m'' to 呈現 a step-in, and make a 相對的 variable ``countdown'' to terminate the proof.
+\input{agdaCode/4.3-Broad-RevTerminate-Principle-With-M}
+
+\subsection{ The case at N }
+Here is the statement of Broad revTermination after n steps, we have to proof the case is impossible:
+\input{agdaCode/3.3-nth-state-termination-statement}
+
+The proof of 「當抵達 n-th state 會終止」 can be simply分為 the two steps below：
+\begin{enumerate}[1.]
+    \item 假定n+1-th state存在， with Piegonhole principle ，可以在 n 個 state 映射到 n + 1 個state，而找到重複經過的兩個相同 reachable state
+    \item In fact, we don't need no-repeat principle here because the definition of reachable state is enough to get contradiction.
+\end{enumerate}.
+
+We discussing mapping rules for broad revTerminate principle firstly.
+
+\subsection{ mapping rules }
+In our proof of n-th Termination case, a critical part is the mapping rules.
+We have,
+\begin{enumerate}[1.]
+    \item an injection from Step to reachable state.  Note that the 定義域 of step is from 0 to N(included both sides)
+    \item bijection between reachable state and Index. because of the limitation of States, we should have n indexes in total.
+\end{enumerate}.
+Here is an 示意圖 for the relations
+\input{ agdaImages/3.3-mapping-relation }
+
+Note again that there are only n indexes in the relations.
+With the relation, we can 更清楚地描述 the Termination proof at n-th state:
+\begin{enumerate}[1.]
+    \item first of all, we have n+1 states (from $st_{0}$ to $st_{n}$)
+    \item with injection from Step to index, we get two different steps mapping to same index using Piegonhole Principle
+    \item with bijection from index back to State, the same indexes should be mapped to same reachable states.
+\end{enumerate}.
+
+\subsection{ Piegonhole principle }
+The definition of Piegonhole principle in agda is shown below:
+
+\input{ agdaCode/3.3-piegonhole-principle }
+
+The two necessary inputs are 
+\begin{enumerate}[1.]
+    \item N to N function. In this case, it is the injection from Step to Index. 
+    \item all mapped N should be less than N.  The proof is 隱含在 Fin的定義裡面.  That is, a natrual number value of Fin N is always less than N.
+\end{enumerate}.
+
+And we could get two different steps which will injection to the same index.
+
+\subsection{ contradiction }
+Here, we don't need the No-Repeat Principle.  
+The piegonhole principle give us two different step and the same index, and we use bijection to make the same index back to two same reachable states.
+the definition of reachable states 恰好 contains the step for the trace, we can simply proof the step is same by the following codes:
+\input{ agdaCode/4.3-proj1-equal}
+
+So, we have the 結論 of the two steps are both same and different, which makes aobvious contradiction.
+
+Until now, we have 補足了 the 剩餘的部分 of Broad revTermination Principle, 從而補足了整體的證明。
