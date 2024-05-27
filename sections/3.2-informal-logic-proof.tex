@@ -1,59 +1,59 @@
 \section{Informal Logic Proof}
 
 \subsection{ No Repeat }
-``No Repeat Principle'' is formally proved in the paper ``A Computational Interpretation of Compact Closed Categories: Reversible Programming with Negative and Fractional Types.''
+The ``No Repeat Principle'' is formally proved in the Chao-Hong Chen's paper [1].
 Here is the definition of the principle:
-Given a reversible abstract machine and an initial state, given two different natural numbers m and n, and the initial state reach $st_{m}$ and $st_{n}$ by walk through m and n steps.
-Then $st_{m}$ should not equal to $st_{n}$.
+Given a reversible abstract machine and an initial state, for two different natural numbers m and n, if the initial state reach $st_{m}$ and $st_{n}$ by walking through m and n steps respectively, then $st_{m}$ should not beequal to $st_{n}$.
 
-\subsection{ 狹義的 statement }
-重述一次 the statement we have to proof:
+\subsection{ Narrow RevTerminate Principle }
+Restating the statement of Narrow RevTerminate Principle: 
 ``Given a reversible abstract machine with a finite number of total states, it will inevitably terminate from any initial state.''
 
-Here is the graph of the machine we expected.  It seems monotonous.  The initial state will 不重複地 經過 all the other states and then terminate.
+Here is the graph of the expected machine.  It seems monotonous: the initial state will traverse all the other states without repetition and then terminate.
 
 \input{agdaImages/3.2-narrow-case-machine}
 
-This is the other case for the machine with finite states.  In the graph, the initial state also walk through finite state and terminate.  However, not all the states are traversed.
+This is the other case for the machine with finite states.  
+In the graph, the initial state also traverses a finite number of states and terminates.  However, not all the states are traversed.
 
 \input{agdaImages/3.2-narrow-case-machine-early-stop}
 
+Assume the number of all states is 𝑁.  That is, we have $st_{0}$, $st_{1}$, ..., and $st_{𝑁-1}$.
+Assume $st_{0}$ is the initial state.  We can check whether $st_{0}$ has a next state.
+Once the current state doesn't have next state, the machine will terminate.  
+Therefore, we only need to consider the states starting from $st_{0}$ always have its next state.
 
-Assume number of all states is N.  That is, we have $st_{0}$, $st_{1}$, ..., and $st_{N-1}$.
-Assume $st_{0}$ is the initial state, we can check whether $st_{0}$ has next state.
-Once current state doesn't have next state, the machine will terminate.  
-Therefore, we just have to consider the states starting from $st_{0}$ always have its next state.
-
-當 trace 推移了 N 次, it should be like the graph below:
+When the trace progresses 𝑁 times, it should look like the graph below:
 
 \input{agdaImages/3.2-n-step-from-st0}
 
-這裡，我們不特別提及已遍歷的前n個state應完全不重複，即使顯而易見地他們重複時會引發矛盾。
-我們將重點關注於 the whole trace with lenth of N+1.
-The reversible machine have only N states, but there are N+1 state we have traversed.
-According to piegonhole principle, we can find two same states in the trace.
+Here, we don't specifically mention that the first 𝑁 states traversed should be entirely non-repetitive, even though it's evident that a repetition would lead to a contradiction. 
+Instead, we focus on the whole trace with a lenth of 𝑁 + 1.
+The reversible machine has only 𝑁 states, but there are 𝑁 + 1 state we have traversed.
+According to piegonhole principle, we can find two identical states in the trace.
 
 \input{agdaImages/3.2-n-step-with-2-same}
 
-With No-Repeat principle, we know it's impossible for an initial state, walk through two different steps but reach same state.
-到這邊，我們成功找出矛盾。 The contradiction shows the length of trace is always less or equal than N, and then terminate.
+With No-Repeat Principle, we know it's impossible for an initial state to walk through two different steps but reach same state.
+At this point, we have successfully identified a contradiction.  
+The contradiction shows that the length of trace is always less or equal than N, and thus the machine will terminate.
 
-\subsection{ 廣義的 statement }
-重述一次 the statement we have to proof:
+\subsection{ Broad RevTerminate Principle }
+Restating the statement of Broad RevTerminate Principle: 
 ``Given a reversible abstract machine, it will inevitably terminate from any initial state with a finite number of reachable states.''
 
-Similar to Narrow RevTerminate Principle, we assume $st_{0}$ is the $$initial state, and 關注於 there are always states after each state we walk through.
-The Broad RevTerminate Principle says there are finite states $st_{0}$ be able to reach. 
-Assume the number of finite states $st_{0}$ be able to reach is N.
-我們與先前一樣走N步以讓the length of trace be N+1.
+Similar to Narrow RevTerminate Principle, we assume $st_{0}$ is the initial state, and focus on the fact that there are always subsequent states after each state we traverse.
+The Broad RevTerminate Principle asserts that there are a finite number of states $st_{0}$ can reach. 
+Assume the number of reachable states from $st_{0}$ is 𝑁.
+As before, we walk 𝑁 steps, making the length of the trace 𝑁 + 1.
 
 \input{agdaImages/3.2-n-step-from-st0}
 
-There are N+1 state we have traversed.  And now, there are only N states $st_{0}$ be able to reachable.
-According to piegonhole principle, we can find two same states in the trace.
+There are 𝑁 + 1 states we have traversed.  However, there are only N states $st_{0}$ can reach.
+According to piegonhole principle, we can find two identical states in the trace.
 
 \input{agdaImages/3.2-n-step-with-2-same}
 
-With No-Repeat principle, we know it's impossible for an initial state, walk through two different steps but reach same state.
-到這邊，我們成功找出矛盾。 The contradiction shows the length of trace is always less or equal than N, and then terminate.
+With No-Repeat principle, we know it's impossible for an initial state to traverse two different steps and reach the same state.
+At this point, we have successfully identified a contradiction.  The contradiction shows the length of trace is always less or equal than N, leading to termination.
 

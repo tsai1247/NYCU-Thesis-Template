@@ -1,62 +1,62 @@
 \section{Formulate Statement}
 
 \subsection{ Redefinition of Narrow RevTerminate Principle}
-相較於 informal logic proof, we need 更嚴格的定義 for our formal logic proof.
+Compared to informal logic proofs, our formal logic proof requires stricter definitions. 
 Here is the Narrow RevTerminate Principle:
 ``Given a reversible abstract machine with a finite number of total states, it will inevitably terminate from any initial state.''
 
-First of all, we define the initial state.  Given a state, if 他不是任何state的next state，we call the state is initial.
+First of all, we define the initial state.  Given a state, if it is not the next state of any other state, we call it an initial state.
 \input{ agdaCode/4.1-is-initial }
 
 Secondly, we define the terminate of a reversible machine.
-Starting from the initial state $st_{0}$, we use $st_{0}$ $\mapsto$* $st_{n}$ presents $st_{0}$ can reach $st_{n}$ by walk through finite steps.
+Starting from the initial state $st_{0}$, we use $st_{0}$ $\mapsto$* $st_{n}$ to indicate that $st_{0}$ can reach $st_{n}$ by traversing a finite number of steps.
 \input{ agdaCode/4.1-mapsto-star }
 
-And if a state $st_{0}$ have no next state, we call the state is stuck.
+If a state $st_{0}$ have no next state, we call it a stuck state.
 \input{ agdaCode/4.1-is-stuck }
 
-The terminate of a reversible machine means ``given an initial state, it will reach a stuck state.''
+The termination of a reversible machine means that given an initial state, it will reach a stuck state.
 \input{ agdaCode/4.1-terminate }
 
-At last, we define ``a reversible abstract machine with finite number of total states.''
-Here is the definition of Fin in agda.  a Fin N set have exactly N elements.
+Finally, we define ``a reversible abstract machine with a finite number of total states.''
+Here is the definition of Fin in agda.  A Fin 𝑁 set have exactly 𝑁 elements.
 \input{ agdaCode/4.1-Fin }
 
-We construct a bijection relation between state and Fin N.
-It seems like all states are indexed by one of element in Fin N set.
+We construct a bijection between the set of states and Fin 𝑁.
+It is as if all states are indexed by an element in the Fin 𝑁 set.
 \input{ agdaCode/4.1-finite-total-states }
 
-Combine the definition above, and we have the exact definition of Narrow RevTerminate Principle:
+Combining the definition above, we have the exact definition of Narrow RevTerminate Principle:
 \input{ agdaCode/4.1-Narrow-RevTerminate-Principle }
 
-\subsection{ Redefinition of Broad RevTerminate Principle}
+\subsection{ Redefinition of Broad RevTerminate Principle }
 Here is the Broad RevTerminate Principle:
 ``Given a reversible abstract machine, it will inevitably terminate from any initial state with a finite number of reachable states.''
 
-Most of the definitions are same as Narrow RevTerminate Principle, we have:
+Most of the definitions are the same as those in the Narrow RevTerminate Principle:
 
-Given $st_{0}$.  For all of the states, if their next state is not $st_{0}$, then $st_{0}$ is initial state.
+For a state to be initial, no other state should have it as their next state.
 \input{ agdaCode/4.1-is-initial }
 
-$st_{0}$ $\mapsto$* $st_{n}$ presents $st_{0}$ can reach $st_{n}$ by walk through finite steps.
+$st_{0}$ $\mapsto$* $st_{n}$ indicates that $st_{0}$ can reach $st_{n}$ by traversing a finite number of steps.
 \input{ agdaCode/4.1-mapsto-star }
 
-If a state have no next state, we call the state is stuck.
+If a state have no next state, we call it a stuck state.
 \input{ agdaCode/4.1-is-stuck }
 
-Before defining ``a finite number of reachable states'', we have to dealt with the ``set of reachable states.''
-$st_{0}$ $\mapsto$[m] $st_{m}$ means $st_{0}$ walk exactly m steps and reach $st_{m}$
-For all the m and 對應的 $st_{m}$ 滿足 $st_{0}$ $\mapsto$[m] $st_{m}$, it's called ``set of reachable states.''
+Before defining ``a finite number of reachable states'', we need to define the ``set of reachable states.''
+$st_{0}$ $\mapsto$[m] $st_{m}$ means $st_{0}$ reaches $st_{m}$ exactly after m steps.
+For all the m and corresponding $st_{m}$ that satisfy $st_{0}$ $\mapsto$[m] $st_{m}$, this is called ``set of reachable states.''
 \input{ agdaCode/4.1-set-of-reachable-states}
 
-In agda, each elements of reachable states set seems like a tuple. 
+In Agda, each element of reachable states set is represented as a tuple. 
 \input{ agdaImages/4.1-set-of-reachable-states}
 
-Then, we construct a bijection relation between reachable state set and Fin N.
+Then, we construct a bijection between the set of reachable states and Fin 𝑁.
 \input{ agdaCode/4.1-finite-reachable-states }
 
-It seems like all reachable states are indexed by one of element in Fin N set.
+This means all reachable states are indexed by an element in Fin 𝑁 set.
 \input{ agdaImages/4.1-finite-reachable-states}
 
-Combine the definition above, and we have the exact definition of Broad RevTerminate Principle:
+Combining the definition above, we have the exact definition of the Broad RevTerminate Principle:
 \input{ agdaCode/4.1-Broad-RevTerminate-Principle }

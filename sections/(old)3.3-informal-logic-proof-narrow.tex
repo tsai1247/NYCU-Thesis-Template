@@ -60,18 +60,18 @@ In our proof of n-th Termination case, a critical part is the mapping rules.
 We have,
 \begin{enumerate}[1.]
     \item an injection from Step to State.  Note that the 定義域 of step is from 0 to N(included both sides)
-    \item bijection between State and Index. because of the limitation of States, we should have n indexes in total.
+    \item bijection between State and Index. because of the limitation of States, we should have n indices in total.
     \item we can also construct an injection from Step to Index easily.  Just Through the two injection and bijection above.
 \end{enumerate}.
 Here is an 示意圖 for the relations
 \input{agdaImages/3.3-mapping-relation}
 
-Note again that there are only n indexes in the relations.
+Note again that there are only n indices in the relations.
 With the relation, we can 更清楚地描述 the Termination proof at n-th state:
 \begin{enumerate}[1.]
     \item first of all, we have n+1 states (from $st_{0}$ to $st_{n}$)
     \item with injection from Step to index, we get two different steps mapping to same index using Piegonhole Principle
-    \item with bijection from index back to State, the same indexes should be mapped to same states.
+    \item with bijection from index back to State, the same indices should be mapped to same states.
     \item No-repeat principle told us that the two different steps should be mapped to different states, and the contradiction occurs.
 \end{enumerate}.
 

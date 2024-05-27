@@ -1,23 +1,25 @@
 \section{Formulate Statement}
 
-First of all, 先定義以下名詞：
-``initial state'' means that in the machine, there is no other state reaching it.
-``the termination of machine'' means we reach a state in the machine, and there is no next state can be reached.  The last state also be called the ``stuck state''
-When we said ``the machine will terminate from an initial state'' means that starting from initial state, 經過machine有限次的推移，we will reach an stuck state.
+First of all, let’s define the following terms:
+``Initial state'' means a state that no other state can reach in the machine.
+``Termination of the machine'' means reaching a state with no subsequent state to transition to. This final state is also called the ``stuck state.''
+When we said ``the machine will terminate from an initial state,'' it means that starting from the initial state, through a finite number of transitions, we will reach a stuck state.
 
-We have a reversible abstract machine, and 指定 one of the state as initial state.  
-It's known that there are finite number of reachable states from initial state.  
-With the forward deterministic of reversible machine, we could make the assumption that the initial state will terminate from the initial state.
+We have a reversible abstract machine, and designate one of the state as initial state.  
+It's known that there are finite number of reachable states from the initial state.  
+Given the forward determinism of the reversible machines, we can assume that the machine will terminate from the initial state.
 
-Here is our 完整的 statement:
+Here is our complete statement:
 ``Given a reversible abstract machine, it will inevitably terminate from any initial state with a finite number of reachable states.''
-We call it ``Broad RevTerminate Principle''.
+We call this the ``Broad RevTerminate Principle.''
 
-In the statement, the number of total state in the machine may be infinite.
-For the informal logic proof, we can easily ignore those unreachable states.  However, it's 相對困難 for the formal proof.
-Therefore, we make an 較狹義的 statement as below:
+In the statement, the total number of states in the machine may be infinite.
+For the informal logic proof, we can easily ignore those unreachable states.  
+However, it is relatively difficult for formal proof. 
+Therefore, we make a narrower statement as follows:
+
 ``Given a reversible abstract machine with a finite number of total states, it will inevitably terminate from any initial state.''
-We call it ``Narrow RevTerminate Principle''.
+We call this the ``Narrow RevTerminate Principle''.
 
-In the statement, we could say ``we have walked through all the states, so it should be terminate.'' in both informal and formal proof easily.
-We will make the 更詳細的證明 in the next section.
+In the statement, we could say ``we have walked through all the states, so it should terminate.'' in both informal and formal proofs easily.
+We will provide a detailed proof in the next section.

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3) (preloaded format=xelatex 2024.4.1)  27 MAY 2024 01:29
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3) (preloaded format=xelatex 2024.4.1)  27 MAY 2024 10:56
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1816,62 +1816,11 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) (agdaImages/3.2-n-step-from-st0.tex
-
-! LaTeX Error: Can be used only in preamble.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 \begin{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 )
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [7] (agdaImages/3.2-n-step-with-2-same.tex
-
-! LaTeX Error: Can be used only in preamble.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 \begin{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-)
-! Display math should end with $$.
-<to be read again> 
-                   s
-l.46 ... Principle says there are finite states $s
-                                                  t_{0}$ be able to reach.
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-Overfull \hbox (263.87624pt too wide) detected at line 46
-[][][][][][][][][][][][][] [][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-[][]
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.46 ...rinciple says there are finite states $st_
-                                                  {0}$ be able to reach.
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
 (agdaImages/3.2-n-step-from-st0.tex
 
 ! LaTeX Error: Can be used only in preamble.
@@ -1886,10 +1835,59 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) (agdaImages/3.2-n-step-with-2-same.tex
+)
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
- [8]
+ [7]
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaImages/3.2-n-step-with-2-same.tex
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \begin{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaImages/3.2-n-step-from-st0.tex
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \begin{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+File: figures/nycu_logo.jpg Graphic file (type bmp)
+<figures/nycu_logo.jpg>
+[8] (agdaImages/3.2-n-step-with-2-same.tex
 
 ! LaTeX Error: Can be used only in preamble.
 
@@ -2020,9 +2018,9 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (36.27577pt too wide) in paragraph at lines 15--21
- []\TU/TimesNewRoman(0)/m/n/12 And if a state $[][][]$ have no next state, we c
-all the state is stuck. [][] 
+Overfull \hbox (3.60194pt too wide) in paragraph at lines 15--21
+ []\TU/TimesNewRoman(0)/m/n/12 If a state $[][][]$ have no next state, we call 
+it a stuck state. [][] 
  []
 
 ) (agdaCode/4.1-terminate.tex
@@ -2062,7 +2060,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) (agdaCode/4.1-Fin.tex
+)
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaCode/4.1-Fin.tex
 \openout4 = `main.ptb'.
 
 
@@ -2100,16 +2103,21 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (75.161pt too wide) in paragraph at lines 21--21
- \TU/TimesNewRoman(0)/m/n/12 Here is the definition of Fin in agda. a Fin N set
- have exactly N elements. [][] 
+Overfull \hbox (79.83578pt too wide) in paragraph at lines 21--21
+ \TU/TimesNewRoman(0)/m/n/12 Here is the definition of Fin in agda. A Fin 𝑁 set
+ have exactly 𝑁 elements. [][] 
  []
 
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
 [10
 
-]) (agdaCode/4.1-finite-total-states.tex
+])
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaCode/4.1-finite-total-states.tex
 \openout4 = `main.ptb'.
 
 
@@ -2220,6 +2228,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+Overfull \hbox (75.71194pt too wide) in paragraph at lines 38--21
+ []\TU/TimesNewRoman(0)/m/n/12 For a state to be initial, no other state should
+ have it as their next state. [][] 
+ []
+
 ) (agdaCode/4.1-mapsto-star.tex
 \openout4 = `main.ptb'.
 
@@ -2256,12 +2270,6 @@ of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (64.17563pt too wide) in paragraph at lines 41--21
- []$[][][]$ $[]$\TU/TimesNewRoman(0)/m/n/12 * $[][][]$ presents $[][][]$ can re
-ach $[][][]$ by walk through finite steps. [][] 
- []
 
 ) (agdaCode/4.1-is-stuck.tex
 \openout4 = `main.ptb'.
@@ -2353,7 +2361,10 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-) (agdaCode/4.1-finite-reachable-states.tex
+)
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaCode/4.1-finite-reachable-states.tex
 \openout4 = `main.ptb'.
 
 
@@ -2391,12 +2402,15 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (110.65465pt too wide) in paragraph at lines 55--21
- []\TU/TimesNewRoman(0)/m/n/12 Then, we construct a bijection relation between 
-reachable state set and Fin N. [][] 
+Overfull \hbox (105.9984pt too wide) in paragraph at lines 55--21
+ []\TU/TimesNewRoman(0)/m/n/12 Then, we construct a bijection between the set o
+f reachable states and Fin 𝑁. [][] 
  []
 
-) (agdaImages/4.1-finite-reachable-states.tex
+)
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaImages/4.1-finite-reachable-states.tex
 
 ! LaTeX Error: Can be used only in preamble.
 
@@ -2487,7 +2501,14 @@ and I'll forget about whatever was undefined.
 
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
-[12]) (agdaCode/4.2-Narrow-RevTerminate-Principle-With-M.tex
+[12])
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaCode/4.2-Narrow-RevTerminate-Principle-With-M.tex
 \openout4 = `main.ptb'.
 
 
@@ -2523,54 +2544,55 @@ of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-) (agdaCode/4.2-Narrow-RevTerminate-Principle-With-M-Proof.tex
-\openout4 = `main.ptb'.
-
-
-! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (34.19943pt too wide) in paragraph at lines 19--21
- \TU/TimesNewRoman(0)/m/n/12 Until m equals to N, we have to proof that the cas
-e is impossible. [][] 
- []
 
 )
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaCode/4.2-Narrow-RevTerminate-Principle-With-M-Proof.tex
+\openout4 = `main.ptb'.
+
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore 
+                           {}
+l.21 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore 
+                           {}
+l.21 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore 
+                           {}
+l.21 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
- [13] (agdaCode/3.3-narrow-revTermination-with-countdown.tex
+[13])
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaCode/3.3-narrow-revTermination-with-countdown.tex
 \openout4 = `main.ptb'.
 
 
@@ -2608,8 +2630,9 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (77.57213pt too wide) in paragraph at lines 27--52
- []\TU/TimesNewRoman(0)/m/n/12 Here is the new principle with countdown [][] 
+Overfull \hbox (84.8983pt too wide) in paragraph at lines 31--52
+ []\TU/TimesNewRoman(0)/m/n/12 Here is the new principle with a countdown [][] 
+
  []
 
 ) (agdaCode/3.3-nth-state-termination-statement.tex
@@ -2652,7 +2675,12 @@ and I'll forget about whatever was undefined.
 )
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
- [14] (agdaImages/3.3-mapping-relation.tex
+ [14]
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaImages/3.3-mapping-relation.tex
 
 ! LaTeX Error: Can be used only in preamble.
 
@@ -2667,12 +2695,22 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 )
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
- [15] (agdaCode/3.3-piegonhole-principle.tex
+[15] (agdaCode/3.3-piegonhole-principle.tex
 \openout4 = `main.ptb'.
 
 )
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
 (agdaCode/3.3-no-repeat-principle.tex
 \openout4 = `main.ptb'.
 
@@ -2723,7 +2761,14 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) (agdaCode/4.3-Broad-RevTerminate-Principle-With-M.tex
+)
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaCode/4.3-Broad-RevTerminate-Principle-With-M.tex
 \openout4 = `main.ptb'.
 
 
@@ -2753,43 +2798,6 @@ and I'll forget about whatever was undefined.
 <argument> \AgdaUnderscore 
                            {}
 l.21 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-) (agdaCode/3.3-nth-state-termination-statement.tex
-\openout4 = `main.ptb'.
-
-
-! Undefined control sequence.
-<recently read> \bij 
-                     
-l.35 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \bij 
-                     
-l.35 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<recently read> \bij 
-                     
-l.35 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2799,7 +2807,55 @@ and I'll forget about whatever was undefined.
 
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
-[17]) (agdaImages/3.3-mapping-relation.tex
+[17])
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaCode/3.3-nth-state-termination-statement.tex
+\openout4 = `main.ptb'.
+
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.35 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.35 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.35 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+File: figures/nycu_logo.jpg Graphic file (type bmp)
+<figures/nycu_logo.jpg>
+[18]
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaImages/3.3-mapping-relation.tex
 
 ! LaTeX Error: Can be used only in preamble.
 
@@ -2814,15 +2870,20 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 )
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [18] (agdaCode/3.3-piegonhole-principle.tex
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+(agdaCode/3.3-piegonhole-principle.tex
 \openout4 = `main.ptb'.
 
-)
 File: figures/nycu_logo.jpg Graphic file (type bmp)
 <figures/nycu_logo.jpg>
- [19]
+ [19])
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
+Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
+e=dflt;mapping=tex-text;!
 (agdaCode/4.3-proj1-equal.tex
 \openout4 = `main.ptb'.
 
@@ -2861,9 +2922,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (211.60612pt too wide) in paragraph at lines 63--82
- \TU/TimesNewRoman(0)/m/n/12 trace, we can simply proof the step is same by the
- following codes: [][] 
+Overfull \hbox (51.79869pt too wide) in paragraph at lines 63--82
+ \TU/TimesNewRoman(0)/m/n/12 same using the following codes: [][] 
  []
 
 ))) (chapters/5-conclusion.tex
@@ -2905,7 +2965,7 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  3D01B53D5D14CB78CA87DD750FE51851;6281.
+(rerunfilecheck)             After:  402B06ECD006E3A564B4377A4CE88CD7;6235.
  )
 (\end occurred inside a group at level 10)
 
@@ -2927,12 +2987,12 @@ Package rerunfilecheck Info: Checksums for `main.out':
 (\end occurred when \iffalse on line 1 was incomplete)
 (\end occurred when \iftrue on line 1 was incomplete) 
 Here is how much of TeX's memory you used:
- 35376 strings out of 409554
- 728086 string characters out of 5772180
+ 35385 strings out of 409554
+ 728740 string characters out of 5772180
  1943148 words of memory out of 5000000
- 56817 multiletter control sequences out of 15000+600000
- 562896 words of font info for 116 fonts, out of 8000000 for 9000
+ 56827 multiletter control sequences out of 15000+600000
+ 562888 words of font info for 115 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 117i,13n,121p,448b,1837s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,13n,121p,448b,1811s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on main.pdf (32 pages).

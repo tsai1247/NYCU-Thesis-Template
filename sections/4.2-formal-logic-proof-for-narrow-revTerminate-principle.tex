@@ -1,82 +1,87 @@
-\section{Formal Logic Proof for Narrow RevTerminate Principle}
+\section{Formal Logic Proof for the Narrow RevTerminate Principle}
 
-\subsection{ Step }
+\subsection{ Steps }
 \input{ agdaCode/4.2-Narrow-RevTerminate-Principle }
 
-Similar to informal logic proof, we proof the principle in such steps below:
+Similar to the informal logic proof, we prove the principle using the following steps:
 \begin{enumerate}[1.]
-    \item Starting from initial state, keep steping into the next state.
-    \item If the next state doesn't exist, then it terminate.
-    \item Upon walked N steps, show contradiction by Piegonhole Principle and No-Repeat Principle.
-    \item 至此，we have proved the case in N steps and it's impossible for the case over N steps.
+    \item Starting from the initial state, continue steping into the next state.
+    \item If the next state doesn't exist, then the machine terminates.
+    \item Upon taking 𝑁 steps, demonstrate a contradiction using Piegonhole Principle and No-Repeat Principle.
+    \item At this point, we have proven the case within 𝑁 steps and shown that it's impossible for the case to extend beyond 𝑁 steps.
 \end{enumerate}
 
 \subsection{ Countdown Rule }
-To realize the step of ``keep walking into the next step'', we add a step m and 對應的 state $st_{m}$.
-
+To realize the step of continuing to the next step, we add a step m and the corresponding state $st_{m}$.
 \input{agdaCode/4.2-Narrow-RevTerminate-Principle-With-M}
 
-When m is less than N, we try steping into the next state.  If there isn't a next state, we got the target stuck state.  Otherwise, we make a recursion with the case of m increasing.
-Until m equals to N, we have to proof that the case is impossible.
+When m is less than 𝑁, we try stepping into the next state.  
+If there isn't a next state, we have reached the target stuck state.  
+Otherwise, we make a recursion with the case of m increasing.
+Until m equals 𝑁, we have to prove that the case is impossible.
 \input{agdaCode/4.2-Narrow-RevTerminate-Principle-With-M-Proof}
 
-For the 證明方式 above, agda will give an ``Termination checking failed'' error.
-To make the proof terminate, we have to create a variable ``countdown'' in the statement.  The ``countdown'' should keep decreasing until it equals to zero.  And we proof the case zero at last.
-The ``countdown'' 恰好與 m 相對.  We keep providing the ``cd + m $\equiv$ N.''  In this way, the proof will terminate at m exactly equals to N, 就如原先的預想一樣。
+For the method above, Agda will give a ``Termination checking failed'' error.
+To make the proof terminate, we have to create a variable ``countdown'' in the statement.  
+The ``countdown'' should keep decreasing until it equals to zero.  And we prove the case zero at last.
+The ``countdown'' is precisely the counterpart to m.  
+We keep ensuring ``cd + m $\equiv$ N.''  
+In this way, the proof will terminate exactly when m equals to 𝑁, as originally intended.
 
-Here is the new principle with countdown
+Here is the new principle with a countdown
 \input{agdaCode/3.3-narrow-revTermination-with-countdown}
 
-\subsection{ The case at N }
-Here is the statement of Narrow revTermination after n steps, we have to proof the case is impossible:
+\subsection{ Case at N }
+Here is the statement of Narrow RevTerminate Principle after n steps; we have to prove this case is impossible:
 \input{agdaCode/3.3-nth-state-termination-statement}
 
-The proof of 「當抵達 n-th state 會終止」 can be simply分為 the two steps below：
+The proof of ``reaching the n-th state will terminate'' can be simply divided into the two steps below:
 \begin{enumerate}[1.]
-    \item 假定n+1-th state存在， with Piegonhole principle ，可以在 n 個 state 映射到 n + 1 個state，而找到重複經過的兩個相同state
-    \item No-repeat 告訴我們找到的兩個state不該是相同的，因為他們的step不同，得到矛盾。
+    \item Assume the n+1-th state exists. Using the Piegonhole Principle, we map n states to n + 1 states and find two identical states that are traversed.
+    \item The No-Repeat Principle tells us that the two identical states should not exist, as their steps differ, resulting in a contradiction.
 \end{enumerate}.
 
-Before introducing Piegonhole principle and No-Repeat Principle, we will discussing mapping rules.
+Before introducing the Piegonhole Principle and the No-Repeat Principle, we will discussing the mapping rules.
 
-\subsection{ mapping rules }
-// TODO: Fin 相關的說明應該都改為 Index
+\subsection{ Mapping Rules }
 In our proof of n-th Termination case, a critical part is the mapping rules.
-We have,
+We have:
 \begin{enumerate}[1.]
-    \item an injection from Step to State.  Note that the 定義域 of step is from 0 to N(included both sides)
-    \item bijection between State and Index. because of the limitation of States, we should have n indexes in total.
-    \item we can also construct an injection from Step to Index easily.  Just Through the two injection and bijection above.
+    \item An injection from Step to State.  Note that the domain of Step is from 0 to 𝑁 (inclusive).
+    \item A bijection between State and Index. Due to the limitation of States, we should have 𝑁 indices in total.
+    \item An injection from Step to Index, constructed through the injection and bijection mentioned above.
 \end{enumerate}.
-Here is an 示意圖 for the relations
+
+Here is a diagram illustrating the relationships:
 \input{ agdaImages/3.3-mapping-relation }
 
-Note again that there are only n indexes in the relations.
-With the relation, we can 更清楚地描述 the Termination proof at n-th state:
+Note again that there are only 𝑁 indices in these relationships.
+With this relationships, we can clearly describe the Termination proof at the n-th state:
 \begin{enumerate}[1.]
-    \item first of all, we have n+1 states (from $st_{0}$ to $st_{n}$)
-    \item with injection from Step to index, we get two different steps mapping to same index using Piegonhole Principle
-    \item with bijection from index back to State, the same indexes should be mapped to same states.
-    \item No-repeat principle told us that the two different steps should be mapped to different states, and the contradiction occurs.
+    \item First, we have 𝑁+1 states (from $st_{0}$ to $st_{n}$)
+    \item Using the injection from Step to Index, we find two different steps mapping to the identical indices using Piegonhole Principle.
+    \item With the bijection from index back to State, the identical indices should map to the same states.
+    \item The No-repeat Principle tells us that the two different steps should map to different states, leading to a contradiction.
 \end{enumerate}.
 
-\subsection{ Piegonhole principle }
-The definition of Piegonhole principle in agda is shown below:
+\subsection{ Piegonhole Principle }
+The definition of Piegonhole Principle in Agda is shown below:
 
 \input{ agdaCode/3.3-piegonhole-principle }
 
-The two necessary inputs are 
+This principle requires two key inputs:
 \begin{enumerate}[1.]
-    \item N to N function. In this case, it is the injection from Step to Index. 
-    \item all mapped N should be less than N.  The proof is 隱含在 Fin的定義裡面.  That is, a natrual number value of Fin N is always less than N.
+    \item A injection from natural number to another natural number. In this case, it is the injection from Step to Index. 
+    \item All mapped number should be less than 𝑁.  The proof is inherent in the definition of Fin.  That is, a natrual number value of Fin 𝑁 is always less than 𝑁.
 \end{enumerate}.
 
-And we could get two different steps which will injection to the same index.
+With this, we can find two different steps that inject to the same index.
 
-\subsection{ No Repeat }
-The definition of No-Repeat-Principle in agda is shown below:
+\subsection{ No-Repeat Principle }
+The definition of No-Repeat Principle in Agda is shown below:
 
-No-Repeat-Principle is proved by {TODO: 學長論文}.  In the principle, we know that the two states with different steps from initial state, they should be different states.
+The No-Repeat Principle is proved in Chao-Hong Chen's paper [1].  
+In the principle, we know that two states reached from the initial state by different steps should be different states.
 \input{agdaCode/3.3-no-repeat-principle}
 
-Until now, we have 補足了 the 剩餘的部分 of Narrow revTermination Principle, 從而補足了整體的證明。
+At this point, we have supplemented the remaining part of the Narrow RevTermination Principle, thus completing the overall proof.
