@@ -1,88 +1,35 @@
 \begin{code}
-open import Relation.Binary.PropositionalEquality
-open import Data.Product
-open import Data.Empty
-open import Data.Nat
-open import Data.Nat.Properties
-open import Function.Bijection using ( _⤖_)
-open import Data.Fin using ( Fin ; toℕ ; fromℕ<)
-open import Relation.Nullary
-import Level as L
-open import Relation.Binary
+------------------------------------------------------------------------
+-- The Agda standard library
+--
+-- Finite sets
+------------------------------------------------------------------------
 
-record RevMachine {ℓ} : Set (L.suc ℓ) where
-  field
-    State : Set ℓ
-    _↦_ : Rel State ℓ
-    deterministic : ∀ {st st₁ st₂} → st ↦ st₁ → st ↦ st₂ → st₁ ≡ st₂
-    deterministicᵣₑᵥ : ∀ {st st₁ st₂} → st₁ ↦ st → st₂ ↦ st → st₁ ≡ st₂
-    has-next : ∀ (st : State) → Dec (∃[ st' ] (st ↦ st'))
+-- Note that elements of Fin n can be seen as natural numbers in the
+-- set {m | m < n}. The notation "m" in comments below refers to this
+-- natural number view.
 
+{-# OPTIONS --without-K --safe #-}
 
-module RevNoRepeat {ℓ} (M : RevMachine {ℓ}) where
-  open RevMachine M
+module agdaTrans where
 
-  is-initial : State → Set _
-  is-initial st = ∄[ st' ] (st' ↦ st)
-  is-stuck : State → Set _
-  is-stuck st = ∄[ st' ] (st' ↦ st)
+open import Data.Empty using (⊥-elim)
+open import Data.Nat.Base as ℕ using (ℕ; zero; suc; z≤n; s≤s)
+open import Data.Sum.Base as Sum using (_⊎_; inj₁; inj₂)
+open import Function.Base using (id; _∘_; _on_)
+import Data.Nat.Properties as ℕₚ
+open import Level using () renaming (zero to ℓ₀)
+open import Relation.Nullary using (yes; no)
+open import Relation.Nullary.Decidable.Core using (True; toWitness)
+open import Relation.Binary.Core
+open import Relation.Binary.PropositionalEquality.Core using (_≡_; _≢_; refl; cong)
 
-  data _↦*_ : State → State → Set (L.suc ℓ) where
-    ◾ : {st : State} → st ↦* st
-    _∷_ : {st₁ st₂ st₃ : State} → st₁ ↦ st₂ → st₂ ↦* st₃ → st₁ ↦* st₃
+------------------------------------------------------------------------
+-- Types
 
-  data _↦[_]_ : State → ℕ → State → Set (L.suc ℓ) where
-    ◾ : ∀ {st} → st ↦[ 0 ] st
-    _∷_ : ∀ {st₁ st₂ st₃ n} → st₁ ↦ st₂ → st₂ ↦[ n ] st₃ → st₁ ↦[ suc n ] st₃
+-- Fin n is a type with n elements.
 
-  postulate
-    Finite-State-Termination : ∀ {N st₀}
-      → (∀ (st : State) → Dec (∃[ st' ] (st ↦ st')))
-      → State ⤖ Fin N
-      → is-initial st₀
-      → ∃[ stₙ ] (st₀ ↦* stₙ × is-stuck stₙ)
-
-      
-    Finite-State-Termination-With-Countdown : ∀ {N st₀}
-      → State ⤖ Fin N
-      → is-initial st₀
-      → ∀ cd m stₘ → cd + m ≡ N → st₀ ↦[ m ] stₘ
-      → ∃[ stₙ ] (st₀ ↦* stₙ × is-stuck stₙ)
-
-    NoRepeat : ∀ {st₀ stₙ stₘ n m}
-          → is-initial st₀
-          → n < m
-          → st₀ ↦[ n ] stₙ
-          → st₀ ↦[ m ] stₘ
-          → stₙ ≢  stₘ
-
-    Finite-State-Termination-At-N : ∀ {N st₀}
-        → State ⤖ Fin N
-        → is-initial st₀
-        → ∃[ stₙ ] (st₀ ↦[ N ] stₙ) → ⊥
-
-
-    pigeonhole : ∀ N → (f : ℕ → ℕ)
-           → (∀ n → n ≤ N → f n < N)
-           → ∃[ m ] ∃[ n ] (m < n × n ≤ N × f m ≡ f n)
-
-    Finite-Reachable-State-Termination : ∀ {N st₀}
-      → (St-Fin : ∃[ m ] ∃[ stₘ ] (st₀ ↦[ m ] stₘ) ⤖ Fin N)
-      → is-initial st₀
-      → ∃[ stₙ ] (st₀ ↦* stₙ × is-stuck stₙ)
-
-
-    cd-1 : ∀ {cd} {m} {N}
-      → suc (cd + m) ≡ N
-      → cd + (m + 1) ≡ N
-      
-    -- target
-    Finite-Reachable-State-Termination-CountDown : ∀ {N st₀}
-      → (St-Fin : ∃[ m ] ∃[ stₘ ] (st₀ ↦[ m ] stₘ) ⤖ Fin N)
-      → (has-next : ∀ (st : State) → Dec (∃[ st' ] (st ↦ st')))
-      → is-initial st₀
-      → ∀ cd m  stₘ → cd + m ≡ N → st₀ ↦[ m ] stₘ
-      → ∃[ stₙ ] (st₀ ↦* stₙ × is-stuck stₙ)
-
-
+data Fin : ℕ → Set where
+  zero : {n : ℕ} → Fin (suc n)
+  suc  : {n : ℕ} (i : Fin n) → Fin (suc n)
 \end{code}

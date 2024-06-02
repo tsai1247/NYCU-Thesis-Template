@@ -18,18 +18,18 @@ In the graph, the initial state also traverses a finite number of states and ter
 
 \input{agdaImages/3.2-narrow-case-machine-early-stop}
 
-Assume the number of all states is 𝑁.  That is, we have $st_{0}$, $st_{1}$, ..., and $st_{𝑁-1}$.
+Assume the number of all states is $\mathbb{N}$.  That is, we have $st_{0}$, $st_{1}$, ..., and $st_{$\mathbb{N}$-1}$.
 Assume $st_{0}$ is the initial state.  We can check whether $st_{0}$ has a next state.
 Once the current state doesn't have next state, the machine will terminate.  
 Therefore, we only need to consider the states starting from $st_{0}$ always have its next state.
 
-When the trace progresses 𝑁 times, it should look like the graph below:
+When the trace progresses $\mathbb{N}$ times, it should look like the graph below:
 
 \input{agdaImages/3.2-n-step-from-st0}
 
-Here, we don't specifically mention that the first 𝑁 states traversed should be entirely non-repetitive, even though it's evident that a repetition would lead to a contradiction. 
-Instead, we focus on the whole trace with a lenth of 𝑁 + 1.
-The reversible machine has only 𝑁 states, but there are 𝑁 + 1 state we have traversed.
+Here, we don't specifically mention that the first $\mathbb{N}$ states traversed should be entirely non-repetitive, even though it's evident that a repetition would lead to a contradiction. 
+Instead, we focus on the whole trace with a lenth of $\mathbb{N}$ + 1.
+The reversible machine has only $\mathbb{N}$ states, but there are $\mathbb{N}$ + 1 state we have traversed.
 According to piegonhole principle, we can find two identical states in the trace.
 
 \input{agdaImages/3.2-n-step-with-2-same}
@@ -44,12 +44,12 @@ Restating the statement of Broad RevTerminate Principle:
 
 Similar to Narrow RevTerminate Principle, we assume $st_{0}$ is the initial state, and focus on the fact that there are always subsequent states after each state we traverse.
 The Broad RevTerminate Principle asserts that there are a finite number of states $st_{0}$ can reach. 
-Assume the number of reachable states from $st_{0}$ is 𝑁.
-As before, we walk 𝑁 steps, making the length of the trace 𝑁 + 1.
+Assume the number of reachable states from $st_{0}$ is $\mathbb{N}$.
+As before, we walk $\mathbb{N}$ steps, making the length of the trace $\mathbb{N}$ + 1.
 
 \input{agdaImages/3.2-n-step-from-st0}
 
-There are 𝑁 + 1 states we have traversed.  However, there are only N states $st_{0}$ can reach.
+There are $\mathbb{N}$ + 1 states we have traversed.  However, there are only N states $st_{0}$ can reach.
 According to piegonhole principle, we can find two identical states in the trace.
 
 \input{agdaImages/3.2-n-step-with-2-same}

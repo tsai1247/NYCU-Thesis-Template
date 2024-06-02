@@ -1,21 +1,50 @@
 \begin{code}%
-\>[2]\AgdaFunction{is-initial} %
-\AgdaSymbol{:} %
-\AgdaField{State} %
-\AgdaSymbol{→} %
-\AgdaPrimitive{Set} %
-\AgdaSymbol{\AgdaUnderscore{}}\<%
-\\
-%
-\>[2]\AgdaFunction{is-initial} %
-\AgdaBound{st} %
-\AgdaSymbol{=} %
-\AgdaFunction{∄[} %
-\AgdaBound{st'} %
-\AgdaFunction{]} %
-\AgdaSymbol{(}\AgdaBound{st'} %
-\AgdaOperator{\AgdaField{↦}} %
-\AgdaBound{st}\AgdaSymbol{)}\<%
-\\
-\>[0]\<%
+    \>[2]\AgdaFunction{Finite-State-Termination} %
+    \AgdaSymbol{:} %
+    \AgdaSymbol{∀} %
+    \AgdaSymbol{\{}\AgdaBound{N} %
+    \AgdaBound{st₀}\AgdaSymbol{\}}\<%
+    \\
+    \>[2][@{}l@{\AgdaIndent{0}}]%
+    \>[4]\AgdaSymbol{→} %
+    \AgdaField{State} %
+    \AgdaOperator{\AgdaFunction{⤖}} %
+    \AgdaDatatype{Fin} %
+    \AgdaBound{N}\<%
+    \\
+    %
+    \>[4]\AgdaSymbol{→} %
+    \AgdaSymbol{(}\AgdaBound{has-next} %
+    \AgdaSymbol{:} %
+    \AgdaSymbol{∀} %
+    \AgdaSymbol{(}\AgdaBound{st} %
+    \AgdaSymbol{:} %
+    \AgdaField{State}\AgdaSymbol{)} %
+    \AgdaSymbol{→} %
+    \AgdaRecord{Dec} %
+    \AgdaSymbol{(}\AgdaFunction{∃[} %
+    \AgdaBound{st'} %
+    \AgdaFunction{]} %
+    \AgdaSymbol{(}\AgdaBound{st} %
+    \AgdaOperator{\AgdaField{↦}} %
+    \AgdaBound{st'}\AgdaSymbol{)))}\<%
+    \\
+    %
+    \>[4]\AgdaSymbol{→} %
+    \AgdaFunction{is-initial} %
+    \AgdaBound{st₀}\<%
+    \\
+    %
+    \>[4]\AgdaSymbol{→} %
+    \AgdaFunction{∃[} %
+    \AgdaBound{stₙ} %
+    \AgdaFunction{]} %
+    \AgdaSymbol{(}\AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦*}} %
+    \AgdaBound{stₙ} %
+    \AgdaOperator{\AgdaFunction{×}} %
+    \AgdaFunction{is-stuck} %
+    \AgdaBound{stₙ}\AgdaSymbol{)}\<%
+    \\
+    \>[0]\<%
 \end{code}

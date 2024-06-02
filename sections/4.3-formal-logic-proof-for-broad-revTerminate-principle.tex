@@ -7,8 +7,8 @@ Similar to informal logic proof, we prove the principle using the following step
 \begin{enumerate}[1.]
     \item Starting from the initial state, continue steping into the next state.
     \item If the next state doesn't exist, then the machine terminates.
-    \item After walking 𝑁 steps, demonstrate a contradiction using the Piegonhole Principle and Mapping Rules.
-    \item At this point, we have proven the case within 𝑁 steps and shown that it's impossible for the case to extend beyond 𝑁 steps.
+    \item After walking $\mathbb{N}$ steps, demonstrate a contradiction using the Piegonhole Principle and Mapping Rules.
+    \item At this point, we have proven the case within $\mathbb{N}$ steps and shown that it's impossible for the case to extend beyond $\mathbb{N}$ steps.
 \end{enumerate}
 
 \subsection{ Countdown Rule }
@@ -17,7 +17,7 @@ Same as the narrow version, we introduce the variable ``m'' to represent steppin
 \input{agdaCode/4.3-Broad-RevTerminate-Principle-With-M}
 
 \subsection{ Case at N }
-Here is the statement of Broad revTermination after 𝑁 steps, where we have to prove the case is impossible:
+Here is the statement of Broad revTermination after $\mathbb{N}$ steps, where we have to prove the case is impossible:
 \input{agdaCode/3.3-nth-state-termination-statement}
 
 The proof of ``termination at the n-th state'' can be simplified into the following two steps:
@@ -32,13 +32,13 @@ We will first discuss the mapping rules for the Broad RevTerminate Principle.
 In our proof of termination as the n-th case, a critical component is the mapping rules.
 We establish:
 \begin{enumerate}[1.]
-    \item An injection from Step to reachable state.  Note that the domain of Step is ranges from 0 to 𝑁 (inclusive).
-    \item A bijection between reachable state and Index, due to the limited number of States, resulting in a total of 𝑁 indices.
+    \item An injection from Step to reachable state.  Note that the domain of Step is ranges from 0 to $\mathbb{N}$ (inclusive).
+    \item A bijection between reachable state and Index, due to the limited number of States, resulting in a total of $\mathbb{N}$ indices.
 \end{enumerate}.
 Here is a diagram illustrating these relationships:
 \input{ agdaImages/3.3-mapping-relation }
 
-Note again that there are only 𝑁 indices in the relationships.
+Note again that there are only $\mathbb{N}$ indices in the relationships.
 With this relationships, we can clearly describe the Termination proof at the n-th state:
 \begin{enumerate}[1.]
     \item Initially, we have n+1 states (from $st_{0}$ to $st_{n}$).
@@ -54,7 +54,7 @@ The definition of Piegonhole principle in Agda is shown below:
 This principle requires two key inputs:
 \begin{enumerate}[1.]
     \item A injection from natural number to another natural number. In this case, it is the injection from Step to Index. 
-    \item All mapped number should be less than 𝑁.  The proof is inherent in the definition of Fin.  That is, a natrual number value of Fin 𝑁 is always less than 𝑁.
+    \item All mapped number should be less than $\mathbb{N}$.  The proof is inherent in the definition of Fin.  That is, a natrual number value of Fin $\mathbb{N}$ is always less than $\mathbb{N}$.
 \end{enumerate}.
 
 Using these inputs, we can derive two different steps that map to the same index.

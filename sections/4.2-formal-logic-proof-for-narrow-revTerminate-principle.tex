@@ -7,18 +7,18 @@ Similar to the informal logic proof, we prove the principle using the following 
 \begin{enumerate}[1.]
     \item Starting from the initial state, continue steping into the next state.
     \item If the next state doesn't exist, then the machine terminates.
-    \item Upon taking 𝑁 steps, demonstrate a contradiction using Piegonhole Principle and No-Repeat Principle.
-    \item At this point, we have proven the case within 𝑁 steps and shown that it's impossible for the case to extend beyond 𝑁 steps.
+    \item Upon taking $\mathbb{N}$ steps, demonstrate a contradiction using Piegonhole Principle and No-Repeat Principle.
+    \item At this point, we have proven the case within $\mathbb{N}$ steps and shown that it's impossible for the case to extend beyond $\mathbb{N}$ steps.
 \end{enumerate}
 
 \subsection{ Countdown Rule }
 To realize the step of continuing to the next step, we add a step m and the corresponding state $st_{m}$.
 \input{agdaCode/4.2-Narrow-RevTerminate-Principle-With-M}
 
-When m is less than 𝑁, we try stepping into the next state.  
+When m is less than $\mathbb{N}$, we try stepping into the next state.  
 If there isn't a next state, we have reached the target stuck state.  
 Otherwise, we make a recursion with the case of m increasing.
-Until m equals 𝑁, we have to prove that the case is impossible.
+Until m equals $\mathbb{N}$, we have to prove that the case is impossible.
 \input{agdaCode/4.2-Narrow-RevTerminate-Principle-With-M-Proof}
 
 For the method above, Agda will give a ``Termination checking failed'' error.
@@ -26,7 +26,7 @@ To make the proof terminate, we have to create a variable ``countdown'' in the s
 The ``countdown'' should keep decreasing until it equals to zero.  And we prove the case zero at last.
 The ``countdown'' is precisely the counterpart to m.  
 We keep ensuring ``cd + m $\equiv$ N.''  
-In this way, the proof will terminate exactly when m equals to 𝑁, as originally intended.
+In this way, the proof will terminate exactly when m equals to $\mathbb{N}$, as originally intended.
 
 Here is the new principle with a countdown
 \input{agdaCode/3.3-narrow-revTermination-with-countdown}
@@ -47,18 +47,18 @@ Before introducing the Piegonhole Principle and the No-Repeat Principle, we will
 In our proof of n-th Termination case, a critical part is the mapping rules.
 We have:
 \begin{enumerate}[1.]
-    \item An injection from Step to State.  Note that the domain of Step is from 0 to 𝑁 (inclusive).
-    \item A bijection between State and Index. Due to the limitation of States, we should have 𝑁 indices in total.
+    \item An injection from Step to State.  Note that the domain of Step is from 0 to $\mathbb{N}$ (inclusive).
+    \item A bijection between State and Index. Due to the limitation of States, we should have $\mathbb{N}$ indices in total.
     \item An injection from Step to Index, constructed through the injection and bijection mentioned above.
 \end{enumerate}.
 
 Here is a diagram illustrating the relationships:
 \input{ agdaImages/3.3-mapping-relation }
 
-Note again that there are only 𝑁 indices in these relationships.
+Note again that there are only $\mathbb{N}$ indices in these relationships.
 With this relationships, we can clearly describe the Termination proof at the n-th state:
 \begin{enumerate}[1.]
-    \item First, we have 𝑁+1 states (from $st_{0}$ to $st_{n}$)
+    \item First, we have $\mathbb{N}$+1 states (from $st_{0}$ to $st_{n}$)
     \item Using the injection from Step to Index, we find two different steps mapping to the identical indices using Piegonhole Principle.
     \item With the bijection from index back to State, the identical indices should map to the same states.
     \item The No-repeat Principle tells us that the two different steps should map to different states, leading to a contradiction.
@@ -72,7 +72,7 @@ The definition of Piegonhole Principle in Agda is shown below:
 This principle requires two key inputs:
 \begin{enumerate}[1.]
     \item A injection from natural number to another natural number. In this case, it is the injection from Step to Index. 
-    \item All mapped number should be less than 𝑁.  The proof is inherent in the definition of Fin.  That is, a natrual number value of Fin 𝑁 is always less than 𝑁.
+    \item All mapped number should be less than $\mathbb{N}$.  The proof is inherent in the definition of Fin.  That is, a natrual number value of Fin $\mathbb{N}$ is always less than $\mathbb{N}$.
 \end{enumerate}.
 
 With this, we can find two different steps that inject to the same index.

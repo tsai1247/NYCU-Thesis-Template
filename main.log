@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3) (preloaded format=xelatex 2024.4.1)  27 MAY 2024 10:56
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3) (preloaded format=xelatex 2024.4.1)  3 JUN 2024 00:07
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1136,7 +1136,20 @@ h-table.tex)))
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/newunicodechar\newunicod
 echar.sty
 Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
-) (config/frontmatters.tex) (config/fonts.tex
+) (config/frontmatters.tex)
+Runaway argument?
+{ \AddToShipoutPictureBG { \parbox [b][ \paperheight ]{ \paperwidth }\ETC.
+! File ended while scanning use of \@argdef.
+<inserted text> 
+                \par 
+l.40 \input{config/frontmatters}
+                                
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+(config/fonts.tex
 
 Package fontspec Info: Font family 'DFKai-SB(0)' created for font 'DFKai-SB'
 (fontspec)             with options
@@ -1610,29 +1623,314 @@ Underfull \hbox (badness 10000) detected at line 52
 
 ] (ack/dedication.tex) (abs/abstract_zh.tex)
 (abs/abstract_en.tex
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [1
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \begin{abstract}
+                    %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \begin{abstract}
+                    %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.1 \begin{abstract}
+                    %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.1 \begin{abstract}
+                    %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{abstract}
+                    %
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[1
 
 
 ]
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [2])
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [3
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \begin{abstract}
+                    %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \begin{abstract}
+                    %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.1 \begin{abstract}
+                    %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.1 \begin{abstract}
+                    %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{abstract}
+                    %
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[2])
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74 \maketocs
+              
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[3
 
 ]
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [4]
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74 \maketocs
+              
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[4]
 No file main.toc.
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74 \maketocs
+              
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [5
 
 ]
@@ -1640,8 +1938,65 @@ No file main.lof.
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.74 \maketocs
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74 \maketocs
+              
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [6
 
 ]
@@ -1649,8 +2004,65 @@ No file main.lot.
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.81 \mainmatter
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.81 \mainmatter
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.81 \mainmatter
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.81 \mainmatter
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.81 \mainmatter
+                
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [7
 
 ] (chapters/1-intro.tex
@@ -1670,15 +2082,129 @@ LaTeX Warning: Reference `chapter:ref' on page 1 undefined on input line 29.
 LaTeX Warning: Reference `chapter:fig' on page 1 undefined on input line 29.
 
 ) (chapters/2-background-knowledge.tex
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [1
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \chapter
+            {Background Knowledge}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \chapter
+            {Background Knowledge}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.1 \chapter
+            {Background Knowledge}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.1 \chapter
+            {Background Knowledge}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \chapter
+            {Background Knowledge}
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[1
 
 
 ]
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [2]
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \chapter
+            {Background Knowledge}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \chapter
+            {Background Knowledge}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.1 \chapter
+            {Background Knowledge}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.1 \chapter
+            {Background Knowledge}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \chapter
+            {Background Knowledge}
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[2]
 Chapter 2.
 (sections/2.1-agda.tex (agdaCode/2.1-natrual-number-definition.tex
 \openout4 = `main.ptb'.
@@ -1724,9 +2250,66 @@ Overfull \hbox (2.95702pt too wide) detected at line 23
 \openout4 = `main.ptb'.
 
 )
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [3
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.24 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.24 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.24 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.24 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.24 
+     
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[3
 
 ] (agdaCode/2.1-peano-axioms-5-1.tex
 \openout4 = `main.ptb'.
@@ -1750,19 +2333,191 @@ Overfull \hbox (8.89456pt too wide) detected at line 31
  []
 
 )
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [4]) (sections/2.2-revmachine.tex (agdaCode/2.2-rev-machine-definition.tex
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.40 \item S
+            implifying Variables Using 'with': In the example, the proof for...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.40 \item S
+            implifying Variables Using 'with': In the example, the proof for...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.40 \item S
+            implifying Variables Using 'with': In the example, the proof for...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.40 \item S
+            implifying Variables Using 'with': In the example, the proof for...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40 \item S
+            implifying Variables Using 'with': In the example, the proof for...
+
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[4]) (sections/2.2-revmachine.tex (agdaCode/2.2-rev-machine-definition.tex
 \openout4 = `main.ptb'.
 
-))) (chapters/3-informal-proof.tex
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [5]
+)))
+(chapters/3-informal-proof.tex
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \chapter
+            { Informal Proof }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \chapter
+            { Informal Proof }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.1 \chapter
+            { Informal Proof }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.1 \chapter
+            { Informal Proof }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \chapter
+            { Informal Proof }
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[5]
 Chapter 3.
 (sections/3.1-formulate-statement.tex) (sections/3.2-informal-logic-proof.tex
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.7 
+    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.7 
+    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.7 
+    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.7 
+    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 
+    
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 [6
 
@@ -1817,10 +2572,38 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 )
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
+! Missing } inserted.
+<inserted text> 
+                }
+l.21 ...e have $st_{0}$, $st_{1}$, ..., and $st_{$
+                                                  \mathbb{N}$-1}$.
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: \symbballowed only in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 ...$st_{0}$, $st_{1}$, ..., and $st_{$\mathbb
+                                                  {N}$-1}$.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Extra }, or forgotten $.
+l.21 ...$, $st_{1}$, ..., and $st_{$\mathbb{N}$-1}
+                                                  $.
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
 (agdaImages/3.2-n-step-from-st0.tex
 
 ! LaTeX Error: Can be used only in preamble.
@@ -1836,18 +2619,81 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 )
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [7]
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaImages/3.2-n-step-with-2-same.tex
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.30 H
+      ere, we don't specifically mention that the first $\mathbb{N}$ states ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.30 H
+      ere, we don't specifically mention that the first $\mathbb{N}$ states ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.30 H
+      ere, we don't specifically mention that the first $\mathbb{N}$ states ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.30 H
+      ere, we don't specifically mention that the first $\mathbb{N}$ states ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 H
+      ere, we don't specifically mention that the first $\mathbb{N}$ states ...
+
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[7] (agdaImages/3.2-n-step-with-2-same.tex
+
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \begin{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+) (agdaImages/3.2-n-step-from-st0.tex
 
 ! LaTeX Error: Can be used only in preamble.
 
@@ -1862,31 +2708,65 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 )
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaImages/3.2-n-step-from-st0.tex
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.54 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-! LaTeX Error: Can be used only in preamble.
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.54 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.54 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.54 
+     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5 \begin{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+l.54 
+     
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-)
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
 [8] (agdaImages/3.2-n-step-with-2-same.tex
 
 ! LaTeX Error: Can be used only in preamble.
@@ -1902,9 +2782,66 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ))) (chapters/4-formal-proof.tex
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [9]
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \chapter
+            { Formal Proof }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \chapter
+            { Formal Proof }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.1 \chapter
+            { Formal Proof }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.1 \chapter
+            { Formal Proof }
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \chapter
+            { Formal Proof }
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[9]
 Chapter 4.
 (sections/4.1-formulate-statement.tex (agdaCode/4.1-is-initial.tex
 \openout4 = `main.ptb'.
@@ -1949,8 +2886,19 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 <argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+                           {}↦*\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}↦*\AgdaUnderscore 
+                                               {}
+l.47 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1960,8 +2908,19 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 <argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+                           {}∷\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}∷\AgdaUnderscore 
+                                              {}
+l.47 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1971,8 +2930,85 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 <argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+                           {}↦*\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}↦*\AgdaUnderscore 
+                                               {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore 
+                           {}∷\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}∷\AgdaUnderscore 
+                                              {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore 
+                           {}↦*\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}↦*\AgdaUnderscore 
+                                               {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore 
+                           {}∷\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}∷\AgdaUnderscore 
+                                              {}
+l.47 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2017,21 +3053,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (3.60194pt too wide) in paragraph at lines 15--21
- []\TU/TimesNewRoman(0)/m/n/12 If a state $[][][]$ have no next state, we call 
-it a stuck state. [][] 
- []
-
 ) (agdaCode/4.1-terminate.tex
-\openout4 = `main.ptb'.
-
-
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
+<argument> @watermark 
+                      
+l.1 \begin{code}
+                %
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2039,10 +3066,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
+<argument> @watermark 
+                      
+l.1 \begin{code}
+                %
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2050,81 +3077,55 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
+<inserted text> @watermark 
+                           
+l.1 \begin{code}
+                %
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-)
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaCode/4.1-Fin.tex
-\openout4 = `main.ptb'.
 
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.1 \begin{code}
+                %
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+! LaTeX Error: File `' not found.
 
-! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{code}
+                %
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-
-Overfull \hbox (79.83578pt too wide) in paragraph at lines 21--21
- \TU/TimesNewRoman(0)/m/n/12 Here is the definition of Fin in agda. A Fin 𝑁 set
- have exactly 𝑁 elements. [][] 
- []
-
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
 [10
 
-])
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaCode/4.1-finite-total-states.tex
+]
+\openout4 = `main.ptb'.
+
+) (agdaCode/4.1-Fin.tex
 \openout4 = `main.ptb'.
 
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+<argument> \AgdaEmptyExtraSkip 
+                               
+l.38 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2132,11 +3133,41 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.38 \end{code}
                
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.38 \end{code}
+               
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--38
+ 
+ []
+
+) (agdaCode/4.1-finite-total-states.tex
+\openout4 = `main.ptb'.
+
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.8 \end{code}
+              
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2144,10 +3175,21 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
+<recently read> \bij 
+                     
+l.8 \end{code}
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \bij 
+                     
+l.8 \end{code}
+              
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -2159,9 +3201,9 @@ and I'll forget about whatever was undefined.
 
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+<recently read> \bij 
+                     
+l.50 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2170,9 +3212,9 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+<recently read> \bij 
+                     
+l.50 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2181,9 +3223,9 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+<recently read> \bij 
+                     
+l.50 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2192,6 +3234,66 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ) (agdaCode/4.1-is-initial.tex
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \begin{code}
+                %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \begin{code}
+                %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.1 \begin{code}
+                %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.1 \begin{code}
+                %
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{code}
+                %
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[11]
 \openout4 = `main.ptb'.
 
 
@@ -2227,12 +3329,6 @@ of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (75.71194pt too wide) in paragraph at lines 38--21
- []\TU/TimesNewRoman(0)/m/n/12 For a state to be initial, no other state should
- have it as their next state. [][] 
- []
 
 ) (agdaCode/4.1-mapsto-star.tex
 \openout4 = `main.ptb'.
@@ -2240,8 +3336,19 @@ Overfull \hbox (75.71194pt too wide) in paragraph at lines 38--21
 
 ! Undefined control sequence.
 <argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+                           {}↦*\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}↦*\AgdaUnderscore 
+                                               {}
+l.47 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2251,8 +3358,19 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 <argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+                           {}∷\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}∷\AgdaUnderscore 
+                                              {}
+l.47 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2262,8 +3380,85 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 <argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+                           {}↦*\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}↦*\AgdaUnderscore 
+                                               {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore 
+                           {}∷\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}∷\AgdaUnderscore 
+                                              {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore 
+                           {}↦*\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}↦*\AgdaUnderscore 
+                                               {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore 
+                           {}∷\AgdaUnderscore {}
+l.47 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \AgdaUnderscore {}∷\AgdaUnderscore 
+                                              {}
+l.47 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2311,43 +3506,8 @@ and I'll forget about whatever was undefined.
 ) (agdaCode/4.1-set-of-reachable-states.tex
 \openout4 = `main.ptb'.
 
-
-! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
-[11]) (agdaImages/4.1-set-of-reachable-states.tex
+)
+(agdaImages/4.1-set-of-reachable-states.tex
 
 ! LaTeX Error: Can be used only in preamble.
 
@@ -2361,17 +3521,14 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-)
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaCode/4.1-finite-reachable-states.tex
+) (agdaCode/4.1-finite-reachable-states.tex
 \openout4 = `main.ptb'.
 
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+<recently read> \bij 
+                     
+l.19 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2380,20 +3537,9 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
-               
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+<recently read> \bij 
+                     
+l.19 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2402,36 +3548,18 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (105.9984pt too wide) in paragraph at lines 55--21
- []\TU/TimesNewRoman(0)/m/n/12 Then, we construct a bijection between the set o
-f reachable states and Fin 𝑁. [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 1--19
+ 
  []
-
-)
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaImages/4.1-finite-reachable-states.tex
-
-! LaTeX Error: Can be used only in preamble.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 \begin{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
 ) (agdaCode/4.1-Broad-RevTerminate-Principle.tex
 \openout4 = `main.ptb'.
 
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+<recently read> \bij 
+                     
+l.61 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2440,9 +3568,9 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+<recently read> \bij 
+                     
+l.61 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2451,9 +3579,9 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-<argument> \AgdaUnderscore 
-                           {}
-l.21 \end{code}
+<recently read> \bij 
+                     
+l.61 \end{code}
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2461,7 +3589,71 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-)) (sections/4.2-formal-logic-proof-for-narrow-revTerminate-principle.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--61
+ 
+ []
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.61 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.61 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.61 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.61 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.61 \end{code}
+               
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[12])) (sections/4.2-formal-logic-proof-for-narrow-revTerminate-principle.tex
 (agdaCode/4.2-Narrow-RevTerminate-Principle.tex
 \openout4 = `main.ptb'.
 
@@ -2499,16 +3691,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
-[12])
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaCode/4.2-Narrow-RevTerminate-Principle-With-M.tex
+) (agdaCode/4.2-Narrow-RevTerminate-Principle-With-M.tex
 \openout4 = `main.ptb'.
 
 
@@ -2545,12 +3728,66 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-)
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaCode/4.2-Narrow-RevTerminate-Principle-With-M-Proof.tex
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.21 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.21 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.21 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.21 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 \end{code}
+               
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[13]) (agdaCode/4.2-Narrow-RevTerminate-Principle-With-M-Proof.tex
 \openout4 = `main.ptb'.
 
 
@@ -2587,12 +3824,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
-[13])
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaCode/3.3-narrow-revTermination-with-countdown.tex
+) (agdaCode/3.3-narrow-revTermination-with-countdown.tex
 \openout4 = `main.ptb'.
 
 
@@ -2673,14 +3905,67 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 )
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [14]
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaImages/3.3-mapping-relation.tex
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.40     \item A
+                ssume the n+1-th state exists. Using the Piegonhole Principl...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.40     \item A
+                ssume the n+1-th state exists. Using the Piegonhole Principl...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.40     \item A
+                ssume the n+1-th state exists. Using the Piegonhole Principl...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.40     \item A
+                ssume the n+1-th state exists. Using the Piegonhole Principl...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.40     \item A
+                ssume the n+1-th state exists. Using the Piegonhole Principl...
+
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[14] (agdaImages/3.3-mapping-relation.tex
 
 ! LaTeX Error: Can be used only in preamble.
 
@@ -2695,23 +3980,131 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 )
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.58 N
+      ote again that there are only $\mathbb{N}$ indices in these relationsh...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.58 N
+      ote again that there are only $\mathbb{N}$ indices in these relationsh...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.58 N
+      ote again that there are only $\mathbb{N}$ indices in these relationsh...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.58 N
+      ote again that there are only $\mathbb{N}$ indices in these relationsh...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.58 N
+      ote again that there are only $\mathbb{N}$ indices in these relationsh...
+
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [15] (agdaCode/3.3-piegonhole-principle.tex
 \openout4 = `main.ptb'.
 
 )
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaCode/3.3-no-repeat-principle.tex
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.74     \item A
+                 injection from natural number to another natural number. In...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.74     \item A
+                 injection from natural number to another natural number. In...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.74     \item A
+                 injection from natural number to another natural number. In...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.74     \item A
+                 injection from natural number to another natural number. In...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.74     \item A
+                 injection from natural number to another natural number. In...
+
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[16] (agdaCode/3.3-no-repeat-principle.tex
 \openout4 = `main.ptb'.
 
 
@@ -2721,9 +4114,7 @@ Missing character: There is no ≢ in font Arial/OT:script=latn;language=dflt;ma
 ping=tex-text;!
 Missing character: There is no ≢ in font Arial/OT:script=latn;language=dflt;map
 ping=tex-text;!
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
-[16])) (sections/4.3-formal-logic-proof-for-broad-revTerminate-principle.tex
+)) (sections/4.3-formal-logic-proof-for-broad-revTerminate-principle.tex
 (agdaCode/4.3-Broad-RevTerminate-Principle.tex
 \openout4 = `main.ptb'.
 
@@ -2761,14 +4152,66 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-)
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaCode/4.3-Broad-RevTerminate-Principle-With-M.tex
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.21 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.21 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.21 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.21 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 \end{code}
+               
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[17]) (agdaCode/4.3-Broad-RevTerminate-Principle-With-M.tex
 \openout4 = `main.ptb'.
 
 
@@ -2805,12 +4248,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
-[17])
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaCode/3.3-nth-state-termination-statement.tex
+) (agdaCode/3.3-nth-state-termination-statement.tex
 \openout4 = `main.ptb'.
 
 
@@ -2847,15 +4285,66 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-)
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
-[18]
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaImages/3.3-mapping-relation.tex
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.35 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.35 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.35 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.35 \end{code}
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.35 \end{code}
+               
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[18]) (agdaImages/3.3-mapping-relation.tex
 
 ! LaTeX Error: Can be used only in preamble.
 
@@ -2870,21 +4359,130 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 )
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaCode/3.3-piegonhole-principle.tex
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.41 N
+      ote again that there are only $\mathbb{N}$ indices in the relationships.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.41 N
+      ote again that there are only $\mathbb{N}$ indices in the relationships.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.41 N
+      ote again that there are only $\mathbb{N}$ indices in the relationships.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.41 N
+      ote again that there are only $\mathbb{N}$ indices in the relationships.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.41 N
+      ote again that there are only $\mathbb{N}$ indices in the relationships.
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[19] (agdaCode/3.3-piegonhole-principle.tex
 \openout4 = `main.ptb'.
 
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [19])
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-Missing character: There is no 𝑁 in font Times New Roman/OT:script=latn;languag
-e=dflt;mapping=tex-text;!
-(agdaCode/4.3-proj1-equal.tex
+)
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.57     \item A
+                ll mapped number should be less than $\mathbb{N}$.  The proo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.57     \item A
+                ll mapped number should be less than $\mathbb{N}$.  The proo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.57     \item A
+                ll mapped number should be less than $\mathbb{N}$.  The proo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.57     \item A
+                ll mapped number should be less than $\mathbb{N}$.  The proo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.57     \item A
+                ll mapped number should be less than $\mathbb{N}$.  The proo...
+
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[20] (agdaCode/4.3-proj1-equal.tex
 \openout4 = `main.ptb'.
 
 
@@ -2927,23 +4525,194 @@ Overfull \hbox (51.79869pt too wide) in paragraph at lines 63--82
  []
 
 ))) (chapters/5-conclusion.tex
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [20]
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \chapter
+            {Conclusion}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.1 \chapter
+            {Conclusion}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.1 \chapter
+            {Conclusion}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.1 \chapter
+            {Conclusion}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \chapter
+            {Conclusion}
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[21]
 Chapter 5.
 )
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [21
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.102 \addBibToContents
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.102 \addBibToContents
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.102 \addBibToContents
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.102 \addBibToContents
+                       
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.102 \addBibToContents
+                       
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[22
 
 ]
 No file main.bbl.
 (appx/1-appendix.tex
 Appendix A.
 ) (author/cv.tex) (author/publications.tex)
-File: figures/nycu_logo.jpg Graphic file (type bmp)
-<figures/nycu_logo.jpg>
- [22
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.140 \end{document}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> @watermark 
+                      
+l.140 \end{document}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<inserted text> @watermark 
+                           
+l.140 \end{document}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! Undefined control sequence.
+ ->\errmessage  LaTeX Error: File `\@watermark 
+                                               ' not found.^^J^^JSee the LaT...
+l.140 \end{document}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! LaTeX Error: File `' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.140 \end{document}
+                    
+I could not locate the file with any of these extensions:
+.pdf,.PDF,.ai,.AI,.png,.PNG,.jpg,.JPG,.jpeg,.JPEG,.jp2,.JP2,.jpf,.JPF,.bmp,.BMP
+,.ps,.PS,.eps,.EPS,.mps,.MPS
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[23
 
 
 ] (main.aux)
@@ -2967,9 +4736,8 @@ Package rerunfilecheck Info: Checksums for `main.out':
 (rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  402B06ECD006E3A564B4377A4CE88CD7;6235.
  )
-(\end occurred inside a group at level 10)
+(\end occurred inside a group at level 9)
 
-### semi simple group (level 10) entered at line 5 (\begingroup)
 ### semi simple group (level 9) entered at line 5 (\begingroup)
 ### semi simple group (level 8) entered at line 5 (\begingroup)
 ### semi simple group (level 7) entered at line 5 (\begingroup)
@@ -2987,12 +4755,12 @@ Package rerunfilecheck Info: Checksums for `main.out':
 (\end occurred when \iffalse on line 1 was incomplete)
 (\end occurred when \iftrue on line 1 was incomplete) 
 Here is how much of TeX's memory you used:
- 35385 strings out of 409554
- 728740 string characters out of 5772180
- 1943148 words of memory out of 5000000
- 56827 multiletter control sequences out of 15000+600000
+ 35444 strings out of 409554
+ 729409 string characters out of 5772180
+ 1942148 words of memory out of 5000000
+ 56891 multiletter control sequences out of 15000+600000
  562888 words of font info for 115 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 117i,13n,121p,448b,1811s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 117i,13n,121p,448b,1755s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (32 pages).
+Output written on main.pdf (33 pages).

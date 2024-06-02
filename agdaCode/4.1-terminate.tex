@@ -1,21 +1,13 @@
 \begin{code}%
-\>[2]\AgdaFunction{is-stuck} %
-\AgdaSymbol{:} %
-\AgdaField{State} %
-\AgdaSymbol{→} %
-\AgdaPrimitive{Set} %
-\AgdaSymbol{\AgdaUnderscore{}}\<%
-\\
-%
-\>[2]\AgdaFunction{is-stuck} %
-\AgdaBound{st} %
-\AgdaSymbol{=} %
-\AgdaFunction{∄[} %
-\AgdaBound{st'} %
-\AgdaFunction{]} %
-\AgdaSymbol{(}\AgdaBound{st} %
-\AgdaOperator{\AgdaField{↦}} %
-\AgdaBound{st'}\AgdaSymbol{)}\<%
-\\
-\>[0]\<%
+    \AgdaFunction{∃[} %
+    \AgdaBound{stₙ} %
+    \AgdaFunction{]} %
+    \AgdaSymbol{(}\AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦*}} %
+    \AgdaBound{stₙ} %
+    \AgdaOperator{\AgdaFunction{×}} %
+    \AgdaFunction{is-stuck} %
+    \AgdaBound{stₙ}\AgdaSymbol{)}\<%
+    \\
+    \>[0]\<%
 \end{code}

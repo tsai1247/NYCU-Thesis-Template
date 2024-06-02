@@ -1,0 +1,1857 @@
+\begin{code}%
+\>[0]\<%
+\\
+\>[0]\AgdaKeyword{import} %
+\AgdaModule{Level} %
+\AgdaSymbol{as} %
+\AgdaModule{L}\<%
+\\
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{Relation.Binary}\<%
+\\
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{Relation.Binary.PropositionalEquality} %
+\AgdaKeyword{using} %
+\AgdaSymbol{(}\AgdaOperator{\AgdaDatatype{\AgdaUnderscore{}≡\AgdaUnderscore{}}} %
+\AgdaSymbol{;} %
+\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}≢\AgdaUnderscore{}}} %
+\AgdaSymbol{;} %
+\AgdaInductiveConstructor{refl} %
+\AgdaSymbol{;} %
+\AgdaFunction{trans} %
+\AgdaSymbol{;} %
+\AgdaFunction{sym} %
+\AgdaSymbol{;} %
+\AgdaFunction{cong} %
+\AgdaSymbol{;} %
+\AgdaFunction{cong₂} %
+\AgdaSymbol{;} %
+\AgdaFunction{cong-app}\AgdaSymbol{;} %
+\AgdaFunction{subst}\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{Data.Product}\<%
+\\
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{Data.Empty}\<%
+\\
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{Data.Bool} %
+\AgdaKeyword{using} %
+\AgdaSymbol{(} %
+\AgdaDatatype{Bool} %
+\AgdaSymbol{;} %
+\AgdaInductiveConstructor{true} %
+\AgdaSymbol{;} %
+\AgdaInductiveConstructor{false} %
+\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{Data.Nat}\<%
+\\
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{Data.Nat.Properties} %
+\AgdaKeyword{using} %
+\AgdaSymbol{(} %
+\AgdaFunction{+-suc} %
+\AgdaSymbol{;} %
+\AgdaFunction{+-comm} %
+\AgdaSymbol{;} %
+\AgdaFunction{+-assoc} %
+\AgdaSymbol{;} %
+\AgdaFunction{<-trans} %
+\AgdaSymbol{;} %
+\AgdaFunction{≤-trans} %
+\AgdaSymbol{;} %
+\AgdaFunction{+-identityʳ} %
+\AgdaSymbol{;} %
+\AgdaFunction{<⇒≤} %
+\AgdaSymbol{;} %
+\AgdaFunction{<⇒≢} %
+\AgdaSymbol{;} %
+\AgdaFunction{+-cancelˡ-≡} %
+\AgdaSymbol{;} %
+\AgdaFunction{<-irrefl}\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{RevMachine}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{Function.Bijection} %
+\AgdaKeyword{using} %
+\AgdaSymbol{(} %
+\AgdaOperator{\AgdaFunction{\AgdaUnderscore{}⤖\AgdaUnderscore{}}} %
+\AgdaSymbol{;} %
+\AgdaRecord{Bijection} %
+\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{Data.Fin} %
+\AgdaKeyword{using} %
+\AgdaSymbol{(} %
+\AgdaDatatype{Fin} %
+\AgdaSymbol{;} %
+\AgdaFunction{toℕ} %
+\AgdaSymbol{;} %
+\AgdaFunction{fromℕ<}\AgdaSymbol{)}\<%
+\\
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{Relation.Nullary}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{Pigeonhole}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaKeyword{module} %
+\AgdaModule{agdaTrans} %
+\AgdaSymbol{\{}\AgdaBound{ℓ}\AgdaSymbol{\}} %
+\AgdaSymbol{(}\AgdaBound{M} %
+\AgdaSymbol{:} %
+\AgdaRecord{RevMachine} %
+\AgdaSymbol{\{}\AgdaBound{ℓ}\AgdaSymbol{\})} %
+\AgdaKeyword{where}\<%
+\\
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaKeyword{open} %
+\AgdaModule{RevMachine.RevMachine} %
+\AgdaBound{M}\<%
+\\
+%
+\>[2]\AgdaKeyword{open} %
+\AgdaKeyword{import} %
+\AgdaModule{RevNoRepeat} %
+\AgdaBound{M}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\AgdaComment{----------------------}\<%
+\\
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaComment{--\ ⤖\ :\ Bijection}\<%
+\\
+%
+\>[2]\AgdaComment{--\ 以下定義\ to,\ from,\ to-from,\ from-to，簡化官方Bijection的對應方式}\<%
+\\
+%
+\>[2]\AgdaComment{--\ 例如\ to\ St-Fin\ ∃st\ 代表\ ∃st\ 經由\ St-Fin\ 這個Bijection對應到的\ Fin\ 值}\<%
+\\
+%
+\>[2]\AgdaKeyword{postulate}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaPostulate{to} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{N} %
+\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N} %
+\AgdaSymbol{)} %
+\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaSymbol{→} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\<%
+\\
+%
+\>[4]\AgdaComment{--\ to\ record\ \{\ to\ =\ record\ \{\ \AgdaUnderscore{}⟨\$⟩\AgdaUnderscore{}\ =\ \AgdaUnderscore{}⟨\$⟩\AgdaUnderscore{}\ ;\ cong\ =\ cong\ \}\ ;\ bijective\ =\ bijective\ \}\ ∃stₘ[]\ =\ \AgdaUnderscore{}⟨\$⟩\AgdaUnderscore{}\ ∃stₘ[]}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[4]\AgdaPostulate{from} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{N} %
+\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N} %
+\AgdaSymbol{)} %
+\AgdaSymbol{→} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N} %
+\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaComment{--\ from\ record\ \{\ to\ =\ to\ ;\ bijective\ =\ record\ \{\ injective\ =\ injective\ ;\ surjective\ =\ record\ \{\ from\ =\ record\ \{\ \AgdaUnderscore{}⟨\$⟩\AgdaUnderscore{}\ =\ \AgdaUnderscore{}⟨\$⟩\AgdaUnderscore{}\ ;\ cong\ =\ cong\ \}\ ;\ right-inverse-of\ =\ right-inverse-of\ \}\ \}\ \}\ fn\ =\ \AgdaUnderscore{}⟨\$⟩\AgdaUnderscore{}\ fn}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[4]\AgdaPostulate{to-from} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{N} %
+\AgdaBound{st₀}\AgdaSymbol{\}}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{St-Fin} %
+\AgdaSymbol{:}%
+\>[19]\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N} %
+\AgdaSymbol{)}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{∃stₘ[]} %
+\AgdaSymbol{:} %
+\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{))}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaPostulate{from} %
+\AgdaBound{St-Fin} %
+\AgdaSymbol{(}\AgdaPostulate{to} %
+\AgdaBound{St-Fin} %
+\AgdaBound{∃stₘ[]}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{∃stₘ[]}\<%
+\\
+%
+\>[4]\AgdaComment{--\ to-from\ record\ \{\ to\ =\ record\ \{\ \AgdaUnderscore{}⟨\$⟩\AgdaUnderscore{}\ =\ \AgdaUnderscore{}⟨\$⟩\AgdaUnderscore{}\ ;\ cong\ =\ cong\ \}\ ;\ bijective\ =\ record\ \{\ injective\ =\ injective\ ;\ surjective\ =\ record\ \{\ from\ =\ from\ ;\ right-inverse-of\ =\ right-inverse-of\ \}\ \}\ \}\ ∃stₘ[]\ =\ injective\ (right-inverse-of\ (\AgdaUnderscore{}⟨\$⟩\AgdaUnderscore{}\ ∃stₘ[]))}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[4]\AgdaPostulate{from-to} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{N} %
+\AgdaBound{st₀}\AgdaSymbol{\}}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{St-Fin} %
+\AgdaSymbol{:} %
+\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N} %
+\AgdaSymbol{)}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{fn} %
+\AgdaSymbol{:} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\AgdaSymbol{)}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaPostulate{to} %
+\AgdaBound{St-Fin} %
+\AgdaSymbol{(}\AgdaPostulate{from} %
+\AgdaBound{St-Fin} %
+\AgdaBound{fn}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{fn}\<%
+\\
+%
+\>[4]\AgdaComment{--\ from-to\ record\ \{\ to\ =\ record\ \{\ \AgdaUnderscore{}⟨\$⟩\AgdaUnderscore{}\ =\ \AgdaUnderscore{}⟨\$⟩\AgdaUnderscore{}\ ;\ cong\ =\ cong\ \}\ ;\ bijective\ =\ record\ \{\ injective\ =\ injective\ ;\ surjective\ =\ record\ \{\ from\ =\ from\ ;\ right-inverse-of\ =\ right-inverse-of\ \}\ \}\ \}\ st\ =\ right-inverse-of\ st}\<%
+\\
+\>[0]\AgdaComment{-----------------------------------------}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaKeyword{private}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaFunction{split↦ⁿ}%
+\>[240I]\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{st} %
+\AgdaBound{st''} %
+\AgdaBound{n} %
+\AgdaBound{m}\AgdaSymbol{\}} %
+\AgdaSymbol{→} %
+\AgdaBound{st} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{n} %
+\AgdaOperator{\AgdaPrimitive{+}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{st''}\<%
+\\
+\>[.][@{}l@{}]\<[240I]%
+\>[12]\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{st'} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{n} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{st'} %
+\AgdaOperator{\AgdaFunction{×}} %
+\AgdaBound{st'} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{st''}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaFunction{split↦ⁿ} %
+\AgdaSymbol{\{}\AgdaArgument{n} %
+\AgdaSymbol{=} %
+\AgdaNumber{0}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{m}\AgdaSymbol{\}} %
+\AgdaBound{rs} %
+\AgdaSymbol{=} %
+\AgdaSymbol{\AgdaUnderscore{}} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaInductiveConstructor{◾} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{rs}\<%
+\\
+%
+\>[4]\AgdaFunction{split↦ⁿ} %
+\AgdaSymbol{\{}\AgdaArgument{n} %
+\AgdaSymbol{=} %
+\AgdaInductiveConstructor{suc} %
+\AgdaBound{n}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{m}\AgdaSymbol{\}} %
+\AgdaSymbol{(}\AgdaBound{r} %
+\AgdaOperator{\AgdaInductiveConstructor{∷}} %
+\AgdaBound{rs}\AgdaSymbol{)} %
+\AgdaKeyword{with} %
+\AgdaFunction{split↦ⁿ} %
+\AgdaSymbol{\{}\AgdaArgument{n} %
+\AgdaSymbol{=} %
+\AgdaBound{n}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{m}\AgdaSymbol{\}} %
+\AgdaBound{rs}\<%
+\\
+%
+\>[4]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{st'} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st↦ⁿst'} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st'↦ᵐst''} %
+\AgdaSymbol{=} %
+\AgdaBound{st'} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaSymbol{(}\AgdaBound{r} %
+\AgdaOperator{\AgdaInductiveConstructor{∷}} %
+\AgdaBound{st↦ⁿst'}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st'↦ᵐst''}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[4]\AgdaFunction{same-trace} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{st₀} %
+\AgdaBound{m} %
+\AgdaBound{n} %
+\AgdaBound{stₙ}\AgdaSymbol{\}}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaSymbol{→} %
+\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{n} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₙ}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{n}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₙ}\<%
+\\
+%
+\>[4]\AgdaFunction{same-trace} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{m}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaBound{m}}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{stₙ}\AgdaSymbol{\}} %
+\AgdaBound{st₀↦stₙ} %
+\AgdaInductiveConstructor{refl} %
+\AgdaSymbol{=} %
+\AgdaBound{st₀↦stₙ}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[4]\AgdaFunction{FinN<N} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{N} %
+\AgdaSymbol{:} %
+\AgdaDatatype{ℕ}\AgdaSymbol{\}} %
+\AgdaSymbol{(}\AgdaBound{fn} %
+\AgdaSymbol{:} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\AgdaSymbol{)}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaFunction{toℕ} %
+\AgdaBound{fn}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{<}} %
+\AgdaBound{N}\<%
+\\
+%
+\>[4]\AgdaFunction{FinN<N} %
+\AgdaInductiveConstructor{Fin.zero} %
+\AgdaSymbol{=} %
+\AgdaInductiveConstructor{s≤s} %
+\AgdaInductiveConstructor{z≤n}\<%
+\\
+%
+\>[4]\AgdaFunction{FinN<N} %
+\AgdaSymbol{(}\AgdaInductiveConstructor{Fin.suc} %
+\AgdaBound{fn}\AgdaSymbol{)} %
+\AgdaSymbol{=} %
+\AgdaInductiveConstructor{s≤s} %
+\AgdaSymbol{(}\AgdaFunction{FinN<N} %
+\AgdaBound{fn}\AgdaSymbol{)}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[4]\AgdaFunction{≤-+} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{m}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaSymbol{→} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{≤}} %
+\AgdaBound{N}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{rest} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{m} %
+\AgdaOperator{\AgdaPrimitive{+}} %
+\AgdaBound{rest} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{N}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaFunction{≤-+} %
+\AgdaSymbol{\{}\AgdaInductiveConstructor{zero}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaInductiveConstructor{zero}\AgdaSymbol{\}} %
+\AgdaBound{m≤N} %
+\AgdaSymbol{=} %
+\AgdaInductiveConstructor{zero} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaInductiveConstructor{refl}\<%
+\\
+%
+\>[4]\AgdaFunction{≤-+} %
+\AgdaSymbol{\{}\AgdaInductiveConstructor{zero}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaInductiveConstructor{suc} %
+\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaBound{m≤N} %
+\AgdaSymbol{=} %
+\AgdaInductiveConstructor{suc} %
+\AgdaBound{N} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaInductiveConstructor{refl}\<%
+\\
+%
+\>[4]\AgdaFunction{≤-+} %
+\AgdaSymbol{\{}\AgdaInductiveConstructor{suc} %
+\AgdaBound{m}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaInductiveConstructor{suc} %
+\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaSymbol{(}\AgdaInductiveConstructor{s≤s} %
+\AgdaBound{m≤N}\AgdaSymbol{)} %
+\AgdaKeyword{with} %
+\AgdaFunction{≤-+} %
+\AgdaBound{m≤N}\<%
+\\
+%
+\>[4]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{rest} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaInductiveConstructor{refl} %
+\AgdaSymbol{=} %
+\AgdaBound{rest} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaInductiveConstructor{refl}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{Step→Trace} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaBound{N} %
+\AgdaBound{st₀}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₙ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{N} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₙ}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{∀} %
+\AgdaBound{m} %
+\AgdaSymbol{→} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{≤}} %
+\AgdaBound{N} %
+\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaFunction{Step→Trace} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaSymbol{(}\AgdaBound{stₙ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st₀↦stₙ}\AgdaSymbol{)} %
+\AgdaBound{m} %
+\AgdaBound{m≤N} %
+\AgdaKeyword{with} %
+\AgdaFunction{≤-+} %
+\AgdaBound{m≤N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{rest} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaInductiveConstructor{refl} %
+\AgdaKeyword{with} %
+\AgdaFunction{split↦ⁿ} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{stₙ}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{m}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{rest}\AgdaSymbol{\}}%
+\>[57]\AgdaBound{st₀↦stₙ}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{stₘ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st₀↦stₘ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{stₘ↦stₙ} %
+\AgdaSymbol{=} %
+\AgdaBound{stₘ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st₀↦stₘ}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{Step→Fin} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaBound{N} %
+\AgdaBound{st₀}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₙ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{N} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₙ}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{∀} %
+\AgdaBound{m} %
+\AgdaSymbol{→} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{≤}}%
+\>[17]\AgdaBound{N} %
+\AgdaSymbol{→} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\<%
+\\
+%
+\>[2]\AgdaFunction{Step→Fin} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaBound{St-Fin} %
+\AgdaBound{∃st₀↦stₙ} %
+\AgdaBound{m} %
+\AgdaBound{m≤N} %
+\AgdaKeyword{with} %
+\AgdaFunction{Step→Trace} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaBound{∃st₀↦stₙ} %
+\AgdaBound{m} %
+\AgdaBound{m≤N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{∃st₀↦stₘ} %
+\AgdaSymbol{=} %
+\AgdaPostulate{to} %
+\AgdaBound{St-Fin} %
+\AgdaSymbol{(}\AgdaBound{m} %
+\AgdaOperator{\AgdaInductiveConstructor{,}}%
+\>[35]\AgdaBound{∃st₀↦stₘ}\AgdaSymbol{)}\<%
+\\
+\>[0]\<%
+\\
+%
+\>[2]\AgdaFunction{Step→ℕ} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaBound{N} %
+\AgdaBound{st₀}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₙ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{N} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₙ}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{(}\AgdaBound{m} %
+\AgdaSymbol{:} %
+\AgdaDatatype{ℕ}\AgdaSymbol{)} %
+\AgdaSymbol{→} %
+\AgdaDatatype{ℕ}\<%
+\\
+%
+\>[2]\AgdaFunction{Step→ℕ} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaBound{St-Fin} %
+\AgdaBound{∃stₙ} %
+\AgdaBound{m} %
+\AgdaKeyword{with} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaFunction{≤?}} %
+\AgdaBound{N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaInductiveConstructor{false}} %
+\AgdaOperator{\AgdaInductiveConstructor{because}} %
+\AgdaInductiveConstructor{ofⁿ} %
+\AgdaBound{¬p} %
+\AgdaSymbol{=} %
+\AgdaNumber{0}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaInductiveConstructor{true}} %
+\AgdaOperator{\AgdaInductiveConstructor{because}} %
+\AgdaInductiveConstructor{ofʸ} %
+\AgdaBound{m≤N} %
+\AgdaKeyword{with} %
+\AgdaFunction{Step→Trace} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaBound{∃stₙ} %
+\AgdaBound{m} %
+\AgdaBound{m≤N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{∃st₀↦stₘ} %
+\AgdaSymbol{=} %
+\AgdaFunction{toℕ} %
+\AgdaSymbol{(}\AgdaPostulate{to} %
+\AgdaBound{St-Fin} %
+\AgdaSymbol{(}\AgdaBound{m} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{∃st₀↦stₘ}\AgdaSymbol{))}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{Step→ℕ<N} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaBound{N} %
+\AgdaBound{st₀}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{St-Fin} %
+\AgdaSymbol{:} %
+\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{∃stₙ} %
+\AgdaSymbol{:} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₙ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{N} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₙ}\AgdaSymbol{))}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{(}\AgdaBound{m} %
+\AgdaSymbol{:} %
+\AgdaDatatype{ℕ}\AgdaSymbol{)} %
+\AgdaSymbol{→} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{≤}} %
+\AgdaBound{N} %
+\AgdaSymbol{→} %
+\AgdaFunction{Step→ℕ} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaBound{St-Fin} %
+\AgdaBound{∃stₙ} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaFunction{<}} %
+\AgdaBound{N}\<%
+\\
+%
+\>[2]\AgdaFunction{Step→ℕ<N} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaBound{St-Fin} %
+\AgdaBound{∃stₙ} %
+\AgdaBound{m} %
+\AgdaBound{m≤N} %
+\AgdaKeyword{with}%
+\>[41]\AgdaBound{m} %
+\AgdaOperator{\AgdaFunction{≤?}} %
+\AgdaBound{N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaInductiveConstructor{true}} %
+\AgdaOperator{\AgdaInductiveConstructor{because}} %
+\AgdaInductiveConstructor{ofʸ} %
+\AgdaBound{p} %
+\AgdaSymbol{=} %
+\AgdaFunction{FinN<N} %
+\AgdaSymbol{(}\AgdaFunction{Step→Fin} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaBound{St-Fin} %
+\AgdaBound{∃stₙ} %
+\AgdaBound{m} %
+\AgdaBound{p}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaInductiveConstructor{false}} %
+\AgdaOperator{\AgdaInductiveConstructor{because}} %
+\AgdaInductiveConstructor{ofⁿ} %
+\AgdaBound{¬p} %
+\AgdaKeyword{with} %
+\AgdaBound{¬p} %
+\AgdaBound{m≤N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaSymbol{()}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaKeyword{private}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaFunction{to-fromℕ} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaBound{N} %
+\AgdaSymbol{(}\AgdaBound{fn} %
+\AgdaSymbol{:} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\AgdaSymbol{)}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaSymbol{→} %
+\AgdaFunction{fromℕ<} %
+\AgdaSymbol{\{}\AgdaFunction{toℕ} %
+\AgdaBound{fn}\AgdaSymbol{\}} %
+\AgdaSymbol{(}\AgdaFunction{FinN<N} %
+\AgdaBound{fn}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{fn}\<%
+\\
+%
+\>[4]\AgdaFunction{to-fromℕ} %
+\AgdaSymbol{(}\AgdaInductiveConstructor{suc} %
+\AgdaBound{N}\AgdaSymbol{)} %
+\AgdaInductiveConstructor{Fin.zero} %
+\AgdaSymbol{=} %
+\AgdaInductiveConstructor{refl}\<%
+\\
+%
+\>[4]\AgdaFunction{to-fromℕ} %
+\AgdaSymbol{(}\AgdaInductiveConstructor{suc} %
+\AgdaBound{N}\AgdaSymbol{)} %
+\AgdaSymbol{(}\AgdaInductiveConstructor{Fin.suc} %
+\AgdaBound{fn}\AgdaSymbol{)} %
+\AgdaSymbol{=} %
+\AgdaFunction{cong} %
+\AgdaInductiveConstructor{Fin.suc} %
+\AgdaSymbol{(}\AgdaFunction{to-fromℕ} %
+\AgdaBound{N} %
+\AgdaBound{fn}\AgdaSymbol{)}\<%
+\\
+\>[0]\<%
+\\
+%
+\>[4]\AgdaKeyword{postulate}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaPostulate{toℕ→Fin} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{fm} %
+\AgdaBound{fn} %
+\AgdaSymbol{:} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\AgdaSymbol{\}}\<%
+\\
+\>[6][@{}l@{\AgdaIndent{0}}]%
+\>[8]\AgdaSymbol{→} %
+\AgdaFunction{toℕ} %
+\AgdaBound{fm} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaFunction{toℕ} %
+\AgdaBound{fn}\<%
+\\
+%
+\>[8]\AgdaSymbol{→} %
+\AgdaBound{fm} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{fn}\<%
+\\
+\>[0]\AgdaComment{\{-}\<%
+\\
+\>[0]\AgdaComment{\ \ \ \ toℕ→Fin\ \{suc\ N\}\ \{Fin.zero\}\ \{Fin.zero\}\ refl\ =\ refl}\<%
+\\
+\>[0]\AgdaComment{\ \ \ \ toℕ→Fin\ \{suc\ N\}\ \{Fin.suc\ fm\}\ \{Fin.suc\ fn\}\ eql\ with\ to-fromℕ\ N\ fn}\<%
+\\
+\>[0]\AgdaComment{\ \ \ \ ...\ |\ from-to-fn≡fn\ with\ to-fromℕ\ N\ fm}\<%
+\\
+\>[0]\AgdaComment{\ \ \ \ ...\ |\ from-to-fm≡fm\ \ =\ cong\ Fin.suc\ (toℕ→Fin\ (+-cancelˡ-≡\ 1\ eql))}\<%
+\\
+\>[0]\AgdaComment{-\}}\<%
+\\
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaFunction{to-eql} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{st₀} %
+\AgdaBound{N}\AgdaSymbol{\}}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{St-Fin} %
+\AgdaSymbol{:} %
+\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\AgdaSymbol{)}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{∃m}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{∃n}\AgdaSymbol{\}}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaPostulate{to} %
+\AgdaBound{St-Fin} %
+\AgdaBound{∃m}%
+\>[22]\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaPostulate{to} %
+\AgdaBound{St-Fin} %
+\AgdaBound{∃n}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaBound{∃m} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{∃n}\<%
+\\
+%
+\>[4]\AgdaFunction{to-eql} %
+\AgdaBound{St-Fin} %
+\AgdaSymbol{\{}\AgdaBound{∃m}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{∃n}\AgdaSymbol{\}} %
+\AgdaBound{eql} %
+\AgdaKeyword{with} %
+\AgdaPostulate{to-from} %
+\AgdaBound{St-Fin} %
+\AgdaBound{∃m}\<%
+\\
+%
+\>[4]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{a≡∃m} %
+\AgdaKeyword{with} %
+\AgdaPostulate{to-from} %
+\AgdaBound{St-Fin} %
+\AgdaBound{∃n}\<%
+\\
+%
+\>[4]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{b≡∃n} %
+\AgdaKeyword{with} %
+\AgdaFunction{cong} %
+\AgdaSymbol{(}\AgdaPostulate{from} %
+\AgdaBound{St-Fin}\AgdaSymbol{)} %
+\AgdaBound{eql}\<%
+\\
+%
+\>[4]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{a≡b} %
+\AgdaSymbol{=} %
+\AgdaFunction{trans} %
+\AgdaSymbol{(}\AgdaFunction{trans} %
+\AgdaSymbol{(}\AgdaFunction{sym} %
+\AgdaBound{a≡∃m}\AgdaSymbol{)} %
+\AgdaBound{a≡b}\AgdaSymbol{)} %
+\AgdaBound{b≡∃n}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[4]\AgdaFunction{proj₁-eql} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{st₀} %
+\AgdaBound{stₘ} %
+\AgdaBound{stₙ}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{m} %
+\AgdaSymbol{:} %
+\AgdaDatatype{ℕ}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{n} %
+\AgdaSymbol{:} %
+\AgdaDatatype{ℕ}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{pₘ} %
+\AgdaSymbol{:} %
+\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{pₙ} %
+\AgdaSymbol{:} %
+\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{n} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₙ}\AgdaSymbol{\}}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{m} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{stₘ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{pₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaSymbol{(}\AgdaBound{n} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{stₙ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{pₙ}\AgdaSymbol{)}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{n}\<%
+\\
+%
+\>[4]\AgdaFunction{proj₁-eql} %
+\AgdaInductiveConstructor{refl} %
+\AgdaSymbol{=} %
+\AgdaInductiveConstructor{refl}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0][@{}l@{\AgdaIndent{0}}]%
+\>[2]\AgdaFunction{pigeonhole-helper} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{N} %
+\AgdaBound{st₀}\AgdaSymbol{\}}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{St-Fin} %
+\AgdaSymbol{:}%
+\>[17]\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{st₀↦ⁿstₙ} %
+\AgdaSymbol{:} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₙ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{N} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₙ}\AgdaSymbol{))}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{(∀} %
+\AgdaBound{n} %
+\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{n≤N} %
+\AgdaSymbol{:} %
+\AgdaBound{n} %
+\AgdaOperator{\AgdaDatatype{≤}} %
+\AgdaBound{N}\AgdaSymbol{)} %
+\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaFunction{Step→ℕ} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaBound{St-Fin} %
+\AgdaSymbol{(}\AgdaBound{st₀↦ⁿstₙ}\AgdaSymbol{)} %
+\AgdaBound{n} %
+\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{<}} %
+\AgdaBound{N}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaFunction{pigeonhole-helper} %
+\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaBound{St-Fin} %
+\AgdaBound{st₀↦ⁿstₙ} %
+\AgdaBound{n} %
+\AgdaBound{n≤N} %
+\AgdaSymbol{=} %
+\AgdaFunction{Step→ℕ<N} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaBound{St-Fin} %
+\AgdaSymbol{(}\AgdaBound{st₀↦ⁿstₙ}\AgdaSymbol{)} %
+\AgdaBound{n} %
+\AgdaBound{n≤N}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{Finite-State-Termination-At-N} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{N} %
+\AgdaBound{st₀}\AgdaSymbol{\}}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{is-initial} %
+\AgdaBound{st₀}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₙ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{N} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₙ}\AgdaSymbol{)} %
+\AgdaSymbol{→} %
+\AgdaFunction{⊥}\<%
+\\
+%
+\>[2]\AgdaFunction{Finite-State-Termination-At-N} %
+\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaBound{St-Fin} %
+\AgdaBound{st₀-initial} %
+\AgdaSymbol{(}\AgdaBound{stₙ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st₀↦stₙ}\AgdaSymbol{)}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaKeyword{with} %
+\AgdaPostulate{pigeonhole} %
+\AgdaBound{N} %
+\AgdaSymbol{(}\AgdaFunction{Step→ℕ} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaBound{St-Fin} %
+\AgdaSymbol{(}\AgdaBound{stₙ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st₀↦stₙ}\AgdaSymbol{))} %
+\AgdaSymbol{(}\AgdaFunction{pigeonhole-helper} %
+\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaBound{St-Fin} %
+\AgdaSymbol{(}\AgdaBound{stₙ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st₀↦stₙ}\AgdaSymbol{)} %
+\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{n} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{m<n} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{n≤N} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{tofm≡tofn} %
+\AgdaKeyword{with} %
+\AgdaFunction{≤-trans} %
+\AgdaSymbol{(}\AgdaFunction{<⇒≤}%
+\>[57]\AgdaBound{m<n}\AgdaSymbol{)} %
+\AgdaBound{n≤N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{m≤N} %
+\AgdaKeyword{with} %
+\AgdaFunction{Step→Trace} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaSymbol{(}\AgdaBound{stₙ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st₀↦stₙ}\AgdaSymbol{)} %
+\AgdaBound{m} %
+\AgdaBound{m≤N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{stₘ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st₀↦stₘ} %
+\AgdaKeyword{with} %
+\AgdaFunction{Step→Trace} %
+\AgdaBound{N} %
+\AgdaBound{st₀} %
+\AgdaSymbol{(}\AgdaBound{stₙ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st₀↦stₙ}\AgdaSymbol{)} %
+\AgdaBound{n} %
+\AgdaBound{n≤N} %
+\AgdaComment{--\ Step→Trace\ (st₀↦ᴺ↦stₙ)\ n}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{stₙ₁} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st₀↦stₙ₁} %
+\AgdaKeyword{with} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaFunction{≤?}} %
+\AgdaBound{N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaInductiveConstructor{false}} %
+\AgdaOperator{\AgdaInductiveConstructor{because}} %
+\AgdaInductiveConstructor{ofⁿ} %
+\AgdaBound{np} %
+\AgdaSymbol{=} %
+\AgdaBound{np} %
+\AgdaBound{m≤N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaInductiveConstructor{true}} %
+\AgdaOperator{\AgdaInductiveConstructor{because}} %
+\AgdaInductiveConstructor{ofʸ} %
+\AgdaBound{p} %
+\AgdaKeyword{with} %
+\AgdaBound{n} %
+\AgdaOperator{\AgdaFunction{≤?}} %
+\AgdaBound{N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaInductiveConstructor{false}} %
+\AgdaOperator{\AgdaInductiveConstructor{because}} %
+\AgdaInductiveConstructor{ofⁿ} %
+\AgdaBound{np} %
+\AgdaSymbol{=} %
+\AgdaBound{np} %
+\AgdaBound{n≤N}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaInductiveConstructor{true}} %
+\AgdaOperator{\AgdaInductiveConstructor{because}} %
+\AgdaInductiveConstructor{ofʸ} %
+\AgdaBound{p₁} %
+\AgdaKeyword{with} %
+\AgdaPostulate{toℕ→Fin} %
+\AgdaBound{tofm≡tofn}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{fm≡fn} %
+\AgdaKeyword{with} %
+\AgdaFunction{to-eql} %
+\AgdaBound{St-Fin} %
+\AgdaBound{fm≡fn}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{∃m≡∃n} %
+\AgdaKeyword{with}%
+\>[20]\AgdaFunction{proj₁-eql} %
+\AgdaBound{∃m≡∃n}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{m≡n} %
+\AgdaSymbol{=}%
+\>[15]\AgdaFunction{<⇒≢} %
+\AgdaBound{m<n} %
+\AgdaBound{m≡n}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaKeyword{private}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaFunction{[n]→*} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{n} %
+\AgdaBound{st₀} %
+\AgdaBound{stₙ}\AgdaSymbol{\}}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaSymbol{→} %
+\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{n} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₙ}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦*}} %
+\AgdaBound{stₙ}\<%
+\\
+%
+\>[4]\AgdaFunction{[n]→*} %
+\AgdaSymbol{\{}\AgdaNumber{0}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaBound{st₀}}\AgdaSymbol{\}} %
+\AgdaInductiveConstructor{◾} %
+\AgdaSymbol{=} %
+\AgdaInductiveConstructor{◾}\<%
+\\
+%
+\>[4]\AgdaFunction{[n]→*} %
+\AgdaSymbol{\{}\AgdaInductiveConstructor{suc} %
+\AgdaBound{n}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{stₙ}\AgdaSymbol{\}} %
+\AgdaSymbol{(}\AgdaBound{st₀↦st₁} %
+\AgdaOperator{\AgdaInductiveConstructor{∷}} %
+\AgdaBound{st₁↦ⁿstₙ}\AgdaSymbol{)} %
+\AgdaSymbol{=} %
+\AgdaBound{st₀↦st₁} %
+\AgdaOperator{\AgdaInductiveConstructor{∷}} %
+\AgdaFunction{[n]→*} %
+\AgdaBound{st₁↦ⁿstₙ}\<%
+\\
+\>[0]\<%
+\\
+%
+\>[4]\AgdaFunction{cd-1} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{cd}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{m}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}}\<%
+\\
+\>[4][@{}l@{\AgdaIndent{0}}]%
+\>[6]\AgdaSymbol{→} %
+\AgdaInductiveConstructor{suc} %
+\AgdaSymbol{(}\AgdaBound{cd} %
+\AgdaOperator{\AgdaPrimitive{+}} %
+\AgdaBound{m}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{N}\<%
+\\
+%
+\>[6]\AgdaSymbol{→} %
+\AgdaBound{cd} %
+\AgdaOperator{\AgdaPrimitive{+}} %
+\AgdaSymbol{(}\AgdaBound{m} %
+\AgdaOperator{\AgdaPrimitive{+}} %
+\AgdaNumber{1}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{N}\<%
+\\
+%
+\>[4]\AgdaFunction{cd-1} %
+\AgdaSymbol{\{}\AgdaBound{cd}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{m}\AgdaSymbol{\}} %
+\AgdaBound{eql}%
+\>[23]\AgdaKeyword{with} %
+\AgdaFunction{sym}\AgdaSymbol{(}\AgdaFunction{+-assoc} %
+\AgdaBound{cd} %
+\AgdaBound{m} %
+\AgdaNumber{1}\AgdaSymbol{)}%
+\>[51]\AgdaComment{--\ trans\ (+-assoc\ m\ 1\ cd)\ eql}\<%
+\\
+%
+\>[4]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{cd+[m+1]≡cd+m+1} %
+\AgdaKeyword{with}%
+\>[32]\AgdaFunction{+-comm} %
+\AgdaSymbol{(}\AgdaBound{cd} %
+\AgdaOperator{\AgdaPrimitive{+}} %
+\AgdaBound{m}\AgdaSymbol{)} %
+\AgdaNumber{1}\<%
+\\
+%
+\>[4]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{cd+m+1≡suc[cd+m]} %
+\AgdaSymbol{=} %
+\AgdaFunction{trans} %
+\AgdaSymbol{(}\AgdaFunction{trans} %
+\AgdaBound{cd+[m+1]≡cd+m+1}%
+\>[59]\AgdaBound{cd+m+1≡suc[cd+m]}\AgdaSymbol{)} %
+\AgdaBound{eql}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{Finite-Reachable-State-Termination-CountDown} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{N} %
+\AgdaBound{st₀}\AgdaSymbol{\}}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{St-Fin} %
+\AgdaSymbol{:} %
+\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{has-next} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{(}\AgdaBound{st} %
+\AgdaSymbol{:} %
+\AgdaField{State}\AgdaSymbol{)} %
+\AgdaSymbol{→} %
+\AgdaRecord{Dec} %
+\AgdaSymbol{(}\AgdaFunction{∃[} %
+\AgdaBound{st'} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st} %
+\AgdaOperator{\AgdaField{↦}} %
+\AgdaBound{st'}\AgdaSymbol{)))}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{is-initial} %
+\AgdaBound{st₀}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{∀} %
+\AgdaBound{cd} %
+\AgdaBound{m}%
+\>[14]\AgdaBound{stₘ} %
+\AgdaSymbol{→} %
+\AgdaBound{cd} %
+\AgdaOperator{\AgdaPrimitive{+}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{≡}} %
+\AgdaBound{N} %
+\AgdaSymbol{→} %
+\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₙ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦*}} %
+\AgdaBound{stₙ} %
+\AgdaOperator{\AgdaFunction{×}} %
+\AgdaFunction{is-stuck} %
+\AgdaBound{stₙ}\AgdaSymbol{)}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{Finite-Reachable-State-Termination-CountDown} %
+\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaBound{St-Fin} %
+\AgdaBound{has-next} %
+\AgdaBound{st₀-initial} %
+\AgdaSymbol{(}\AgdaInductiveConstructor{suc} %
+\AgdaBound{cd}\AgdaSymbol{)} %
+\AgdaBound{m} %
+\AgdaBound{stₘ} %
+\AgdaBound{sum-eql} %
+\AgdaBound{st₀↦ᵐstₘ} %
+\AgdaKeyword{with} %
+\AgdaBound{has-next} %
+\AgdaBound{stₘ}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaInductiveConstructor{false}} %
+\AgdaOperator{\AgdaInductiveConstructor{because}} %
+\AgdaInductiveConstructor{ofⁿ} %
+\AgdaBound{¬p} %
+\AgdaSymbol{=} %
+\AgdaBound{stₘ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaFunction{[n]→*} %
+\AgdaBound{st₀↦ᵐstₘ} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{¬p}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaDottedPattern{\AgdaSymbol{.}}\AgdaDottedPattern{\AgdaInductiveConstructor{true}} %
+\AgdaOperator{\AgdaInductiveConstructor{because}} %
+\AgdaInductiveConstructor{ofʸ} %
+\AgdaSymbol{(}\AgdaBound{stₘ₊₁} %
+\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{stₘ↦stₘ₊₁}\AgdaSymbol{)} %
+\AgdaKeyword{with} %
+\AgdaFunction{cd-1} %
+\AgdaSymbol{\{}\AgdaBound{cd}\AgdaSymbol{\}} %
+\AgdaBound{sum-eql}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{sum-eql} %
+\AgdaKeyword{with} %
+\AgdaBound{st₀↦ᵐstₘ} %
+\AgdaOperator{\AgdaFunction{++↦ⁿ}} %
+\AgdaSymbol{(}\AgdaBound{stₘ↦stₘ₊₁} %
+\AgdaOperator{\AgdaInductiveConstructor{∷}} %
+\AgdaInductiveConstructor{◾}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaBound{st₀↦stₘ₊₁} %
+\AgdaSymbol{=} %
+\AgdaFunction{Finite-Reachable-State-Termination-CountDown}%
+\>[66]\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaBound{St-Fin} %
+\AgdaBound{has-next} %
+\AgdaBound{st₀-initial} %
+\AgdaBound{cd} %
+\AgdaSymbol{(}\AgdaBound{m} %
+\AgdaOperator{\AgdaPrimitive{+}} %
+\AgdaNumber{1}\AgdaSymbol{)} %
+\AgdaBound{stₘ₊₁} %
+\AgdaBound{sum-eql} %
+\AgdaBound{st₀↦stₘ₊₁}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\>[2]\AgdaFunction{Finite-Reachable-State-Termination-CountDown} %
+\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaBound{St-Fin} %
+\AgdaBound{has-next} %
+\AgdaBound{st₀-initial} %
+\AgdaNumber{0} %
+\AgdaBound{m} %
+\AgdaBound{stₘ} %
+\AgdaInductiveConstructor{refl} %
+\AgdaBound{st₀↦ᵐstₘ} %
+\AgdaKeyword{with} %
+\AgdaFunction{Finite-State-Termination-At-N} %
+\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaBound{St-Fin} %
+\AgdaBound{st₀-initial}%
+\>[172]\AgdaSymbol{(}\AgdaBound{stₘ}%
+\>[178]\AgdaOperator{\AgdaInductiveConstructor{,}} %
+\AgdaBound{st₀↦ᵐstₘ}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaSymbol{...} %
+\AgdaSymbol{|} %
+\AgdaSymbol{()}\<%
+\\
+\>[0]\<%
+\\
+%
+\>[2]\AgdaFunction{Finite-Reachable-State-Termination} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{\{}\AgdaBound{N} %
+\AgdaBound{st₀}\AgdaSymbol{\}}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{St-Fin} %
+\AgdaSymbol{:} %
+\AgdaFunction{∃[} %
+\AgdaBound{m} %
+\AgdaFunction{]} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₘ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦[}} %
+\AgdaBound{m} %
+\AgdaOperator{\AgdaDatatype{]}} %
+\AgdaBound{stₘ}\AgdaSymbol{)} %
+\AgdaOperator{\AgdaFunction{⤖}} %
+\AgdaDatatype{Fin} %
+\AgdaBound{N}\AgdaSymbol{)}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaSymbol{(}\AgdaBound{has-next} %
+\AgdaSymbol{:} %
+\AgdaSymbol{∀} %
+\AgdaSymbol{(}\AgdaBound{st} %
+\AgdaSymbol{:} %
+\AgdaField{State}\AgdaSymbol{)} %
+\AgdaSymbol{→} %
+\AgdaRecord{Dec} %
+\AgdaSymbol{(}\AgdaFunction{∃[} %
+\AgdaBound{st'} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st} %
+\AgdaOperator{\AgdaField{↦}} %
+\AgdaBound{st'}\AgdaSymbol{)))}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{is-initial} %
+\AgdaBound{st₀}\<%
+\\
+%
+\>[4]\AgdaSymbol{→} %
+\AgdaFunction{∃[} %
+\AgdaBound{stₙ} %
+\AgdaFunction{]} %
+\AgdaSymbol{(}\AgdaBound{st₀} %
+\AgdaOperator{\AgdaDatatype{↦*}} %
+\AgdaBound{stₙ} %
+\AgdaOperator{\AgdaFunction{×}} %
+\AgdaFunction{is-stuck} %
+\AgdaBound{stₙ}\AgdaSymbol{)}\<%
+\\
+%
+\>[2]\AgdaFunction{Finite-Reachable-State-Termination} %
+\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaBound{St-Fin} %
+\AgdaBound{has-next} %
+\AgdaBound{st₀-initial}\<%
+\\
+\>[2][@{}l@{\AgdaIndent{0}}]%
+\>[4]\AgdaSymbol{=} %
+\AgdaFunction{Finite-Reachable-State-Termination-CountDown} %
+\AgdaSymbol{\{}\AgdaBound{N}\AgdaSymbol{\}} %
+\AgdaSymbol{\{}\AgdaBound{st₀}\AgdaSymbol{\}} %
+\AgdaBound{St-Fin} %
+\AgdaBound{has-next} %
+\AgdaBound{st₀-initial} %
+\AgdaBound{N} %
+\AgdaNumber{0} %
+\AgdaBound{st₀} %
+\AgdaSymbol{(}\AgdaFunction{+-identityʳ} %
+\AgdaBound{N}\AgdaSymbol{)} %
+\AgdaInductiveConstructor{◾}\<%
+\\
+%
+\\[\AgdaEmptyExtraSkip]%
+%
+\\[\AgdaEmptyExtraSkip]%
+\>[0]\<%
+\end{code}

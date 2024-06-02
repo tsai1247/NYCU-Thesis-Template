@@ -1,21 +1,38 @@
 \begin{code}%
-\>[2]\AgdaFunction{is-stuck} %
-\AgdaSymbol{:} %
-\AgdaField{State} %
-\AgdaSymbol{→} %
-\AgdaPrimitive{Set} %
-\AgdaSymbol{\AgdaUnderscore{}}\<%
-\\
-%
-\>[2]\AgdaFunction{is-stuck} %
-\AgdaBound{st} %
-\AgdaSymbol{=} %
-\AgdaFunction{∄[} %
-\AgdaBound{st'} %
-\AgdaFunction{]} %
-\AgdaSymbol{(}\AgdaBound{st} %
-\AgdaOperator{\AgdaField{↦}} %
-\AgdaBound{st'}\AgdaSymbol{)}\<%
-\\
-\>[0]\<%
+    %
+    \\[\AgdaEmptyExtraSkip]%
+    \>[0]\AgdaKeyword{data} %
+    \AgdaDatatype{Fin} %
+    \AgdaSymbol{:} %
+    \AgdaDatatype{ℕ} %
+    \AgdaSymbol{→} %
+    \AgdaPrimitive{Set} %
+    \AgdaKeyword{where}\<%
+    \\
+    \>[0][@{}l@{\AgdaIndent{0}}]%
+    \>[2]\AgdaInductiveConstructor{zero} %
+    \AgdaSymbol{:} %
+    \AgdaSymbol{\{}\AgdaBound{n} %
+    \AgdaSymbol{:} %
+    \AgdaDatatype{ℕ}\AgdaSymbol{\}} %
+    \AgdaSymbol{→} %
+    \AgdaDatatype{Fin} %
+    \AgdaSymbol{(}\AgdaInductiveConstructor{suc} %
+    \AgdaBound{n}\AgdaSymbol{)}\<%
+    \\
+    %
+    \>[2]\AgdaInductiveConstructor{suc}%
+    \>[7]\AgdaSymbol{:} %
+    \AgdaSymbol{\{}\AgdaBound{n} %
+    \AgdaSymbol{:} %
+    \AgdaDatatype{ℕ}\AgdaSymbol{\}} %
+    \AgdaSymbol{(}\AgdaBound{i} %
+    \AgdaSymbol{:} %
+    \AgdaDatatype{Fin} %
+    \AgdaBound{n}\AgdaSymbol{)} %
+    \AgdaSymbol{→} %
+    \AgdaDatatype{Fin} %
+    \AgdaSymbol{(}\AgdaInductiveConstructor{suc} %
+    \AgdaBound{n}\AgdaSymbol{)}\<%
+    \\
 \end{code}
