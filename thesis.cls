@@ -319,7 +319,7 @@
   \ifTHESISOPTIONmaster
     \bibtitle{References}%
   \else
-    \bibtitle{References}%
+    \bibtitle{Bibliography}%
   \fi
   \cvtitle{Curriculum Vitae}%
   \loptitle{List of Publications}%
@@ -382,10 +382,10 @@
   \addcontentsline{toc}{chapter}{\textbf{\@loftitle}}%
   \listoffigures
 % List of Tables
-  \cleardoublepage
-  \phantomsection
-  \addcontentsline{toc}{chapter}{\textbf{\@lottitle}}%
-  \listoftables
+  % \cleardoublepage
+  % \phantomsection
+  % \addcontentsline{toc}{chapter}{\textbf{\@lottitle}}%
+  % \listoftables
 \fi
 }
 

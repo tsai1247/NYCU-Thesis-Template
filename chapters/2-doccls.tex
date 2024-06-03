@@ -6,9 +6,9 @@ As a dependently typed functional programming language, we provide a foundationa
 
 \section{Agda}
 
-Agda is a dependently typed functional programming language.
+Agda is a dependently typed functional programming language [3].
 Writing in the Agda language is akin to organizing a mathematical proof. It begins with self-evident datatypes, proposes assumptions to be proven, and provides detailed evidence for their validity thereafter.
-The following is an example of a datatype concerning natural numbers.
+The following is an example of a datatype concerning natural numbers[5]. 
 
 \input{agdaCode/2.1-natrual-number-definition}
 
@@ -42,7 +42,7 @@ then for all natural numbers n, f(n) holds true.
 This illustrates the proof of the fifth Peano axiom. This straightforward proof highlights a few commonly used proof techniques in Agda:
 \begin{enumerate}[1.]
 \item Pattern Matching on Variables: The example splits the natural number n into two cases: zero and suc n, for separate discussion. This technique allows for detailed examination of different scenarios directly related to the structure of natural numbers.
-\item Mathematical Induction on Natural Numbers: Theorems involving natural numbers often leverage induction. In Agda, we typically prove a case for n to infer the case for suc n. Agda ensures that there is a corresponding proof for the base case (usually zero), which acts as the termination condition for a comprehensive proof.
+\item Well-founded recursion in Agda [6]: Theorems involving natural numbers often leverage induction. In Agda, we typically prove a case for n to infer the case for suc n. Agda ensures that there is a corresponding proof for the base case (usually zero), which acts as the termination condition for a comprehensive proof.
 \item Simplifying Variables Using 'with': In the example, the proof for f(n) is obtained using axiom-5, and it is named fn. This approach helps to avoid verbose variable expressions, streamlining the proof.
 \end{enumerate}
 
