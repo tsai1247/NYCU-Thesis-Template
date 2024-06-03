@@ -1,0 +1,51 @@
+\begin{code}%
+    \\
+    %
+    \>[4]\AgdaPostulate{pigeonhole} %
+    \AgdaSymbol{:} %
+    \AgdaSymbol{∀} %
+    \AgdaBound{N} %
+    \AgdaSymbol{→} %
+    \AgdaSymbol{(}\AgdaBound{f} %
+    \AgdaSymbol{:} %
+    \AgdaDatatype{ℕ} %
+    \AgdaSymbol{→} %
+    \AgdaDatatype{ℕ}\AgdaSymbol{)}\<%
+    \\
+    \>[4][@{}l@{\AgdaIndent{0}}]%
+    \>[11]\AgdaSymbol{→} %
+    \AgdaSymbol{(∀} %
+    \AgdaBound{n} %
+    \AgdaSymbol{→} %
+    \AgdaBound{n} %
+    \AgdaOperator{\AgdaDatatype{≤}} %
+    \AgdaBound{N} %
+    \AgdaSymbol{→} %
+    \AgdaBound{f} %
+    \AgdaBound{n} %
+    \AgdaOperator{\AgdaFunction{<}} %
+    \AgdaBound{N}\AgdaSymbol{)}\<%
+    \\
+    %
+    \>[11]\AgdaSymbol{→} %
+    \AgdaFunction{∃[} %
+    \AgdaBound{m} %
+    \AgdaFunction{]} %
+    \AgdaFunction{∃[} %
+    \AgdaBound{n} %
+    \AgdaFunction{]} %
+    \AgdaSymbol{(}\AgdaBound{m} %
+    \AgdaOperator{\AgdaFunction{<}} %
+    \AgdaBound{n} %
+    \AgdaOperator{\AgdaFunction{×}} %
+    \AgdaBound{n} %
+    \AgdaOperator{\AgdaDatatype{≤}} %
+    \AgdaBound{N} %
+    \AgdaOperator{\AgdaFunction{×}} %
+    \AgdaBound{f} %
+    \AgdaBound{m} %
+    \AgdaOperator{\AgdaDatatype{≡}} %
+    \AgdaBound{f} %
+    \AgdaBound{n}\AgdaSymbol{)}\<%
+    \>[0]\<%
+\end{code}

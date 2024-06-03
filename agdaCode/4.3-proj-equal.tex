@@ -1,0 +1,56 @@
+\begin{code}
+    \>[4]\AgdaFunction{proj₁-eql} %
+    \AgdaSymbol{:} %
+    \AgdaSymbol{∀} %
+    \AgdaSymbol{\{}\AgdaBound{st₀} %
+    \AgdaBound{stₘ} %
+    \AgdaBound{stₙ}\AgdaSymbol{\}} %
+    \AgdaSymbol{\{}\AgdaBound{m} %
+    \AgdaSymbol{:} %
+    \AgdaDatatype{ℕ}\AgdaSymbol{\}} %
+    \AgdaSymbol{\{}\AgdaBound{n} %
+    \AgdaSymbol{:} %
+    \AgdaDatatype{ℕ}\AgdaSymbol{\}} %
+    \AgdaSymbol{\{}\AgdaBound{pₘ} %
+    \AgdaSymbol{:} %
+    \AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦[}} %
+    \AgdaBound{m} %
+    \AgdaOperator{\AgdaDatatype{]}} %
+    \AgdaBound{stₘ}\AgdaSymbol{\}} %
+    \AgdaSymbol{\{}\AgdaBound{pₙ} %
+    \AgdaSymbol{:} %
+    \AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦[}} %
+    \AgdaBound{n} %
+    \AgdaOperator{\AgdaDatatype{]}} %
+    \AgdaBound{stₙ}\AgdaSymbol{\}}\<%
+    \\
+    \>[4][@{}l@{\AgdaIndent{0}}]%
+    \>[6]\AgdaSymbol{→} %
+    \AgdaSymbol{(}\AgdaBound{m} %
+    \AgdaOperator{\AgdaInductiveConstructor{,}} %
+    \AgdaBound{stₘ} %
+    \AgdaOperator{\AgdaInductiveConstructor{,}} %
+    \AgdaBound{pₘ}\AgdaSymbol{)} %
+    \AgdaOperator{\AgdaDatatype{≡}} %
+    \AgdaSymbol{(}\AgdaBound{n} %
+    \AgdaOperator{\AgdaInductiveConstructor{,}} %
+    \AgdaBound{stₙ} %
+    \AgdaOperator{\AgdaInductiveConstructor{,}} %
+    \AgdaBound{pₙ}\AgdaSymbol{)}\<%
+    \\
+    %
+    \>[6]\AgdaSymbol{→} %
+    \AgdaBound{m} %
+    \AgdaOperator{\AgdaDatatype{≡}} %
+    \AgdaBound{n}\<%
+    \\
+    %
+    \>[4]\AgdaFunction{proj₁-eql} %
+    \AgdaInductiveConstructor{refl} %
+    \AgdaSymbol{=} %
+    \AgdaInductiveConstructor{refl}\<%
+    \\
+    %
+\end{code}

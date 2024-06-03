@@ -1,33 +1,247 @@
-\chapter{Reference}
+\chapter{Formal Proof}
 \label{chapter:ref}
 
-Section~\ref{sec:citation} explains how to include citation.
-Section~\ref{sec:quote} explains how to use quote.
+\section{Formulate Statement}
 
-\section{Citation}
-\label{sec:citation}
+\subsection{ Redefinition of Narrow RevTerminate Principle}
+Compared to informal logic proofs, our formal logic proof requires stricter definitions. 
+Here is the Narrow RevTerminate Principle:
+``Given a reversible abstract machine with a finite number of total states, it will inevitably terminate from any initial state.''
 
-We use \textbackslash cite\{\} to cite references.
-Besides, we need to use $\sim$ to connect \textbackslash cite\{\} and previous text.
+First of all, we define the initial state.  Given a state, if it is not the next state of any other state, we call it an initial state.
 
-For example (請看 .tex 檔),
-\begin{itemize}
-\item Yang et al.~\cite{Yang_2016} analyzed the strategy and tactics of Reinhard von Lohengramm blablabla.
-\item Yang and Fox divides the history of Free Planets into three eras~\cite{Yang_2017}.
-\end{itemize}
+\input{ agdaCode/4.1-is-initial }
 
-Note that, when mentioning authors
-\begin{itemize}
-\item only 1 author: Yang [citation] ...
-\item just 2 authors: Yang and Fox [citation] ...
-\item more than 2 authors: Yang et al. [citation] ...
-\end{itemize}
+Secondly, we define the terminate of a reversible machine.
+Starting from the initial state $st_{0}$, we use $st_{0}$ $\mapsto$* $st_{n}$ to indicate that $st_{0}$ can reach $st_{n}$ by traversing a finite number of steps.
 
-\section{Quote}
-\label{sec:quote}
+\input{ agdaCode/4.1-mapsto-star }
 
-\textbf{注意:} 在 latex 中使用單/雙引號時要小心, 左邊的引號打法不同 (請看 .tex 檔):
-\begin{itemize}
-\item `單引號'
-\item ``單引號"
-\end{itemize}
+If a state $st_{0}$ have no next state, we call it a stuck state.
+
+\input{ agdaCode/4.1-is-stuck }
+
+The termination of a reversible machine means that given an initial state, it will reach a stuck state.
+
+\input{ agdaCode/4.1-terminate }
+
+Finally, we define ``a reversible abstract machine with a finite number of total states.''
+Here is the definition of Fin in agda.  A Fin $\mathbb{N}$ set have exactly $\mathbb{N}$ elements.
+
+\input{ agdaCode/4.1-Fin }
+
+We construct a bijection between the set of states and Fin $\mathbb{N}$.
+It is as if all states are indexed by an element in the Fin $\mathbb{N}$ set.
+
+\input{ agdaCode/4.1-finite-total-states }
+
+Combining the definition above, we have the exact definition of Narrow RevTerminate Principle:
+
+
+\input{ agdaCode/4.1-Narrow-RevTerminate-Principle }
+
+\subsection{ Redefinition of Broad RevTerminate Principle }
+Here is the Broad RevTerminate Principle:
+``Given a reversible abstract machine, it will inevitably terminate from any initial state with a finite number of reachable states.''
+
+Most of the definitions are the same as those in the Narrow RevTerminate Principle:
+
+For a state to be initial, no other state should have it as their next state.
+
+\input{ agdaCode/4.1-is-initial }
+
+$st_{0}$ $\mapsto$* $st_{n}$ indicates that $st_{0}$ can reach $st_{n}$ by traversing a finite number of steps.
+
+\input{ agdaCode/4.1-mapsto-star }
+
+If a state have no next state, we call it a stuck state.
+
+\input{ agdaCode/4.1-is-stuck }
+
+Before defining ``a finite number of reachable states'', we need to define the ``set of reachable states.''
+$st_{0}$ $\mapsto$[m] $st_{m}$ means $st_{0}$ reaches $st_{m}$ exactly after m steps.
+For all the m and corresponding $st_{m}$ that satisfy $st_{0}$ $\mapsto$[m] $st_{m}$, this is called ``set of reachable states.''
+
+\input{ agdaCode/4.1-set-of-reachable-states}
+
+In Agda, each element of reachable states set is represented as a tuple. 
+
+\input{ agdaImages/4.1-set-of-reachable-states}
+
+Then, we construct a bijection between the set of reachable states and Fin $\mathbb{N}$.
+
+\input{ agdaCode/4.1-finite-reachable-states }
+
+Combining the definition above, we have the exact definition of the Broad RevTerminate Principle:
+
+\input{ agdaCode/4.1-Broad-RevTerminate-Principle }
+
+\section{Formal Logic Proof for the Narrow RevTerminate Principle}
+
+\subsection{ Steps }
+
+\input{ agdaCode/4.2-Narrow-RevTerminate-Principle }
+
+Similar to the informal logic proof, we prove the principle using the following steps:
+\begin{enumerate}[1.]
+    \item Starting from the initial state, continue steping into the next state.
+    \item If the next state doesn't exist, then the machine terminates.
+    \item Upon taking $\mathbb{N}$ steps, demonstrate a contradiction using Piegonhole Principle and No-Repeat Principle.
+    \item At this point, we have proven the case within $\mathbb{N}$ steps and shown that it's impossible for the case to extend beyond $\mathbb{N}$ steps.
+\end{enumerate}
+
+\subsection{ Countdown Rule }
+To realize the step of continuing to the next step, we add a step m and the corresponding state $st_{m}$.
+
+\input{agdaCode/4.2-Narrow-RevTerminate-Principle-With-M}
+
+When m is less than $\mathbb{N}$, we try stepping into the next state.  
+If there isn't a next state, we have reached the target stuck state.  
+Otherwise, we make a recursion with the case of m increasing.
+Until m equals $\mathbb{N}$, we have to prove that the case is impossible.
+
+\input{agdaCode/4.2-Narrow-RevTerminate-Principle-With-M-Proof}
+
+For the method above, Agda will give a ``Termination checking failed'' error.
+To make the proof terminate, we have to create a variable ``countdown'' in the statement.  
+The ``countdown'' should keep decreasing until it equals to zero.  And we prove the case zero at last.
+The ``countdown'' is precisely the counterpart to m.  
+We keep ensuring ``cd + m $\equiv$ N.''  
+In this way, the proof will terminate exactly when m equals to $\mathbb{N}$, as originally intended.
+
+Here is the new principle with a countdown
+
+\input{agdaCode/3.3-narrow-revTermination-with-countdown}
+
+\subsection{ Case at N }
+Here is the statement of Narrow RevTerminate Principle after n steps; we have to prove this case is impossible:
+
+\input{agdaCode/3.3-nth-state-termination-statement}
+
+The proof of ``reaching the n-th state will terminate'' can be simply divided into the two steps below:
+\begin{enumerate}[1.]
+    \item Assume the n+1-th state exists. Using the Piegonhole Principle, we map n states to n + 1 states and find two identical states that are traversed.
+    \item The No-Repeat Principle tells us that the two identical states should not exist, as their steps differ, resulting in a contradiction.
+\end{enumerate}.
+
+Before introducing the Piegonhole Principle and the No-Repeat Principle, we will discussing the mapping rules.
+
+\subsection{ Mapping Rules }
+In our proof of n-th Termination case, a critical part is the mapping rules.
+We have:
+\begin{enumerate}[1.]
+    \item An injection from Step to State.  Note that the domain of Step is from 0 to $\mathbb{N}$ (inclusive).
+    \item A bijection between State and Index. Due to the limitation of States, we should have $\mathbb{N}$ indices in total.
+    \item An injection from Step to Index, constructed through the injection and bijection mentioned above.
+\end{enumerate}.
+
+Here is a diagram illustrating the relationships:
+
+\input{ agdaImages/3.3-mapping-relation }
+
+Note again that there are only $\mathbb{N}$ indices in these relationships.
+With this relationships, we can clearly describe the Termination proof at the n-th state:
+\begin{enumerate}[1.]
+    \item First, we have $\mathbb{N}$+1 states (from $st_{0}$ to $st_{n}$)
+    \item Using the injection from Step to Index, we find two different steps mapping to the identical indices using Piegonhole Principle.
+    \item With the bijection from index back to State, the identical indices should map to the same states.
+    \item The No-repeat Principle tells us that the two different steps should map to different states, leading to a contradiction.
+\end{enumerate}.
+
+\subsection{ Piegonhole Principle }
+The definition of Piegonhole Principle in Agda is shown below:
+
+\input{ agdaCode/4.2.5-piegonhole-principle }
+
+This principle requires two key inputs:
+\begin{enumerate}[1.]
+    \item A injection from natural number to another natural number. In this case, it is the injection from Step to Index. 
+    \item All mapped number should be less than $\mathbb{N}$.  The proof is inherent in the definition of Fin.  That is, a natrual number value of Fin $\mathbb{N}$ is always less than $\mathbb{N}$.
+\end{enumerate}.
+
+With this, we can find two different steps that inject to the same index.
+
+\subsection{ No-Repeat Principle }
+The definition of No-Repeat Principle in Agda is shown below:
+
+The No-Repeat Principle is proved in Chao-Hong Chen's paper [1].  
+In the principle, we know that two states reached from the initial state by different steps should be different states.
+
+\input{agdaCode/3.3-no-repeat-principle}
+
+At this point, we have supplemented the remaining part of the Narrow RevTermination Principle, thus completing the overall proof.
+
+\section{Formal Logic Proof for the Broad RevTerminate Principle}
+
+\subsection{ Step }
+\input{ agdaCode/4.3-Broad-RevTerminate-Principle }
+
+Similar to informal logic proof, we prove the principle using the following steps:
+\begin{enumerate}[1.]
+    \item Starting from the initial state, continue steping into the next state.
+    \item If the next state doesn't exist, then the machine terminates.
+    \item After walking $\mathbb{N}$ steps, demonstrate a contradiction using the Piegonhole Principle and Mapping Rules.
+    \item At this point, we have proven the case within $\mathbb{N}$ steps and shown that it's impossible for the case to extend beyond $\mathbb{N}$ steps.
+\end{enumerate}
+
+\subsection{ Countdown Rule }
+Here is the Countdown Rule for Broad RevTerminate Principle.
+Same as the narrow version, we introduce the variable ``m'' to represent stepping in, and create a corresponding variable ``countdown'' to ensure the proof terminates.
+
+\input{agdaCode/4.3-Broad-RevTerminate-Principle-With-M}
+
+\subsection{ Case at N }
+Here is the statement of Broad revTermination after $\mathbb{N}$ steps, where we have to prove the case is impossible:
+
+\input{agdaCode/3.3-nth-state-termination-statement}
+
+The proof of ``termination at the n-th state'' can be simplified into the following two steps:
+\begin{enumerate}[1.]
+    \item Assume that n+1-th state exists.  With the Piegonhole principle, we can map n states to n+1 states, thus finding two identical reachable states.
+    \item In fact, we don't need No-Repeat Principle here because the definition of a reachable state itself is sufficient to get generate a contradiction.
+\end{enumerate}.
+
+We will first discuss the mapping rules for the Broad RevTerminate Principle.
+
+\subsection{ Mapping Rules }
+In our proof of termination as the n-th case, a critical component is the mapping rules.
+We establish:
+\begin{enumerate}[1.]
+    \item An injection from Step to reachable state.  Note that the domain of Step is ranges from 0 to $\mathbb{N}$ (inclusive).
+    \item A bijection between reachable state and Index, due to the limited number of States, resulting in a total of $\mathbb{N}$ indices.
+\end{enumerate}.
+Here is a diagram illustrating these relationships:
+
+\input{ agdaImages/3.3-mapping-relation }
+
+Note again that there are only $\mathbb{N}$ indices in the relationships.
+With this relationships, we can clearly describe the Termination proof at the n-th state:
+\begin{enumerate}[1.]
+    \item Initially, we have n+1 states (from $st_{0}$ to $st_{n}$).
+    \item With the injection from Step to Index, using the Piegonhole Principle, we identify two different steps that map to the identical index.
+    \item With the bijection from Index back to State, the same indices must map to the same reachable states.
+\end{enumerate}.
+
+\subsection{ Piegonhole Principle }
+The definition of Piegonhole principle in Agda is shown below:
+
+\input{ agdaCode/4.3.5-piegonhole-principle }
+
+This principle requires two key inputs:
+\begin{enumerate}[1.]
+    \item A injection from natural number to another natural number. In this case, it is the injection from Step to Index. 
+    \item All mapped number should be less than $\mathbb{N}$.  The proof is inherent in the definition of Fin.  That is, a natrual number value of Fin $\mathbb{N}$ is always less than $\mathbb{N}$.
+\end{enumerate}.
+
+Using these inputs, we can derive two different steps that map to the same index.
+
+\subsection{ Contradiction }
+Here, we do not require the No-Repeat Principle.  
+The Piegonhole Principle indicates that two different steps correspond to the same index; through bijection, this same index maps back to two identical reachable states.
+The definition of reachable states inherently includes the step in the trace, allowing us to straightforwardly prove that the steps are the same using the following codes:
+
+\input{ agdaCode/4.3-proj-equal}
+
+Therefore, we arrive at the conclusion that the two steps are simultaneously the same and different, presenting an obvious contradiction.
+
+With this, we have addressed the remaining elements of the Broad RevTerminate Principle, thereby completing the overall proof.

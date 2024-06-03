@@ -1,0 +1,32 @@
+\vspace{1em}
+
+\usetikzlibrary{graphs, positioning, quotes, shapes.geometric}
+
+\begin{document}
+\begin{tikzpicture}[node distance=10pt]
+    \node[draw]                         (Step 0)  {Step 0};
+    \node[draw, below=30pt of Step 0]   (Step 1)  {Step 1};
+    \node[draw, below=30pt of Step 1]   (Step 2)  {Step 2};
+    \node[draw, below=30pt of Step 2]   (Step 3)  {Step 3};
+    \node[draw, below=30pt of Step 3]   (Step n)  {Step n};
+    
+    \node[draw, right=30pt of Step 0]   (State 0)  {State 0};
+    \node[draw, right=30pt of Step 1]   (State 1)  {State 1};
+    \node[draw, right=30pt of Step 2]   (State 2)  {State 2};
+    \node[draw, right=30pt of Step 3]   (State 3)  {State 3};
+    \node[draw, right=30pt of Step n]   (State n)  {State n};
+
+    \node[draw, right=30pt of State 0]   (Index 0)  {Index 0};
+    \node[draw, right=30pt of State 1]   (Index 1)  {Index 1};
+    \node[draw, right=30pt of State 2]   (Index 2)  {Index 2};
+    \node[draw, right=30pt of State 3]   (Index 3)  {Index 3};
+    \node[draw, right=30pt of State n]   (Index n)  {　　?　　};
+
+    \graph{
+        (Step 0) -> (State 0) -> (Index 1);
+        (Step 1) -> (State 1) -> (Index 3);
+        (Step 2) -> (State 2) -> (Index 0);
+        (Step 3) -> (State 3) -> (Index 2);
+        (Step n) -> (State n) -> (Index n);
+    };
+\end{tikzpicture}

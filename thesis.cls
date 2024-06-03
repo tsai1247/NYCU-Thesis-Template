@@ -319,7 +319,7 @@
   \ifTHESISOPTIONmaster
     \bibtitle{References}%
   \else
-    \bibtitle{Bibliography}%
+    \bibtitle{References}%
   \fi
   \cvtitle{Curriculum Vitae}%
   \loptitle{List of Publications}%
@@ -661,7 +661,7 @@
   % English name
     \begin{tabular}{ll}%
       \large{Student:}&{\large{\@author}}\vspace{0.5em}\\%
-      \large{Advisor:}&{Dr. \large{\@advisor}}\\%
+      \large{Advisor:}&{\large{Dr. \@advisor}}\\%
       \ifx \@coadvisorA \@empty \else
         &{\large{\@coadvisorA}}\\%
       \fi

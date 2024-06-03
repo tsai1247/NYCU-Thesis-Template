@@ -1,0 +1,35 @@
+\begin{code}%
+    \\
+    %
+    \>[4]\AgdaPostulate{Finite-State-Termination-At-N} %
+    \AgdaSymbol{:} %
+    \AgdaSymbol{∀} %
+    \AgdaSymbol{\{}\AgdaBound{N} %
+    \AgdaBound{st₀}\AgdaSymbol{\}}\<%
+    \\
+    \>[4][@{}l@{\AgdaIndent{0}}]%
+    \>[8]\AgdaSymbol{→} %
+    \AgdaField{State} %
+    \AgdaOperator{\AgdaFunction{⤖}} %
+    \AgdaDatatype{Fin} %
+    \AgdaBound{N}\<%
+    \\
+    %
+    \>[8]\AgdaSymbol{→} %
+    \AgdaFunction{is-initial} %
+    \AgdaBound{st₀}\<%
+    \\
+    %
+    \>[8]\AgdaSymbol{→} %
+    \AgdaFunction{∃[} %
+    \AgdaBound{stₙ} %
+    \AgdaFunction{]} %
+    \AgdaSymbol{(}\AgdaBound{st₀} %
+    \AgdaOperator{\AgdaDatatype{↦[}} %
+    \AgdaBound{N} %
+    \AgdaOperator{\AgdaDatatype{]}} %
+    \AgdaBound{stₙ}\AgdaSymbol{)} %
+    \AgdaSymbol{→} %
+    \AgdaFunction{⊥}\<%
+    \>[0]\<%
+\end{code}

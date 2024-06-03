@@ -1,31 +1,88 @@
-\chapter{Section Ordering}
+\chapter{Informal Proof}
 \label{chapter:secorder}
 
-Section ordering in \textit{thesis.cls} is:
-\begin{itemize}
-\item Chapter (shown in \textbf{Table of Contents})
-\item Section (shown in \textbf{Table of Contents})
-\item Subsection (shown in \textbf{Table of Contents})
-\item Paragraph
-\item Subparagraph
-\end{itemize}
-DONOT use \textbackslash subsubsection, it is not supported in \textit{thesis.cls}.
-It is replaced by \textbackslash paragraph.
+\section{Formulate Statement}
 
-\section{Section}
-\label{sec:secorder}
-\lipsum[1-2]  % dumy text generator
+First of all, let’s define the following terms:
+``Initial state'' means a state that no other state can reach in the machine.
+``Termination of the machine'' means reaching a state with no subsequent state to transition to. This final state is also called the ``stuck state.''
+When we said ``the machine will terminate from an initial state,'' it means that starting from the initial state, through a finite number of transitions, we will reach a stuck state.
 
-\subsection{Subsection}
-\label{subsec:secorder}
-\lipsum[3-4]  % dumy text generator
+We have a reversible abstract machine, and designate one of the state as initial state.  
+It's known that there are finite number of reachable states from the initial state.  
+Given the forward determinism of the reversible machines, we can assume that the machine will terminate from the initial state.
 
-\paragraph{Paragraph}
-\lipsum[5-6]  % dumy text generator
+Here is our complete statement:
+``Given a reversible abstract machine, it will inevitably terminate from any initial state with a finite number of reachable states.''
+We call this the ``Broad RevTerminate Principle.''
 
-\subparagraph{Subparagraph}
-\lipsum[7]  % dumy text generator
+In the statement, the total number of states in the machine may be infinite.
+For the informal logic proof, we can easily ignore those unreachable states.  
+However, it is relatively difficult for formal proof. 
+Therefore, we make a narrower statement as follows:
 
-\section{Section}
-\label{sec:secorder}
-\lipsum[8]  % dumy text generator
+``Given a reversible abstract machine with a finite number of total states, it will inevitably terminate from any initial state.''
+We call this the ``Narrow RevTerminate Principle''.
+
+In the statement, we could say ``we have walked through all the states, so it should terminate.'' in both informal and formal proofs easily.
+We will provide a detailed proof in the next section.
+
+\section{Informal Logic Proof}
+
+\subsection{ No Repeat }
+The ``No Repeat Principle'' is formally proved in the Chao-Hong Chen's paper [1].
+Here is the definition of the principle:
+Given a reversible abstract machine and an initial state, for two different natural numbers m and n, if the initial state reach $st_{m}$ and $st_{n}$ by walking through m and n steps respectively, then $st_{m}$ should not beequal to $st_{n}$.
+
+\subsection{ Narrow RevTerminate Principle }
+Restating the statement of Narrow RevTerminate Principle: 
+``Given a reversible abstract machine with a finite number of total states, it will inevitably terminate from any initial state.''
+
+Here is the graph of the expected machine.  It seems monotonous: the initial state will traverse all the other states without repetition and then terminate.
+
+\input{agdaImages/3.2-narrow-case-machine}
+
+This is the other case for the machine with finite states.  
+In the graph, the initial state also traverses a finite number of states and terminates.  However, not all the states are traversed.
+
+\input{agdaImages/3.2-narrow-case-machine-early-stop}
+
+Assume the number of all states is $\mathbb{N}$.  That is, we have $st_{0}$, $st_{1}$, ..., and $st_{$\mathbb{N}$-1}$.
+Assume $st_{0}$ is the initial state.  We can check whether $st_{0}$ has a next state.
+Once the current state doesn't have next state, the machine will terminate.  
+Therefore, we only need to consider the states starting from $st_{0}$ always have its next state.
+
+When the trace progresses $\mathbb{N}$ times, it should look like the graph below:
+
+\input{agdaImages/3.2-n-step-from-st0}
+
+Here, we don't specifically mention that the first $\mathbb{N}$ states traversed should be entirely non-repetitive, even though it's evident that a repetition would lead to a contradiction. 
+Instead, we focus on the whole trace with a lenth of $\mathbb{N}$ + 1.
+The reversible machine has only $\mathbb{N}$ states, but there are $\mathbb{N}$ + 1 state we have traversed.
+According to piegonhole principle, we can find two identical states in the trace.
+
+\input{agdaImages/3.2-n-step-with-2-same}
+
+With No-Repeat Principle, we know it's impossible for an initial state to walk through two different steps but reach same state.
+At this point, we have successfully identified a contradiction.  
+The contradiction shows that the length of trace is always less or equal than N, and thus the machine will terminate.
+
+\subsection{ Broad RevTerminate Principle }
+Restating the statement of Broad RevTerminate Principle: 
+``Given a reversible abstract machine, it will inevitably terminate from any initial state with a finite number of reachable states.''
+
+Similar to Narrow RevTerminate Principle, we assume $st_{0}$ is the initial state, and focus on the fact that there are always subsequent states after each state we traverse.
+The Broad RevTerminate Principle asserts that there are a finite number of states $st_{0}$ can reach. 
+Assume the number of reachable states from $st_{0}$ is $\mathbb{N}$.
+As before, we walk $\mathbb{N}$ steps, making the length of the trace $\mathbb{N}$ + 1.
+
+\input{agdaImages/3.2-n-step-from-st0}
+
+There are $\mathbb{N}$ + 1 states we have traversed.  However, there are only N states $st_{0}$ can reach.
+According to piegonhole principle, we can find two identical states in the trace.
+
+\input{agdaImages/3.2-n-step-with-2-same}
+
+With No-Repeat principle, we know it's impossible for an initial state to traverse two different steps and reach the same state.
+At this point, we have successfully identified a contradiction.  The contradiction shows the length of trace is always less or equal than N, leading to termination.
+
